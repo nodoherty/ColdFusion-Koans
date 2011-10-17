@@ -1,7 +1,12 @@
 <cfscript>
 	testSuite = new mxunit.framework.TestSuite();
 
-	testSuite.addAll("AboutAsserts.AboutAsserts");
+	testSuite.addAll("Koans.AboutAsserts");
+	testSuite.addAll("Koans.AboutVariables");
+	testSuite.addAll("Koans.AboutArrays");
+	testSuite.addAll("Koans.AboutStructs");
+	testSuite.addAll("Koans.AboutFunctions");
+	testSuite.addAll("Koans.AboutComponents");
 
 	results = testSuite.run();
 </cfscript>
