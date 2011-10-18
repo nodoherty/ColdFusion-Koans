@@ -4,7 +4,7 @@ component extends="mxunit.framework.TestCase"{
 		//functions in ColdFusion are an easy way to encapsulate functionality
 		var sum = add(1,2);
 
-		assertEquals(sum,3);
+		assertEquals(sum,"__");
 	};
 
 	private numeric function add(numeric a, numeric b){
@@ -17,9 +17,9 @@ component extends="mxunit.framework.TestCase"{
 		var sum = 0;
 		
 		//we can copy the add function to a property on the sturcture **note functions live in the variables scope of a component**
-		
+
 		myStruct.add = variables.add;
-		sum = myStruct.add(3,4);
+		sum = myStruct.add("__");
 
 		assertEquals(sum,7);
 
