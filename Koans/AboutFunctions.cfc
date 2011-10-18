@@ -19,9 +19,9 @@ component extends="mxunit.framework.TestCase"{
 		//we can copy the add function to a property on the sturcture **note functions live in the variables scope of a component**
 
 		myStruct.add = variables.add;
-		sum = myStruct.add("__");
+		sum = myStruct.add(3,4);
 
-		assertEquals(sum,7);
+		assertEquals(sum,"__");
 
 	}
 }
