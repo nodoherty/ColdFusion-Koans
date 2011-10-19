@@ -11,7 +11,7 @@ component extends="mxunit.framework.TestCase"{
 		return a + b;
 	}
 
-	public function testCopyingAFunction(){
+	public void function testCopyingAFunction(){
 		//functions are also first class citizens in coldfusion, meaning they can be passed around like vars
 		var myStruct = {};
 		var sum = 0;
@@ -22,6 +22,63 @@ component extends="mxunit.framework.TestCase"{
 		sum = myStruct.add(3,4);
 
 		assertEquals(sum,"__");
+	}
 
+	public void function testFunctionArguments(){
+		//look at the add2 function below, it has an empty argument signature, but it can seill accept arguments
+		var sum = add2(4,5);
+
+		assertEquals(sum,"__");
+	}
+
+	private numeric function add2(){
+		return arguments[1] + arguments[2];
+	}
+
+	public void function testPassArrayIntoFunction(){
+		var myArray = ["peach","apple","strawberry","orange"];
+
+		changeArray(myArray);
+		//what is the value of my array AFTER its passed into the changeArray function
+		assertEquals(myArray[1],"__");
+		//what does this mean?  Go here for more information http://adobe.ly/rp0TGa
+
+	}
+
+	private function changeArray(Array theArray){
+		arguments.theArray[1] = "Pizza";
+	}
+
+	public void function testPassStructIntoFunction(){
+		var myStruct = {fruit = "apple",veggie="carrot"};
+
+		changeStruct(myStruct);
+		//what the value of the veggie key after its passed into changeStruct
+		assertEquals(myStruct.veggie,"__");
+		//what does this mean?  Go here for more information http://adobe.ly/rp0TGa
+	}
+
+	public void function testCopyStructThenPassItIntoFunction(){
+		var myStruct = {fruit = "apple",veggie="carrot"};
+		var myOtherStruct = myStruct;
+
+		changeStruct(myOtherStruct);
+
+		assertEquals(myStruct.veggie,"__");
+	}
+
+	public void function testCopyStructUsingStructThenPassItIntoFunction(){
+		var myStruct = {fruit = "apple",veggie="carrot"};
+		var myOtherStruct = structCopy(myStruct);
+
+		changeStruct(myOtherStruct);
+
+		assertEquals(myStruct.veggie,"__");
+	}
+
+	private function changeStruct(Struct theStruct){
+		if(structKeyExists(theStruct,"veggie")){
+			theStruct.veggie = "Pizza";
+		}
 	}
 }

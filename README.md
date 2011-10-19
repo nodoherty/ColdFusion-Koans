@@ -14,6 +14,6 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 * Add comments that explain the concept for your test.
 * Make sure you can make your test pass, then delete the correct answer before you submit.
 * If you need to create a new CFC for your test, put it in the components folder. 
-* 
+* If there is a link to more information on a topic feel free to shorten it and include it
 
 ##Contributors
