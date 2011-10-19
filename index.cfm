@@ -7,6 +7,7 @@
 	testSuite.addAll("Koans.AboutStructs");
 	testSuite.addAll("Koans.AboutFunctions");
 	testSuite.addAll("Koans.AboutComponents");
+	testSuite.addAll("Koans.AboutComponentTags");
 
 	results = testSuite.run();
 </cfscript>

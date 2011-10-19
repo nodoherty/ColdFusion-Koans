@@ -27,4 +27,12 @@ component{
 			return missingMethodArguments[2] & " " & missingMethodArguments[1];				
 		}	
 	}
+
+	public String function getOne(){
+		return "1";
+	}
+
+	public String function getTwo(){
+		return "2";
+	}
 }
