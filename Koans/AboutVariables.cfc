@@ -10,13 +10,13 @@ component extends="mxunit.framework.TestCase"{
 	public void function testAddingStringAndNumber(){
 		//string concatanation in ColdFusion is done with the & sign
 		var myVar = 1 & "Hello";
-		assertEquals("__",myVar);
+		assertEquals(myVar,"__");
 	}
 
 	public void function testAddingTwoNumbers(){
 		//What happens when we add a number and a string?
 		var myVar = 1 + "1";
-		assertEquals("__",myVar);
+		assertEquals(myVar,"__");
 	}
 	
 }
