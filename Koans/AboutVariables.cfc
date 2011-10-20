@@ -7,16 +7,8 @@ component extends="mxunit.framework.TestCase"{
 		assertFalse(isDefined("variables.myVar"));
 	}
 
-	public void function testAddingStringAndNumber(){
-		//string concatanation in ColdFusion is done with the & sign
-		var myVar = 1 & "Hello";
-		assertEquals(myVar,"__");
+	public void function testIfAVariableExists(){
+		//the isdefined function will tell you if a variable exists or not	
+		assertEquals(isDefined("foo"),"__"); 
 	}
-
-	public void function testAddingTwoNumbers(){
-		//What happens when we add a number and a string?
-		var myVar = 1 + "1";
-		assertEquals(myVar,"__");
-	}
-	
 }

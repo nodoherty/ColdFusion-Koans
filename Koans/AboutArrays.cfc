@@ -13,6 +13,10 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myArray[1],"__");		
 	}
 
+	private String function returnString(String myArg){
+		                  
+	}
+
 	public void function testAppendingArrayElements(){
 		var myArray = ["one","two","three"];
 		
