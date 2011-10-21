@@ -3,10 +3,13 @@
 
 	testSuite.addAll("Koans.AboutAsserts");
 	testSuite.addAll("Koans.AboutVariables");
+	testSuite.addAll("Koans.AboutBooleans");
 	testSuite.addAll("Koans.AboutStrings");
 	testSuite.addAll("Koans.AboutNumbers");
+	testSuite.addAll("Koans.AboutDates");
 	testSuite.addAll("Koans.AboutArrays");
 	testSuite.addAll("Koans.AboutStructs");
+	testSuite.addAll("Koans.AboutLists");
 	testSuite.addAll("Koans.AboutFunctions");
 	testSuite.addAll("Koans.AboutComponents");
 	testSuite.addAll("Koans.AboutComponentTags");
