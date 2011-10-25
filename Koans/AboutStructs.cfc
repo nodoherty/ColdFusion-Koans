@@ -11,6 +11,7 @@ component extends="mxunit.framework.TestCase"{
 		var myStruct = {foo = "Foo"};
 
 		//add the correct key and value to the mystruct to make the test pass
+		
 		assertEquals(myStruct.bar,"Bar");
 	}
 
