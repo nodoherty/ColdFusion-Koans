@@ -1,6 +1,6 @@
 component extends="mxunit.framework.TestCase"{
 
-	public boolean function isTruthy(Any myVar){
+	private boolean function isTruthy(Any myVar){
 
 		if(isBoolean(arguments.myVar)){
 			return (arguments.myVar) ? true : false;	

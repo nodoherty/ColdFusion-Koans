@@ -33,4 +33,18 @@ component extends="mxunit.framework.TestCase"{
 
 		assertEquals(myNum mod 2,"__");
 	}
+
+	public void function testIncrementingAVar(){
+		var myNum = 4;
+
+		//take a second to think about this one
+		myNum = addOne(myNum++);
+
+		assertEquals(myNum,"__");
+		//if you are not sure what happened read this blog post by Ben Nadal http://bit.ly/tsDWYe
+	}
+
+	private numeric function addOne(numeric myNum){
+		return myNum + 1;
+	}
 }

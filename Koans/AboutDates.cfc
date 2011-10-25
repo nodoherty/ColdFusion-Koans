@@ -42,4 +42,19 @@ component extends="mxunit.framework.TestCase"{
 		//another thing to note here is that i is function scoped, not block scoped in the loop like in some languages
 		assertEquals(dateFormat(i,"mm/dd/yyyy"),"__");
 	}
+
+	public void function testWorkingWithDates(){
+		
+		myDate = parseDateTime("01/01/77");		
+		assertEquals(isDate(myDate),"__");
+
+		myDate = parseDateTime("01.01.77");		
+		assertEquals(isDate(myDate),"__");
+
+		var myDate = parseDateTime("January 1, 1977");		
+		assertEquals(isDate(myDate),"__");
+
+		var myDate = parseDateTime("Wednesday, October 25, 2011");		
+		assertEquals(isDate(myDate),"__");	
+	}
 }
