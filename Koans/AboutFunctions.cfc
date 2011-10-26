@@ -89,10 +89,9 @@ component extends="mxunit.framework.TestCase"{
 		
 		assertEquals(myStruct.fruit1,"__");
 		assertEquals(myStruct.fruit2,"__");
-		assertEquals(myStruct.fruit3,"__");
-		
-		
+		assertEquals(myStruct.fruit3,"__");	
 	}
+	
 	private function switchParams(string fruit1 = "apple", string fruit2 = "banana", string fruit3="grape"){
 		return {fruit1 = fruit2, fruit2 = fruit1, fruit3 = fruit3};
 	}
