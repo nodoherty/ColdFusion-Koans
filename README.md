@@ -21,3 +21,7 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 ##Contributors
 
 Michael Seid [@mbseid](http://twitter.com/#!/mbseid)
+
+##Thanks
+
+Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
