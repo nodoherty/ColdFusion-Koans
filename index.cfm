@@ -1,4 +1,4 @@
-<cfscript>
+	<cfscript>
 	testSuite = new mxunit.framework.TestSuite();
 
 	testSuite.addAll("Koans.AboutAsserts");
@@ -13,8 +13,11 @@
 	testSuite.addAll("Koans.AboutFunctions");
 	testSuite.addAll("Koans.AboutComponents");
 	testSuite.addAll("Koans.AboutComponentTags");
+	testSuite.addAll("Koans.AboutExceptions");
 
 	results = testSuite.run();
+
+
 </cfscript>
 
 <h1>Welcome to the ColdFusion Koans</h1>
@@ -23,6 +26,6 @@
 <p><b>This is a comunity run project to please feel free to fork this project and contribute any time.</b></p>com
 
 <cfoutput>
-	#replaceNoCase(results.getResultsOutput("html"),"ColdFusion-Koans.","","ALL")#
+	#replaceNoCase(results.getResultsOutput("html"),"#application.currentDirectory#.","","ALL")#
 </cfoutput>
 
