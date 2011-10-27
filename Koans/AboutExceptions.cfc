@@ -41,6 +41,17 @@ component extends="mxunit.framework.TestCase" {
 	}
 
 	private void function throwError(){
-		throw(type="User Generated Error",message="I am a user generated error.");
+		throw(type="UserGeneratedError",message="I am a user generated error.");
+	}
+
+	/** 
+ 	* @mxunit:expectedException CustomErrorType
+ 	*/ 
+	public void function testCreatingYourOwnException(){
+		generateError();
+	}
+
+	private void function generateError(){
+		//use the function throwError as an example
 	}
 }
