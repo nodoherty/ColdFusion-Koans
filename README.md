@@ -19,3 +19,5 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 * If there is a link to more information on a topic feel free to shorten it and include it
 
 ##Contributors
+
+Michael Seid [@mbseid](http://twitter.com/#!/mbseid)
