@@ -7,7 +7,7 @@ open the file AboutAsserts/AboutAsserts.cfc and begin making the tests pass.
 
 As you complete a secion you'll confirm your tests by refreshing this page or running the test suite using the mxunit eclipse plugin.
 
-**This is a comunity run project to please feel free to fork this project and contribute any time.**
+**This is a comunity run project to please feel free to fork this project and contribute any time.  See the Suggested topics for ideas if you need one or feel free to add your own**
 
 ##Suggestions for committing
 
@@ -17,6 +17,13 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 * Make sure you can make your test pass, then delete the correct answer before you submit.
 * If you need to create a new CFC for your test, put it in the components folder. 
 * If there is a link to more information on a topic feel free to shorten it and include it
+
+##Suggested topics
+
+* AboutOOP
+  * Inheritence
+  * Encapsulation
+  * Scope
 
 ##Contributors
 
