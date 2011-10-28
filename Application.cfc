@@ -1,9 +1,9 @@
 component{
 	this.name = "ColdFusion Koans";
+	this.mappings["/mxunit"] = expandPath('.') & "/mxunit/";
 
 	public boolean function onApplicationStart(){
 		application.currentDirectory = getCurrentDirectory();
-
 		return true;
 	}
 

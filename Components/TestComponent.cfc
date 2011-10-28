@@ -1,6 +1,6 @@
 component{
 	
-	 	/**
+	 /**
 	*@getters true
 	*@setters true
 	*/
