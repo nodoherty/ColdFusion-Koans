@@ -1,6 +1,8 @@
 component{
 	this.name = "ColdFusion Koans";
 	this.mappings["/mxunit"] = expandPath('.') & "/mxunit/";
+	this.sessionmanagement = true;
+    this.sessiontimeout= CreateTimeSpan(0,1,0,0);
 
 	public boolean function onApplicationStart(){
 		application.currentDirectory = getCurrentDirectory();
