@@ -1,4 +1,4 @@
-component{
+component extends="BaseComponent"{
 	
 	 /**
 	*@getters true
@@ -19,6 +19,10 @@ component{
 
 	public String function getFullName(){
 		return this.firstName & " " & this.lastName;
+	}
+
+	public String function getPersonInformation(){
+		return this.getFullName() & "is a: " & this.sex;
 	}
 
 	public Any function onMissingMethod(String missingMethodName, Struct missingMethodArguments){

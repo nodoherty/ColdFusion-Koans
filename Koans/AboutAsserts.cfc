@@ -14,7 +14,7 @@ component extends="mxunit.framework.TestCase"{
 	}
 
 	public void function testResultShouldBeEqual(){
-		var result = 0;
+		var result = "__";
 
 		/*and sometimes you'll need to update the code itself to 
 		make the test pass.  Here you'll need to change the value

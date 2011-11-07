@@ -36,7 +36,7 @@ component extends="mxunit.framework.TestCase"{
 		var myDate = "";
 
 		for(i = now();i<dateAdd("d",5,now);i = i + 1){
-			//do somethign to each date in here, how cool is this?
+			//do something to each date in here, how cool is this?
 		}
 		
 		//another thing to note here is that i is function scoped, not block scoped in the loop like in some languages
