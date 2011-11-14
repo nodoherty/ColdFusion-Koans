@@ -1,4 +1,4 @@
-<cfcomponent displayname="MxunitInstallVerificationTest" extends="framework.TestCase">
+<cfcomponent displayname="MxunitInstallVerificationTest" extends="mxunit.framework.TestCase">
 			<cffunction name="testThis" >
 				<cfset assertEquals("this","this") />
 			</cffunction>

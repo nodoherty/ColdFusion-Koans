@@ -1,0 +1,18 @@
+.tip{
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    padding: 10px;
+    top: 10px;
+    border: 2px solid grey;
+    opacity: .9;
+    background: rgb(209,209,209); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(209,209,209,1) 0%, rgba(124,124,124,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(209,209,209,1)), color-stop(100%,rgba(124,124,124,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(124,124,124,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(124,124,124,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(209,209,209,1) 0%,rgba(124,124,124,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(209,209,209,1) 0%,rgba(124,124,124,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#7c7c7c',GradientType=0 ); /* IE6-9 */
+}

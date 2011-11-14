@@ -1,0 +1,10 @@
+settings.xml
+.settings/
+.project
+MXUnitInstallTest.cfc
+buildprops/antrunner.properties
+tests/testresults/
+
+/WEB-INF
+/doc
+/dist

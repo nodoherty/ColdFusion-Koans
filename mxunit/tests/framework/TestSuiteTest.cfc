@@ -53,6 +53,17 @@
 		</cfscript>   
 	</cffunction>
 
+	<cffunction name="testGetMapReturnsMap">
+		<cfscript>
+		var testSuite = createObject("component","mxunit.framework.TestSuite").TestSuite();   
+		var map = "";
+
+		makePublic(testSuite,"getMap");
+		map = testSuite.getMap();
+		
+		assertTrue(isInstanceof(map,"java.util.Map"));
+		</cfscript>
+	</cffunction>
 
 	<cffunction name="setUp" access="public" returntype="void">
 
