@@ -1,6 +1,11 @@
 component{
 	this.name = "ColdFusion Koans";
+	
 	this.mappings["/mxunit"] = expandPath('.') & "/mxunit/";
+	//railo needs mappings to component dirs for calling the components from within mxunit
+	this.mappings["/Koans"] = expandPath('.') & "/Koans/";
+	this.mappings["/Components"] = expandPath('.') & "/Components/";
+
 	this.sessionmanagement = true;
     this.sessiontimeout= CreateTimeSpan(0,1,0,0);
 
