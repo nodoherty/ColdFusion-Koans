@@ -14,6 +14,7 @@
 	testSuite.addAll("Koans.AboutComponents");
 	testSuite.addAll("Koans.AboutComponentTags");
 	testSuite.addAll("Koans.AboutExceptions");
+	testSuite.addAll("Koans.AboutQueries");
 
 	results = testSuite.run();
 
