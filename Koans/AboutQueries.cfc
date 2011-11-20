@@ -73,7 +73,7 @@
 		<!--- Query on a query supports a limited subset of functions available in a dedicated rdbms--->
 		<cftry>
 			<cfquery name="QofQ" dbtype="query">
-				SELECT TOP(1) FROM myQry
+				SELECT TOP(1) * FROM myQry
 			</cfquery>
 			<cfcatch>
 				<cfset success = FALSE>
