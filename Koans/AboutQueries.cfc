@@ -83,5 +83,37 @@
 		<cfset assertTrue(success,"Expected True")>		
 	</cffunction>
 	
+	<cffunction name="testQueryParams_preventSQLInjection" returntype="void" output="false">
+		<cfset var myQry = buildQueryObj()>
+		<cfset var searchName = "'' OR 1=1">
+		
+		<!--- Query Params give a simple way of preventing sql injection attacks--->
+		<cfquery name="QofQ" dbtype="query">
+			SELECT * FROM myQry WHERE NAME = <cfqueryparam cfsqltype="cf_sql_varchar" value="#searchName#">
+		</cfquery>
+		
+		<cfset assertEquals(QofQ.recordCount,"___")>		
+	</cffunction>
+	
+	<cffunction name="testQueryParams_typeMismatch" returntype="void" output="false">
+		<cfset var myQry = buildQueryObj()>
+		<cfset var searchID = "3 OR 1=1"><!--- Alter this to make the test pass --->
+		<cfset var success = TRUE>
+		
+		<!--- Query Params are datatype specific--->
+		<cftry>
+			<!--- This query will throw an error if a non integer is passed for 'searchID' --->
+			<cfquery name="QofQ" dbtype="query">
+				SELECT * FROM myQry WHERE ID = <cfqueryparam cfsqltype="cf_sql_integer" value="#searchID#">
+			</cfquery>
+			<cfcatch type="any">
+				<cfset success = FALSE>
+			</cfcatch>
+		</cftry>
+		
+		<cfset assertTrue(success,"Expected True")>		
+	</cffunction>
+	
+	
 	
 </cfcomponent>
