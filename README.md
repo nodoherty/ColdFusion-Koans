@@ -28,6 +28,7 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 ##Contributors
 
 Michael Seid [@mbseid](http://twitter.com/#!/mbseid)
+
 Steven Neiland [@sneiland](http://twitter.com/#!/sneiland)
 
 ##Thanks
