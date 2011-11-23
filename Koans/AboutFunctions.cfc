@@ -82,17 +82,17 @@ component extends="mxunit.framework.TestCase"{
 		}
 	}
 	
-	//Demonstrate how attributesCollections can be used to pass subset of named arguments
-	public void function testAttrubutesCollection(){
-		var aCollection = {fruit1 = "pear", fruit2 = "banana"};
-		var myStruct = switchParams( attributeCollection = aCollection);
+	//Demonstrate how argumentsCollections can be used to pass subset of named arguments
+	public void function testArgumentCollection(){
+		var aCollection = {fruit1 = "pear", fruit2 = "banana", fruit3 = "grape"};
+		var myStruct = switchParams( argumentCollection = aCollection);
 		
 		assertEquals(myStruct.fruit1,"__");
 		assertEquals(myStruct.fruit2,"__");
 		assertEquals(myStruct.fruit3,"__");	
 	}
 	
-	private function switchParams(string fruit1 = "apple", string fruit2 = "banana", string fruit3="grape"){
+	private function switchParams(string fruit1, string fruit2, string fruit3){
 		return {fruit1 = fruit2, fruit2 = fruit1, fruit3 = fruit3};
 	}
 }
