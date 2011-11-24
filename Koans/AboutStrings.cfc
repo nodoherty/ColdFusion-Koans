@@ -15,19 +15,19 @@ component extends="mxunit.framework.TestCase"{
 	public void function testSearchingStirng(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(findNoCase(myVar,"ANY"),"__");
+		assertEquals(findNoCase("ANY",myVar),"__");
 	}
 
 	public void function testSearchingStirng2(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(findNoCase(myVar,"ANY",26),"__");
+		assertEquals(findNoCase("ANY",myVar,26),"__");
 	}
 
 	public void function testSearchingStirng3(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(find(myVar,"ANY",26),"__");
+		assertEquals(find("ANY",myVar,26),"__");
 	}
 
 	public void function testStringReplace(){
