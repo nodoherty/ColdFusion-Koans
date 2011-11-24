@@ -7,7 +7,7 @@
 		<cfset var valueArray = [] />
 
 		<cfloop list="#myList#" index="i">
-			<cfinvoke component="Components.testComponent" method="get#i#" returnvariable="retVar" />
+			<cfinvoke component="Components.TestComponent" method="get#i#" returnvariable="retVar" />
 			<cfset arrayAppend(valueArray,retVar) />
 		</cfloop>
 

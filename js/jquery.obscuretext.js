@@ -1,6 +1,7 @@
 (function( $ ){
 	$.fn.obscuretext = function(){
-		$this = $(this);
+		$this = $(this),
+		var regex = //;
 
 		var errors = $this.find(".error");
 
@@ -25,11 +26,9 @@
 
 		function showResult(text,$target) {
 			var newSpan = $('<span class="tip">' + text + '</span>');
-
-
 		}
 
-		function hideResult($target) {
+		function hideResult($target){
 			
 		}
 
