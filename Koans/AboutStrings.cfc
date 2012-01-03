@@ -23,6 +23,17 @@ component extends="mxunit.framework.TestCase"{
 
 	}
 
+	public void function testReversingString(){
+		
+		// Use the reverse() function to reverse a string
+		// Usage: reverse(string)
+
+		var myVar = "otatop";
+
+		assertEquals(reverse(myVar), "__"); // Hint: spuds
+
+	}
+
 	public void function testGettingStringContentFromLeft(){
 		
 		// Use the left() function to return a specified number of characters from a string, beginning at the left.
