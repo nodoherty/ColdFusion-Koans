@@ -11,6 +11,24 @@ component extends="mxunit.framework.TestCase"{
 
 		assertEquals(trim(myVar),"__");
 	}
+	
+	public void function testRemovingLeadingSpaces() {
+
+		// ColdFusion has a LTrim(string) function that removes spaces from the beginning of a string
+
+		var myVar = "  hello world!  ";		
+
+		assertEquals(lTrim(myVar),"__");
+	}
+
+	public void function testRemovingTrailingSpaces() {
+
+		// ColdFusion has a RTrim(string) function that removes spaces from the end string
+
+		var myVar = "  hello world!  ";		
+
+		assertEquals(rTrim(myVar),"__");
+	}
 
 	public void function testSearchingStirng(){
 		var myVar = "To start press any key.  Wheres the any key?";
