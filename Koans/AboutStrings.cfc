@@ -23,7 +23,7 @@ component extends="mxunit.framework.TestCase"{
 
 	public void function testRemovingTrailingSpaces() {
 
-		// ColdFusion has a RTrim(string) function that removes spaces from the end string
+		// ColdFusion has a RTrim(string) function that removes spaces from the end of a string
 
 		var myVar = "  hello world!  ";		
 
