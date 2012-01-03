@@ -4,10 +4,31 @@ component extends="mxunit.framework.TestCase"{
 		
 		// Use the len() function to return the length of a string or binary object
 		// For now, we'll work with a simple string
+		// Usage: len(string)
 		
 		var myVar = "apple";
 		assertEquals(len(myVar),"__");
 		
+	}
+
+	public void function testGettingStringContentFromLeft(){
+		
+		// Use the left() function to return a specified number of characters from a string, beginning at the left.
+		// Usage: left(string, count)
+
+		var myVar = "peanut";
+		assertEquals(left(myVar, 3), "__" );
+
+	}
+
+	public void function testGettingStringContentFromRight(){
+
+		// Use the right() function to return a specified number of characters from a string, beginning at the right.
+		// Usage: right(string, count)
+
+		var myVar = "peanut";
+		assertEquals(right(myVar, 3), "__" );
+
 	}
 
 	public void function testAddingStringAndNumber(){
