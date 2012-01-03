@@ -1,5 +1,15 @@
 component extends="mxunit.framework.TestCase"{
 
+	public void function testGettingStringLength(){
+		
+		// Use the len() function to return the length of a string or binary object
+		// For now, we'll work with a simple string
+		
+		var myVar = "apple";
+		assertEquals(len(myVar),"__");
+		
+	}
+
 	public void function testAddingStringAndNumber(){
 		//string concatanation in ColdFusion is done with the & sign
 		var myVar = 1 & "Hello";
@@ -30,19 +40,19 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(rTrim(myVar),"__");
 	}
 
-	public void function testSearchingStirng(){
+	public void function testSearchingString(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
 		assertEquals(findNoCase("ANY",myVar),"__");
 	}
 
-	public void function testSearchingStirng2(){
+	public void function testSearchingString2(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
 		assertEquals(findNoCase("ANY",myVar,26),"__");
 	}
 
-	public void function testSearchingStirng3(){
+	public void function testSearchingString3(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
 		assertEquals(find("ANY",myVar,26),"__");
