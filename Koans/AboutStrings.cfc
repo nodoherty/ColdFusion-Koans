@@ -7,8 +7,20 @@ component extends="mxunit.framework.TestCase"{
 		// Usage: len(string)
 		
 		var myVar = "apple";
+
 		assertEquals(len(myVar),"__");
 		
+	}
+
+	public void function testRepeatingString(){
+		
+		// Use the repeatString() function to repeat a string
+		// Usage: repeatString(string, count)
+
+		var myVar = "Ho! "; // Notice the trailing space
+
+		assertEquals(repeatString(myVar, 3), "__");
+
 	}
 
 	public void function testGettingStringContentFromLeft(){
@@ -17,6 +29,7 @@ component extends="mxunit.framework.TestCase"{
 		// Usage: left(string, count)
 
 		var myVar = "peanut";
+		
 		assertEquals(left(myVar, 3), "__" );
 
 	}
@@ -27,6 +40,7 @@ component extends="mxunit.framework.TestCase"{
 		// Usage: right(string, count)
 
 		var myVar = "peanut";
+		
 		assertEquals(right(myVar, 3), "__" );
 
 	}
@@ -45,20 +59,23 @@ component extends="mxunit.framework.TestCase"{
 	
 	public void function testRemovingLeadingSpaces() {
 
-		// ColdFusion has a LTrim(string) function that removes spaces from the beginning of a string
+		// Use the lTrim() function to removes spaces from the beginning of a string
+		// Usage: lTrim(string)
 
 		var myVar = "  hello world!  ";		
 
-		assertEquals(lTrim(myVar),"__");
+		assertEquals(lTrim(myVar), "__");
 	}
 
 	public void function testRemovingTrailingSpaces() {
 
-		// ColdFusion has a RTrim(string) function that removes spaces from the end of a string
+		// Use the rTrim() function to removes spaces from the end of a string
+		// Usage: rTrim(string)
 
 		var myVar = "  hello world!  ";		
 
-		assertEquals(rTrim(myVar),"__");
+		assertEquals(rTrim(myVar), "__");
+
 	}
 
 	public void function testSearchingString(){
