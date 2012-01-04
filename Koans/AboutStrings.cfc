@@ -100,6 +100,19 @@ component extends="mxunit.framework.TestCase"{
 
 	}
 
+	public void function testRemovingChars(){
+		
+		// Use the removeChars() function to remove characters from a string
+		// Usage: removeChars(string, start, count)
+
+		var greatMoviePlot = "Marty and the Doc go back to the future";
+
+		// Hint: another great movie plot.
+
+		assertEquals(removeChars(greatMoviePlot, 21, 5), "__");
+
+	}
+
 	public void function testSearchingString(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
