@@ -143,4 +143,18 @@ component extends="mxunit.framework.TestCase"{
 		//Did that last test get you?  To replace all occurances you need to pass another argument to find
 		assertEquals(replace(myVar,"any","pound","all"),"__");
 	}
+
+	public void function testSpanExcluding(){
+		
+		// Use the spanExcluding() function to gets characters from a string, starting from the beginning and stopping when it encounters any of the specified characters
+		// Note: The search is case sensitive. 
+		// Usage: spanExcluding(string, set)
+
+		var martySays = "Yeah well Biff, you're forgetting one thing. What the hell is that!!?";
+
+		// Hint: Watch out for trailing spaces
+
+		assertEquals(spanExcluding(martySays, "W"), "__");
+
+	}
 }
