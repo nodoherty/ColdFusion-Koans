@@ -56,6 +56,17 @@ component extends="mxunit.framework.TestCase"{
 
 	}
 
+	public void function testGettingSubString(){
+		
+		// Use the mid() function to  extract a substring from a string
+		// Usage: mid(string, start, count)
+
+		var goodActor = "Chevy Case";
+
+		// Hint: Good automobile maker
+		assertEquals(mid(goodActor, 1, 5), "__"); 
+	}
+
 	public void function testAddingStringAndNumber(){
 		//string concatanation in ColdFusion is done with the & sign
 		var myVar = 1 & "Hello";
