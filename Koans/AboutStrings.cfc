@@ -157,4 +157,18 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(spanExcluding(martySays, "W"), "__");
 
 	}
+
+	public void function testSpanIncluding(){
+		
+		// Use the spanIncluding() function to get characters from a string, from the beginning and stopping when it encounters any character that IS NOT in the specified character set. 
+		// Note: The search is case sensitive. 
+		// Usage: spanIncluding(string, set)
+
+		var martySays = "This is heavy.";
+
+		// Hint: If letters could talk, one might say this.
+
+		assertEquals(spanIncluding(martySays, "This "), "__");
+
+	}
 }
