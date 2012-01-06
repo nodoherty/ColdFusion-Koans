@@ -8,7 +8,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testAddingToDate(){
 		var myDate = NOW();
 
-		myDate = dateAdd("y",7,myDate);
+		myDate = dateAdd("d",7,myDate);
 
 		assertEquals(dateFormat(myDate,"mm/dd/yyyy"),"__");
 	}
