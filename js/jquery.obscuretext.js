@@ -1,25 +1,30 @@
 (function( $ ){
-	$.fn.obscuretext = function(){
-		$this = $(this),
-		var regex = //;
+	$.fn.obscuretext = function(options){
+		var $this = $(this);
 
-		var errors = $this.find(".error");
+		var defaultOptions = {
+			regex : /(Expected \[)[^\]]*/
+		}
+
+		$.extend(options || {}, defaultOptions);
+
+		var errors = $this.find("td.error");
 
 		errors.each(function(){
 			var $this = $(this),
 				html = $this.html();
 
-			$this.replaceWith(getNewElem());
+			$this.replaceWith(getNewElem(html));
 		});
 
 		function getNewElem(hoverText){
-			var span = $("<span>...</span>");
+			var $span = $("<span>...</span>");
 
-			span.on("mouseover",function(){
+			$span.on("mouseover",function(){
 				showResult(hoverText)
 			});
 
-			span.on("mouseout",fuction(){
+			$span.on("mouseout",function(){
 				hideResult($(this));
 			});
 		}
@@ -32,6 +37,6 @@
 			
 		}
 
-		return this;
+		return $this;
 	}
 }(jQuery));
