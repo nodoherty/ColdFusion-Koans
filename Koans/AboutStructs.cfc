@@ -25,4 +25,21 @@ component extends="mxunit.framework.TestCase"{
 		//access the sturcture key in another way
 		assertEquals("__","Bar");
 	}
+
+	public void function testDeletingStruct(){
+		
+		// Use StructDelete() to remove an element from a structure
+		// Usage: structDelete(structure, key)
+		// Reference: http://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-7f07.html
+		
+		// Let's create our struct, assigning great cars as our keys
+		var carStruct = { bmw = "good", delorean = "great!" };
+
+		// Let's use structDelete() to remove the lesser car.
+		var delete = structDelete(carStruct, "bmw"); // Be sure to edit here
+
+		// Let's  use the structKeyExists() function to see if our BMW still exists
+		assertEquals(structKeyExists(carStruct, "bmw"), "__");
+
+	}
 }
