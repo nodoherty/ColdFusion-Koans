@@ -57,4 +57,18 @@ component extends="mxunit.framework.TestCase"{
 		var myDate = parseDateTime("Wednesday, October 25, 2011");		
 		assertEquals(isDate(myDate),"__");	
 	}
+
+	public void function testMonthAsString(){
+		
+		// Use the monthAsString() function to return the name of a specified month by passing a number
+		// Usage: monthAsString(monthNumber)
+		// Reference: http://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-7ee4.html
+
+		// Let's say your birthday is in March. The numbers work out like this:
+		// January = 1, February = 2, etc.
+		var myBirthdayMonth = 3;
+
+		assertEquals(monthAsString(myBirthdayMonth), "__");
+
+	}
 }

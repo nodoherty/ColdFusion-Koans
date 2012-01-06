@@ -36,10 +36,10 @@ component extends="mxunit.framework.TestCase"{
 		var carStruct = { bmw = "good", delorean = "great!" };
 
 		// Let's use structDelete() to remove the lesser car.
-		var delete = structDelete(carStruct, "bmw"); // Be sure to edit here
+		structDelete(carStruct, "bmw"); 
 
 		// Let's  use the structKeyExists() function to see if our BMW still exists
-		assertEquals(structKeyExists(carStruct, "bmw"), "__");
+		assertEquals(structKeyExists(carStruct, "bmw"), "yes");
 
 	}
 }
