@@ -16,22 +16,22 @@ component extends="mxunit.framework.TestCase"{
 	}
 
 	public void function testStringValue1(){
-		assertEquals(isTruthy(isTruthy("yes")),"__");
-		assertEquals(isTruthy(isTruthy("no")),"__");
+		assertEquals(isTruthy("yes"),"__");
+		assertEquals(isTruthy("no"),"__");
 	}
 
 	public void function testStringValue2(){
-		assertEquals(isTruthy(isTruthy("true")),"__");
-		assertEquals(isTruthy(isTruthy("false")),"__");
+		assertEquals(isTruthy("true"),"__");
+		assertEquals(isTruthy("false"),"__");
 	}
 
 	public void function testStringValue3(){
-		assertEquals(isTruthy(isTruthy("y")),"__");
-		assertEquals(isTruthy(isTruthy("n")),"__");
+		assertEquals(isTruthy("y"),"__");
+		assertEquals(isTruthy("n"),"__");
 	}
 
 	public void function testNumericValue(){
-		assertEquals(isTruthy(isTruthy(-2)),"__");
-		assertEquals(isTruthy(isTruthy(0)),"__");
+		assertEquals(isTruthy(-2),"__");
+		assertEquals(isTruthy(0),"__");
 	}
 }
