@@ -25,7 +25,7 @@
     			arrayAppend(returnArray,sortedTests[i].name);
     		}
     	
-    		return methods;
+    		return returnArray;
     	</cfscript>
     </cffunction>
 
