@@ -1,4 +1,4 @@
-<cfcomponent extends="mxunit.framework.TestCase">
+<cfcomponent extends="mxunit.framework.TestCase" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
 	
 	<cffunction name="buildQueryObj" access="private" returntype="query" output="false">
 		<!--- You can build a query recordset within coldfusion with using a real database
@@ -17,31 +17,31 @@
 		<cfreturn qryObj>
 	</cffunction> 
 
-	<cffunction name="testIsQuery" returntype="void" output="false">
+	<cffunction name="testIsQuery" returntype="void" output="false" order="1">
 		<cfset var myQry = buildQueryObj()>
 		<!--- Check that a variable is a query --->
 		<cfset assertEquals(IsQuery(myQry),"___")>
 	</cffunction>
 	
-	<cffunction name="testGettingQueryRecordCount" returntype="void" output="false">
+	<cffunction name="testGettingQueryRecordCount" returntype="void" output="false" order="2">
 		<cfset var myQry = buildQueryObj()>
 		<!--- The total number of records in a returned query can be accessed using the recordcount --->
 		<cfset assertEquals(myQry.recordCount,"___")>
 	</cffunction>
 
-	<cffunction name="testGettingFirstName_dotNotation" returntype="void" output="false">
+	<cffunction name="testGettingFirstName_dotNotation" returntype="void" output="false" order="3">
 		<cfset var myQry = buildQueryObj()>
 		<!--- You can use dot notation to get at a particular column and a bracketed row numver--->
 		<cfset assertEquals(myQry.name[1],"___")>		
 	</cffunction>
 	
-	<cffunction name="testGettingSecondName_bracketNotation" returntype="void" output="false">
+	<cffunction name="testGettingSecondName_bracketNotation" returntype="void" output="false" order="4">
 		<cfset var myQry = buildQueryObj()>
 		<!--- You can use brackets in place of dot notation to get at a particular cell using column/row number combination --->
 		<cfset assertEquals(myQry["name"][2],"___")>		
 	</cffunction>
 
-	<cffunction name="testGettingQueryMetaData" returntype="void" output="false">
+	<cffunction name="testGettingQueryMetaData" returntype="void" output="false" order="5">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var queryMetaData=getMetaData(myQry)>
 		<!--- You can get the meta data on a query recordset as an array
@@ -50,13 +50,13 @@
 		<cfset assertEquals(arrayLen(queryMetaData),"___")>
 	</cffunction>
 	
-	<cffunction name="testGettingColumnLabels" returntype="void" output="false">
+	<cffunction name="testGettingColumnLabels" returntype="void" output="false" order="6">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var queryColumns = myQry.columnList>
 		<cfset assertEquals(queryColumns,"___")>
 	</cffunction>
 
-	<cffunction name="testGettingRowByValue_QueryofQuery" returntype="void" output="false">
+	<cffunction name="testGettingRowByValue_QueryofQuery" returntype="void" output="false"  order="7">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var QofQ = "">
 		<!--- You can do a query on a query resultset from within coldfusion without having to hit the database again by specifying dbtype="query"--->
@@ -66,7 +66,7 @@
 		<cfset assertEquals(QofQ.recordCount,"___")>		
 	</cffunction>
 	
-	<cffunction name="testAdvancedSQL_QueryofQuery" returntype="void" output="false">
+	<cffunction name="testAdvancedSQL_QueryofQuery" returntype="void" output="false"  order="8">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var QofQ = "">
 		<cfset var success = TRUE>
@@ -83,7 +83,7 @@
 		<cfset assertTrue(success,"Expected True")>		
 	</cffunction>
 	
-	<cffunction name="testQueryParams_preventSQLInjection" returntype="void" output="false">
+	<cffunction name="testQueryParams_preventSQLInjection" returntype="void" output="false"  order="9">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var searchName = "'' OR 1=1">
 		
@@ -95,7 +95,7 @@
 		<cfset assertEquals(QofQ.recordCount,"___")>		
 	</cffunction>
 	
-	<cffunction name="testQueryParams_typeMismatch" returntype="void" output="false">
+	<cffunction name="testQueryParams_typeMismatch" returntype="void" output="false"  order="10">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var searchID = "3 OR 1=1"><!--- Alter this to make the test pass --->
 		<cfset var success = TRUE>

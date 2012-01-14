@@ -1,6 +1,6 @@
-<cfcomponent extends="mxunit.framework.TestCase" >
+<cfcomponent extends="mxunit.framework.TestCase" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
 	
-	<cffunction name="testDynamicInvocation" returntype="void" access="public" output="false" hint="" >
+	<cffunction name="testDynamicInvocation" returntype="void" access="public" output="false" hint="" order="1">
 		<!--- There are some powerful things that we can't do in scripts yet, like calling the cfinvoke function --->	
 		<!--- Lets say we want to dynamically call a function on a coponent.  Here we'll use list values to call methods in the test component --->
 		<cfset var myList = "one,two" />
