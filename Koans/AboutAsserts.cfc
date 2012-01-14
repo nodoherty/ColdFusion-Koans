@@ -1,10 +1,19 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
-
+	
+	/**
+	*@order 1
+	*/
 	public void function testTrueShouldBeTrue(){
 		//try replacing false with true
 		assertTrue(false);
 	}	
 
+	/**
+	*@order 2
+	*/
 	public void function testStringsShouldBeEqual(){
 		var result = "Foo";
 		
@@ -13,6 +22,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(result,"__");
 	}
 
+	/**
+	*@order 3
+	*/
 	public void function testResultShouldBeEqual(){
 		var result = 0;
 
