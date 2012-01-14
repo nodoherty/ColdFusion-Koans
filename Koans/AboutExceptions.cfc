@@ -1,5 +1,11 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase" {
-
+	
+	/**
+	*@order 1
+	*/
 	public void function testCapturingAnError(){		
 		var errorType = "";
 
@@ -27,6 +33,9 @@ component extends="mxunit.framework.TestCase" {
 		var oops = 1 + doesntExist;
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testCapturingACustomeError(){		
 		var errorType = "";
 
@@ -46,6 +55,7 @@ component extends="mxunit.framework.TestCase" {
 
 	/** 
  	* @mxunit:expectedException CustomErrorType
+ 	* @order 3
  	*/ 
 	public void function testCreatingYourOwnException(){
 		generateError();

@@ -1,5 +1,11 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
 	
+	/**
+	*@order 1
+	*/
 	public void function testInvokingAFunction(){
 		//functions in ColdFusion are an easy way to encapsulate functionality
 		var sum = add(1,2);
@@ -11,6 +17,9 @@ component extends="mxunit.framework.TestCase"{
 		return a + b;
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testCopyingAFunction(){
 		//functions are also first class citizens in coldfusion, meaning they can be passed around like vars
 		var myStruct = {};
@@ -24,6 +33,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(sum,"__");
 	}
 
+	/**
+	*@order 3
+	*/
 	public void function testFunctionArguments(){
 		//look at the add2 function below, it has an empty argument signature, but it can seill accept arguments
 		var sum = add2(4,5);
@@ -35,6 +47,9 @@ component extends="mxunit.framework.TestCase"{
 		return arguments[1] + arguments[2];
 	}
 
+	/**
+	*@order 4
+	*/
 	public void function testPassArrayIntoFunction(){
 		var myArray = ["peach","apple","strawberry","orange"];
 
@@ -49,6 +64,9 @@ component extends="mxunit.framework.TestCase"{
 		arguments.theArray[1] = "Pizza";
 	}
 
+	/**
+	*@order 5
+	*/
 	public void function testPassStructIntoFunction(){
 		var myStruct = {fruit = "apple",veggie="carrot"};
 
@@ -58,6 +76,9 @@ component extends="mxunit.framework.TestCase"{
 		//what does this mean?  Go here for more information http://adobe.ly/rp0TGa
 	}
 
+	/**
+	*@order 6
+	*/
 	public void function testCopyStructThenPassItIntoFunction(){
 		var myStruct = {fruit = "apple",veggie="carrot"};
 		var myOtherStruct = myStruct;
@@ -67,6 +88,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myStruct.veggie,"__");
 	}
 
+	/**
+	*@order 7
+	*/
 	public void function testCopyStructUsingStructThenPassItIntoFunction(){
 		var myStruct = {fruit = "apple",veggie="carrot"};
 		var myOtherStruct = structCopy(myStruct);
@@ -83,6 +107,9 @@ component extends="mxunit.framework.TestCase"{
 	}
 	
 	//Demonstrate how argumentsCollections can be used to pass subset of named arguments
+	/**
+	*@order 8
+	*/
 	public void function testArgumentCollection(){
 		var aCollection = {fruit1 = "pear", fruit2 = "banana", fruit3 = "grape"};
 		var myStruct = switchParams( argumentCollection = aCollection);

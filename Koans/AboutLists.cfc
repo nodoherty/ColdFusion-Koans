@@ -1,5 +1,11 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
-
+	
+	/**
+	*@order 1
+	*/
 	public void function testListWithNonStandardDelimitors(){
 	    var myList = "apple_pear_banana_grape";
 	    //passing a delminiter for a 3rd parameter into listgetadd lets just about any string act as a list
@@ -9,6 +15,9 @@ component extends="mxunit.framework.TestCase"{
 	    assertEquals(result,"__");
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testChangingAListDelimiter(){
 		var myList = "apple_pear_banana";
 		myList = listChangeDelims(myList,",","_");

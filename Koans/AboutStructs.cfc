@@ -1,5 +1,11 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
 	
+	/**
+	*@order 1
+	*/
 	public void function testCheckingIfAStructKeyExists(){
 		var myStruct = {foo = "Foo"};
 
@@ -7,6 +13,9 @@ component extends="mxunit.framework.TestCase"{
 		assertTrue(structKeyExists(myStruct,"__"));
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testAddingAStructKey(){
 		var myStruct = {foo = "Foo"};
 
@@ -14,6 +23,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myStruct.bar,"Bar");
 	}
 
+	/**
+	*@order 3
+	*/
 	public void function testGettingStructKey(){
 		var myStruct = {bar = "Bar"};
 
@@ -26,6 +38,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals("__","Bar");
 	}
 
+	/**
+	*@order 4
+	*/
 	public void function testDeletingStruct(){
 		
 		// Use StructDelete() to remove an element from a structure

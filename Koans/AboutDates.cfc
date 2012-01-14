@@ -1,10 +1,20 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
+
+	/**
+	*@order 1
+	*/
 	public void function testGettingAndFormattingCurrentTime(){
 		var myDate = NOW();
 		
 		assertEquals(dateFormat(myDate,"mm/dd/yyyy"),"__");
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testAddingToDate(){
 		var myDate = NOW();
 
@@ -13,6 +23,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(dateFormat(myDate,"mm/dd/yyyy"),"__");
 	}
 
+	/**
+	*@order 3
+	*/
 	public void function testSubtractingDates(){
 		var myDate1 = NOW();
 		var myDate2 = dateAdd("d",7,myDate1);
@@ -21,6 +34,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myDate1 - myDate2,"__");
 	}
 
+	/**
+	*@order 4
+	*/
 	public void function testComparingDates(){
 		var myDate1 = NOW();
 		var myDate2 = dateAdd("d",26,myDate1);
@@ -30,6 +46,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(diff,"__");
 	}
 
+	/**
+	*@order 5
+	*/
 	public void function testLoopingThroughDates(){
 		var i = "";
 		var now = NOW();
@@ -43,6 +62,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(dateFormat(i,"mm/dd/yyyy"),"__");
 	}
 
+	/**
+	*@order 6
+	*/
 	public void function testWorkingWithDates(){
 		
 		myDate = parseDateTime("01/01/77");		
@@ -58,6 +80,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(isDate(myDate),"__");	
 	}
 
+	/**
+	*@order 7
+	*/
 	public void function testMonthAsString(){
 		
 		// Use the monthAsString() function to return the name of a specified month by passing a number

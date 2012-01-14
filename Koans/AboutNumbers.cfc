@@ -1,10 +1,19 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
+	/**
+	*@order 1
+	*/
 	public void function testAddingTwoNumbers(){
 		//What happens when we add a number and a string?
 		var myVar = 1 + "1";
 		assertEquals(myVar,"__");
 	}
 	
+	/**
+	*@order 2
+	*/
 	public void function testAddingNumbers(){
 		var a = 0.01;
 		var b = 0.06;
@@ -14,6 +23,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(a+b,"__");
 	}	
 
+	/**
+	*@order 3
+	*/
 	public void function testPrecisionEvaluate(){
 		var a = 0.01;
 		var b = 0.06;
@@ -22,18 +34,27 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(PrecisionEvaluate(a+b),"__");
 	}
 
+	/**
+	*@order 4
+	*/
 	public void function testModulus(){
 		var myNum = 8;
 
 		assertEquals(myNum mod 2,"__");
 	}
 
+	/**
+	*@order 5
+	*/
 	public void function testModulus2(){
 		var myNum = 5;
 
 		assertEquals(myNum mod 2,"__");
 	}
 
+	/**
+	*@order 6
+	*/
 	public void function testIncrementingAVar(){
 		var myNum = 4;
 

@@ -1,5 +1,11 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
-
+	
+	/**
+	*@order 1
+	*/
 	public void function testNotVarScopingVariablesPutsVarInVariablesScope(){
 		//in ColdFusion using the var keyword in front of a variable declaration assures that it doesn't end up in the components variables scope which is global to the component, for example var bar = "bar". Fix this declaration to make sure that is myVar is not in the variables scopescope
 		myVar = "This is bad";
@@ -8,11 +14,17 @@ component extends="mxunit.framework.TestCase"{
 		assertFalse(isDefined("variables.myVar"));
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testIfAVariableExists(){
 		//the isdefined function will tell you if a variable exists or not	
 		assertEquals(isDefined("foo"),"__"); 
 	}
 
+	/**
+	*@order 3
+	*/
 	public void function testScoping(){
 		/*
 		ColdFusion has many 'scopes' in which it stored variables. 

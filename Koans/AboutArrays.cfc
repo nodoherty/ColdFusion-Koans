@@ -1,11 +1,20 @@
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+*/
 component extends="mxunit.framework.TestCase"{
-
+	
+	/**
+	*@order 1
+	*/
 	public void function testGetingArrayLength(){
 		var myArray = ["one","two","three"];
 
 		assertEquals(arrayLen(myArray),"__");
 	}
 
+	/**
+	*@order 2
+	*/
 	public void function testGettingArrayElement(){
 		var myArray = ["one","two","three"];
 		
@@ -13,10 +22,16 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myArray[1],"__");		
 	}
 
+	/**
+	*@order 3
+	*/
 	private String function returnString(String myArg){
 		                  
 	}
 
+	/**
+	*@order 4
+	*/
 	public void function testAppendingArrayElements(){
 		var myArray = ["one","two","three"];
 		
@@ -25,6 +40,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myArray[4],"__");
 	}
 
+	/**
+	*@order 5
+	*/
 	public void function testArrayTextSorting(){
 		var myArray = ["pineapple","banana","grape","kiwi"];
 
@@ -33,6 +51,9 @@ component extends="mxunit.framework.TestCase"{
 		assertEquals(myArray[2],"__");
 	}
 
+	/**
+	*@order 6
+	*/
 	public void function testArrayNumberSorting(){
 		var myArray = [6,9,34,8,22];
 
