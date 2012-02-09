@@ -1,88 +1,450 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
+  <head>
+    <title>Learn CFML with the EdgeCase ColdFusion Koans</title>
+    <meta content='Learn CFML with the EdgeCase ColdFusion Koans' name='description' />
+    <meta content='CFML' name='keywords' />
+    <meta content='yes' name='apple-mobile-web-app-capable' />
+    <meta content='black' name='apple-mobile-web-app-status-bar-style' />
+    <link href='/apple_favicon.png' rel='apple-touch-icon' />
 
-  <title>mhenke/ColdFusion-Koans @ GitHub</title>
+    <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon' />
+    <style type='text/css'>
+      /*<![CDATA[*/
+        html,body,div,span,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,em,img,q,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{  margin:0;  padding:0;  border:0;  outline:0;  font-weight:inherit;  font-style:inherit;  font-size:100%;  font-family:inherit;  vertical-align:baseline}body{line-height:1;color:#000;background:#fff}table{border-collapse:separate;border-spacing:0}caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}a img,input[type="image"]{border:none}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}* html .clearfix{  height:1%}.clear{clear:both}nav{display:block}body{  font-family:'OFL Sorts Mill Goudy','sorts-mill-goudy-1','sorts-mill-goudy-2',serif;  background :#fff}#top_line{  position  :fixed;  top       :0;  right     :0;  left      :0;  height    :6px;  background:#99C5FD;  z-index   :2}h1,h2,h3{color:#99C5FD}h1{font-size:64px}h2{font-size:28px;background:url(/images/header_line.gif) repeat-x 0 50%}h2 span{background:#fff;padding-right:12px}h3{font-size:20px;margin-top:40px}.clear{clear:both;height:0}#sidebar{  position:fixed;  left    :800px;  top     :30px;  width   :250px;  padding :50px 0 0 0}body.small #sidebar{  position:static}#edgecase_logo{  display    :block;  width      :250px;  height     :79px;  margin     :40px 0 0 0;  text-indent:-999em;  background :url(/images/edgecase_logo.gif) no-repeat 10px}#main_content .main_button{ display :block; height :40px; margin :0 auto 30px auto; padding :0px; color :#fff; font-size :14px; letter-spacing :1px; line-height :42px; text-align :center; text-decoration:none; text-transform :uppercase; background-color:#d00; background-image:-moz-linear-gradient(top,#FB746F,#d00); background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#d00),color-stop(1,#FB746F)); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d00',endColorstr='#FB746F'); -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#d00',endColorstr='#FB746F')";/* IE8 */ -moz-border-radius :4px; -webkit-border-radius:4px; border-radius :4px}#main_content .main_button:active{ background-image:-moz-linear-gradient(top,#d00,#E15C56); background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#E15C56),color-stop(1,#d00)); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E15C56',endColorstr='#d00'); -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#E15C56',endColorstr='#d00')"}#sidebar nav{ width :250px; margin :0 auto; font-size :12px; line-height :26px; text-transform:uppercase}#sidebar nav ol{ clear:left; list-style-position:outside; padding:7px 12px 5px 20px; background-color:#f3f3f3; -moz-border-radius-bottomleft :4px; -moz-border-radius-bottomright :4px; -webkit-border-bottom-left-radius :4px; -webkit-border-bottom-left-radius :4px; border-bottom-right-radius :4px; border-bottom-right-radius :4px}#sidebar nav.windows ol{ -moz-border-radius-topleft :4px; -webkit-border-top-left-radius:4px; border-top-left-radius :4px}#sidebar nav.nix ol{ -moz-border-radius-topright :4px; -webkit-border-top-right-radius:4px; border-top-right-radius :4px}#main_content #sidebar nav li{ margin :0 0 0 10px; border-bottom:1px solid #ddd; font-size :13px}#main_content #sidebar nav li:last-child{border-bottom:0}#sidebar nav a{ display :block; color :black; font-size :11px; text-decoration:none}#sidebar nav a.tab{ float :left; width :115px; height :28px; padding-left:10px; color :#99C5FD; font-size :13px; line-height :32px; -moz-border-radius-topleft :4px; -moz-border-radius-topright :4px; -webkit-border-top-left-radius :4px; -webkit-border-top-right-radius:4px; border-top-left-radius :4px; border-top-right-radius :4px}#sidebar nav a.tab.active{background-color:#f3f3f3}#main_content{ width :600px; margin :0; padding:36px 60px 30px 60px}#main_content section{ clear :both; display :block; margin-bottom:25px; padding-top :65px}#main_content .koanaons_sections_section div{margin:20px 0}#main_content a{color:#99C5FD}#main_content ul{ list-style-type :circle; list-style-position:inside; margin-left :20px}#main_content ul li,#main_content ol li{margin-bottom:0.5em}#main_content p{ margin :20px 0; font-size :18px; color :#333; line-height:25px}#main_content p.instructions_message{ margin-top :0; margin-left:0; color :#666; font-size :14px; font-style :italic; line-height:24px}#main_content p.instructions_message a{color:#f54d47}.terminal,.editor{ padding :5px 10px; background-color:black; background-image:-moz-linear-gradient(top,#000,#444); background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#444),color-stop(1,#000))}#main_content .terminal p,#main_content .editor p{ margin :10px 0; color :#fff; font-family:monaco,monospace; font-size :14px}#main_content #introduction{  position      :relative;  top           :20px;  width         :690px;  margin-bottom :20px;  padding-top   :0;  padding-bottom:106px;  background    :url(/images/enso.gif) no-repeat 91% 0}#main_content #introduction h1{ margin-bottom:45px; padding-top :24px}#main_content #introduction h1 span{ display :block; margin :10px 0 0 0; color :#444; font-size :16px; letter-spacing:3px; text-transform:uppercase}#main_content #introduction p{ width :600px; color :#555; font-size :21px; line-height:35px; text-align :justify}#main_content #the_structure img{ float :left; margin:20px 30px 30px 0}#main_content #authors p{ float:left; width:275px}#main_content #edgecase a{ display :block; height :40px; margin :0 auto 30px auto; padding :0px; color :#fff; font-size :14px; letter-spacing :1px; line-height :42px; text-align :center; text-decoration:none; text-transform :uppercase; background-color:#d00; background-image:-moz-linear-gradient(top,#FB746F,#d00); background-image:-webkit-gradient(linear,left bottom,left top,color-stop(0,#d00),color-stop(1,#FB746F)); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d00',endColorstr='#FB746F'); -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#d00',endColorstr='#FB746F')";/* IE8 */ -moz-border-radius :4px; -webkit-border-radius:4px; border-radius :4px}#main_content #other_resources{margin-bottom:0}#main_content #inspiration p a,#main_content #other_resources p a{line-height:16px;text-decoration:none}#main_content #other_resources a span,#main_content #inspiration a span{ display :block; color :#555; font-style :italic; text-decoration:none}#mountains{ padding-top:3em; color :#9b9b9b; font-size :24px}
+      /*]]>*/
+    </style>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function iPhone(){ return (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)); }
+        function setBodyClass(){ document.body.className = (document.documentElement.clientWidth<=940) ? 'small' : 'large'; }
+        
+        (function($){
+          $.extend(jQuery.easing,{
+            easeInOutExpo: function (x, t, b, c, d) {
+              if (t==0) return b;
+              if (t==d) return b+c;
+              if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+              return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+            }
+          });
+        
+          $.fn.boldSelectedElement = function(i) {
+            $(this).css('font-weight', 'normal').eq(i).css('font-weight', 'bold');
+          };
+        
+          $.fn.highlightVisibleAnchor = function() {
+            var $this = $(this),
+                anchors = $this.map(function() {return $(this).attr('href'); }),
+                anchorPositions = $.map(anchors, function(a){return $(a).offset().top; });
+        
+            function currentIndex(sections) {
+              var scrollPosition = $(window).scrollTop(),
+                  i=0,
+                  inSection = false;
+        
+              while(!inSection) {
+                i++;
+                if(sections[i-1] > scrollPosition) {
+                  i = 1;
+                  inSection = true;
+                } else if (i >  sections[sections.length-1]) {
+                  i = sections.length;
+                  inSection = true;
+                } else {
+                  inSection = sections[i-1] <= scrollPosition && scrollPosition < sections[i];
+                }
+              }
+        
+              return i-1;
+            }
+        
+            $(this).boldSelectedElement(currentIndex(anchorPositions));
+        
+            $(window).scroll(function() {
+              $this.boldSelectedElement(currentIndex(anchorPositions));
+            });
+          };
+        
+        
+          $.fn.scrollToAnchor = function() {
+            return this.click(function(e) {
+              if(iPhone()) { return; }
+        
+              e.preventDefault();
+              var targetSection = $($(this).attr('href'));
+              var scrollTo      = targetSection.offset().top;
+              $('html,body').animate({scrollTop: scrollTo}, 350, 'easeInOutExpo');
+            });
+          };
+        
+        
+          $(function(){
+            setBodyClass();
+            $(window).resize(setBodyClass);
+            $('#sidebar ol a').scrollToAnchor().highlightVisibleAnchor();
+        
+            $('.email_address').each(function() {
+              var address   = $(this).text().replace(' [at] ', '@').replace(' [dot] ', '.');
+              var emailLink = '<a href="mailto:' + address + '">' + address + '</a>';
+        
+              $(this).replaceWith(emailLink);
+            });
+          });
+        })(jQuery);
+      //]]>
+    </script>
+    <script src='http://use.typekit.com/bsl0mwg.js' type='text/javascript'></script>
+    <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #fce200;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #031dff; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #031dff; }
-    h3 { text-align: center; color: #031dff; }
-    a { color: #031dff; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id='top_line'></div>
+    <div id='main_content'>
+      <section id='introduction'>
+        <h1>
+          Learn CFML
+          <span>With the Edgecase ColdFusion Koans</span>
 
-<body>
-  <a href="https://github.com/mhenke/ColdFusion-Koans"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+        </h1>
+        <p>The Koans walk you along the path to enlightenment in order to learn CFML. The goal is to learn the CFML language, syntax, structure, and some common functions and libraries. We also teach you culture. Testing is not just something we pay lip service to, but something we live. It is essential in your quest to learn and do great things in the language.</p>
+      </section>
+      <div id='sidebar'>
+        <a class='main_button' href='https://github.com/downloads/edgecase/CFML_koans/CFMLkoans-2012-02-02.zip'>download the koans</a>
+        <a class='main_button' href='/online'>ColdFusion Koans online</a>
+        <nav class='nix'>
 
-  <div id="container">
+          <a class='active tab' href='/'>*nix</a>
+          <a class='tab' href='/windows.html'>windows</a>
+          <ol>
+            <li>
+              <a href='#main_content'>introduction</a>
+            </li>
+            <li>
 
-    <div class="download">
-      <a href="https://github.com/mhenke/ColdFusion-Koans/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/mhenke/ColdFusion-Koans/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+              <a href='#the_structure'>the structure</a>
+            </li>
+            <li>
+              <a href='#installing_CFML'>installing CFML</a>
+            </li>
+            <li>
+              <a href='#what_editors'>what editors can i use?</a>
+
+            </li>
+            <li>
+              <a href='#the_path'>the path to enlightenment</a>
+            </li>
+            <li>
+              <a href='#authors'>authors</a>
+            </li>
+
+            <li>
+
+              <a href='#cc'>license</a>
+            </li>
+            <li>
+              <a href='#edgecase'>private training</a>
+            </li>
+            <li>
+
+              <a href='#inspiration'>inspiration</a>
+
+            </li>
+            <li>
+              <a href='#other_resources'>other resources</a>
+            </li>
+          </ol>
+        </nav>
+
+        <a href='http://edgecase.com' id='edgecase_logo' target='_blank'>Brought to you by EdgeCase</a>
+      </div>
+
+      <section id='the_structure'>
+        <h2><span>The Structure</span></h2>
+        <img alt='ColdFusion Koans files' src='/images/files.gif' />
+        <p>The koans are broken out into areas by file, hashes are covered in about_hashes.rb, modules are introduced in about_modules.rb, etc. They are presented in order in the path_to_enlightenment.rb file.</p>
+        <p>Each koan builds up your knowledge of CFML and builds upon itself. It will stop at the first place you need to correct.</p>
+
+        <p>Some koans simply need to have the correct answer substituted for an incorrect one. Some, however, require you to supply your own answer. If you see the method __ (a double underscore) listed, it is a hint to you to supply your own code in order to make it work correctly.</p>
+      </section>
+
+      <section id='installing_CFML'>
+        <h2><span>Installing CFML</span></h2>
+        <p class='instructions_message'>
+          These instructions are for *nix platforms. We also have
+          <a href='/windows#installing_CFML'>Windows instructions</a>
+
+          .
+        </p>
+        <p>
+          In order to run the koans you need CFML installed. If you do not already have CFML setup, please visit
+          <a href='http://CFML-lang.org/en/downloads' target='_blank'>http://CFML-lang.org/en/downloads</a>
+
+          for operating system specific instructions.
+        </p>
+        <p>To verify your installation, in your terminal window simply type:</p>
+        <div class='terminal'>
+
+          <p>$ CFML --version</p>
+        </div>
+        <p>Any response for CFML with a version number greater than 1.8 is fine.</p>
+      </section>
+
+      <section id='what_editors'>
+        <h2><span>What Editors Can I Use?</span></h2>
+        <p class='instructions_message'>
+
+          These instructions are for *nix platforms. We also have
+          <a href='/windows#what_editors'>Windows instructions</a>
+          .
+        </p>
+        <p>You can really use any editor you'd like, but here are some suggestions:</p>
+
+        <ul>
+          <li>
+            <a href='http://macromates.com' rel='external'>TextMate</a>
+
+          </li>
+          <li>
+            <a href='http://www.jetbrains.com/CFML' rel='external'>CFMLMine</a>
+          </li>
+          <li>
+
+            <a href='http://code.google.com/p/macvim' rel='external'>Vim</a>
+          </li>
+
+          <li>
+            <a href='http://www.jedit.org' rel='external'>jEdit</a>
+          </li>
+          <li>
+            <a href='http://homepage.mac.com/zenitani/emacs-e.html' rel='external'>Emacs</a>
+
+          </li>
+        </ul>
+
+      </section>
+      <section id='the_path'>
+        <h2><span>The Path to Enlightenment</span></h2>
+        <p class='instructions_message'>
+          These instructions are for *nix platforms. We also have
+          <a href='/windows#the_path'>Windows instructions</a>
+
+          .
+        </p>
+
+        <p>You can run the tests by calling the path_to_enlightenment.rb file.</p>
+        <p>In your terminal, while in the CFML_koans directory, type:</p>
+        <div class='terminal'>
+          <p>[ CFML_koans ] $ CFML path_to_enlightenment.rb</p>
+        </div>
+        <div id='red_green_refactor'>
+
+          <h3>Red, Green, Refactor</h3>
+
+          <p>In test-driven development (TDD) the mantra has always been red: write a failing test and run it, green: make the test pass, and refactor: look at the code and see if you can make it any better.</p>
+          <p>With the koans, you will need to run the tests and see it fail (red), make the test pass (green), then take a moment and reflect upon the test to see what it is teaching you and improve the code to better communicate its intent (refactor).</p>
+          <p>The very first time you run it you will see the following output:</p>
+          <div class='terminal'>
+            <p>
+              [ CFML_koans ] $ CFML path_to_enlightenment.rb
+              <br />
+
+              (in /Users/person/dev/CFML_koans)
+              <br />
+              cd koans
+            </p>
+            <p>
+              Thinking AboutAsserts
+              <br />
+              test_assert_truth has damaged your karma.
+            </p>
+            <p>
+              You have not yet reached enlightenment ...
+              <br />
+
+              &lt;false&gt; is not true.
+            </p>
+            <p>
+              Please meditate on the following code:
+              <br />
+              ./about_asserts.rb:10:in `test_assert_truth'
+              <br />
+              path_to_enlightenment.rb:27
+            </p>
+
+            <p>
+
+              mountains are merely mountains
+            </p>
+          </div>
+          <p>You have come to the first error. Notice you are told where to look for the error:</p>
+          <div class='terminal'>
+            <p>
+              Please meditate on the following code:
+              <br />
+
+              ./about_asserts.rb:10:in `test_assert_truth'
+              <br />
+
+              path_to_enlightenment.rb:27
+            </p>
+          </div>
+          <p>You then open up the about_asserts.rb file in your text editor and look at line 10:</p>
+          <div class='editor'>
+            <p>
+              # We shall contemplate truth by testing reality, via asserts.
+              <br />
+
+              def test_assert_truth
+              <br />
+
+              &nbsp;&nbsp;assert false  # This should be true
+              <br />
+              end
+            </p>
+          </div>
+          <p>You then change false to true and run the tests again. You should get a new error.</p>
+          <p>Before moving on, think about what you are learning.</p>
+
+          <p>In this specific case, ignore everything except the method name (test_assert_truth) and the parts inside the method (everything before the end). The goal is for you to see that if you pass a value to the assert method, it will either ensure it is true and continue on, or fail if in fact the statement is false.</p>
+
+        </div>
+      </section>
+      <section id='authors'>
+        <h2><span>Authors</span></h2>
+        <p>
+          Jim Weirich
+          <br />
+
+          <span class='email_address'>jim [at] weirichhouse [dot] org</span>
+
+          <br />
+          <a href='http://twitter.com/jimweirich' target='_blank'>@jimweirich</a>
+        </p>
+        <p>
+          Joe O'Brien
+          <br />
+          <span class='email_address'>joe [at] edgecase [dot] com</span>
+
+          <br />
+
+          <a href='http://twitter.com/objo' target='_blank'>@objo</a>
+        </p>
+        <br class='clear' />
+      </section>
+      <section id='cc'>
+        <h2><span>License</span></h2>
+
+        <p>
+          ColdFusion Koans is released under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons, Attribution-NonCommercial-ShareAlike License</a>.
+          <a href='http://twitter.com/jimweirich' target='_blank'>@jimweirich</a>
+
+        </p>
+        <br class='clear' />
+      </section>
+      <section id='edgecase'>
+
+        <h2><span>We Provide Private Training</span></h2>
+        <p>EdgeCase helps organizations access the full potential of the latest technologies and methodologies by offering structured training in areas such as Git, CFML, CFML on Rails, and Agile development. We specialize in building better software and staying on top of rapidly changing technologies. Let us bring that expertise to your business.</p>
+        <p>
+          <a href='http://edgecase.com/contact' target='_blank'>Get in Contact with EdgeCase</a>
+
+        </p>
+      </section>
+      <section id='inspiration'>
+
+        <h2><span>Inspiration</span></h2>
+        <p>A special thanks to Mike Clark and Ara Howard for inspiring this project. Mike Clark wrote an excellent blog post about learning CFML through unit testing. This sparked an idea that has taken a bit to solidify, that of bringing new CFMLists into the community through testing. Ara Howard then gave us the idea for the Koans in his CFML quiz entry on Meta Koans (a must for any CFMList wanting to improve their skills). Also, "The Little Lisper" taught us all the value of the short questions/simple answers style of learning.</p>
+        <p>
+          <a href='http://clarkware.com/cgi/blosxom/2005/03/18' target='_blank'>
+            Mike Clark's post
+            <span>clarkware.com/cgi/blosxom/2005/03/18</span>
+
+          </a>
+
+        </p>
+        <p>
+          <a href='http://CFMLquiz.com/quiz67.html' target='_blank'>
+            Meta Koans
+            <span>CFMLquiz.com/quiz67.html</span>
+          </a>
+        </p>
+        <p>
+
+          <a href='http://amazon.com/Little-LISPer-Third-Daniel-Friedman/dp/0023397632' target='_blank'>
+            The Little Lisper
+            <span>amazon.com/Little-LISPer-Third-Daniel-Friedman/dp/0023397632</span>
+          </a>
+        </p>
+      </section>
+      <section id='other_resources'>
+        <h2><span>Other Resources</span></h2>
+
+        <p>
+          <a href='http://pivotaltracker.com/projects/48111' target='_blank'>
+            EdgeCase ColdFusion Koans Issue Tracker
+            <span>pivotaltracker.com/projects/48111</span>
+          </a>
+        </p>
+        <p>
+          <a href='http://github.com/edgecase/CFML_koans' target='_blank'>
+
+            EdgeCase ColdFusion Koans on Github
+            <span>github.com/edgecase/CFML_koans</span>
+
+          </a>
+        </p>
+        <p>
+          <a href='http://CFML-lang.org' target='_blank'>
+            The CFML Language
+            <span>CFML-lang.org</span>
+
+          </a>
+        </p>
+        <p>
+
+          <a href='http://tryCFML.org' target='_blank'>
+            Try CFML in your browser
+            <span>tryCFML.org</span>
+          </a>
+        </p>
+
+        <p>
+          <a href='http://pragprog.com/titles/CFML/programming-CFML' target='_blank'>
+            Dave Thomas' introduction to CFML Programming
+            <span>pragprog.com/titles/CFML/programming-CFML</span>
+
+          </a>
+        </p>
+        <p>
+          <a href='http://pragprog.com/titles/bmsft/everyday-scripting-with-CFML' target='_blank'>
+
+            Brian Marick's fantastic guide for beginners: Everyday Scripting with CFML
+            <span>pragprog.com/titles/bmsft/everyday-scripting-with-CFML</span>
+          </a>
+        </p>
+      </section>
+
+      <p id='mountains'>Mountains are merely mountains</p>
     </div>
+    <script type='text/javascript'>
+      //<![CDATA[
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-18201694-1']);
+          _gaq.push(['_setDomainName', '.CFMLkoans.com']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+      //]]>
+    </script>
 
-    <h1><a href="https://github.com/mhenke/ColdFusion-Koans">ColdFusion-Koans</a>
-      <span class="small">by <a href="https://github.com/mhenke">mhenke</a></span></h1>
-
-    <div class="description">
-      
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Grant Copley (grant@fusehill.com)<br/>jtreher (jtreher@gmail.com)<br/>Michael Seid (mbseid@gmail.com)<br/>Ryan Ryan (ryan.anklam@gmail.com)<br/>Scott Stroz (scott@boyzoid.com)<br/>sneiland (sneiland@hotmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Mike Henke (henke.mike@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/mhenke/ColdFusion-Koans/zipball/master">zip</a> or
-      <a href="https://github.com/mhenke/ColdFusion-Koans/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/mhenke/ColdFusion-Koans</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/mhenke/ColdFusion-Koans">mhenke/ColdFusion-Koans</a>
-    </div>
-
-  </div>
-
-</body>
+  </body>
 </html>
