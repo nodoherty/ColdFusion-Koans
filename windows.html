@@ -160,48 +160,32 @@
       <section id='the_structure'>
         <h2><span>The Structure</span></h2>
         <img alt='ColdFusion Koans files' src='images/files.gif' />
-        <p>The koans are broken out into areas by file, arrays are covered in AboutArrays.cfc, components are introduced in AboutComponents.cfc, etc. They are presented in order in the PathToEnlightenment.cfc file.</p>
+        <p>The koans are broken out into areas by file, arrays are covered in AboutArrays.cfc, components are introduced in AboutComponents.cfc, etc. They are presented in order in the home page, index.cfml. This is your path to enlightenment.</p>
         <p>Each koan builds up your knowledge of CFML and builds upon itself. It will stop at the first place you need to correct.</p>
         <p>Some koans simply need to have the correct answer substituted for an incorrect one. Some, however, require you to supply your own answer. If you see the method __ (a double underscore) listed, it is a hint to you to supply your own code in order to make it work correctly.</p>
       </section>
 
-      <section id='installing_CFML'>
+            <section id='installing_CFML'>
         <h2><span>Installing CFML</span></h2>
         <p class='instructions_message'>
-          These instructions are for Windows. We also have
-          <a href='index.html#installing_CFML'>*nix instructions</a>
+          These instructions are for *nix platforms. We also have
+          <a href='windows.html#installing_CFML'>Windows instructions</a>
+
           .
         </p>
-        <p>You must have a version of CFML installed in order to run the Koans. Please take the time to download a version of CFML that best suits your needs. The koans use features that are built into the CFML language so many ports of the CFML Interpreter will run the koans without additional configuration or hacking. If you're unsure which version of CFML to install, the one click installer of MRI (Matz CFML Interpreter) in the 1.8 series is probably perfect to get started.</p>
-
         <p>
-          If you're interested in running the Koans (or any other CFML programs) in multiple CFML versions then you'll probably want to download "Pik" which is a CFML package manager for windows (
-          <a href='http://github.com/vertiginous/pik' target='_blank'>http://github.com/vertiginous/pik</a>
-          ) which is based on the *nix tool RVM (
-          <a href='http://rvm.beginrescueend.com' target='_blank'>http://rvm.beginrescueend.com</a>
-          ).
+          In order to run the koans you need CFML installed. If you do not already have CFML setup, please visit for specific instructions:
         </p>
-        <p>
-          So, follow this link and download any of the 1.8 packages:
-          <a href='http://CFMLforge.org/frs/?group_id=167&amp;release_id=42563' target='_blank'>http://CFMLforge.org/frs/?group_id=167&amp;release_id=42563</a>
-
-        </p>
-        <p>Download it and double click the installer. This will place all the CFML libraries and executables into a directory on your local machine. If you happen to forget to tick the box that asks if you wish to alter your PATH variable (where the command line looks for programs to run when you're typing commands) then you can do that manually by:</p>
-        <ol>
-          <li>Find where you installed CFML (usually C:\CFML)</li>
-          <li>Right click on My Computer (or the recent windows equal) and click "Properties"</li>
-          <li>On the advanced tab click the button "Environmental Variables"</li>
-          <li>Add "PATH-TO-CFML\bin;" to the beginning (or end, or whereever)</li>
-
-        </ol>
-        <p>Now open a command prompt and type "CFML -v" if you get a response and no error, then you've done it! Now that you have CFML installed you'll need to pull down the koans.</p>
-        <ol>
-          <li>Unzip to C:\oss\CFML_koans</li>
-          <li>Open command prompt (start &gt; run &gt; type "cmd" hit enter)</li>
-
-          <li>run (based on step 1) "cd C:\oss\CFML_koans"</li>
-          <li>run "rake"</li>
-        </ol>
+        <ul>
+          <li>
+          <a href='http://www.adobe.com/products/coldfusion-family.html' target='_blank'>Adobe ColdFusion server</a>
+          </li>
+          <li>
+          <a href='http://www.getrailo.org/index.cfm/download/' target='_blank'>Railo ColdFusion server</a>
+          </li>
+        </ul>
+        
+        <p>To verify your installation, in your browser type in the url for your server and you should see a welcome page.</p>
       </section>
 <section id='what_editors'>
         <h2><span>What Editors Can I Use?</span></h2>
@@ -215,7 +199,10 @@
 
         <ul>
           <li>
-            <a href='http://www.sublimetext.com/2' rel='external'>Sublime Text 2</a> with a ColdFusion package
+            <a href='http://www.adobe.com/products/coldfusion-builder.html' rel='external'>Adobe ColdFusion Builder</a>
+          </li>
+          <li>
+            <a href='http://www.adobe.com/products/dreamweaver.html' rel='external'>Adobe Dreamweaver</a>
           </li>
           <li>
             <a href='http://eclipse.org/' rel='external'>Eclipse</a> with <a href='http://cfeclipse.org/' rel='external'>CFEclipse</a>
@@ -224,10 +211,7 @@
             <a href='http://www.jetbrains.com/idea/' rel='external'>IntelliJ IDEA</a> with <a href='http://plugins.intellij.net/plugin/?id=3571' rel='external'>CFML Support Plugin</a>
           </li>
           <li>
-            <a href='http://www.adobe.com/products/coldfusion-builder.html' rel='external'>Adobe ColdFusion Builder</a>
-          </li>
-          <li>
-            <a href='http://www.adobe.com/products/dreamweaver.html' rel='external'>Adobe Dreamweaver</a>
+            <a href='http://www.sublimetext.com/2' rel='external'>Sublime Text 2</a> with a ColdFusion package
           </li>
         </ul>
 
@@ -235,80 +219,37 @@
       <section id='the_path'>
         <h2><span>The Path to Enlightenment</span></h2>
         <p class='instructions_message'>
-          These instructions are for Windows platforms. We also have
-          <a href='index.html#the_path'>*nix instructions</a>
+          These instructions are for *nix platforms. We also have
+          <a href='windows.html#the_path'>Windows instructions</a>
+
           .
         </p>
-        <p>You can run the tests by calling the path_to_enlightenment.rb file.</p>
 
-        <p>In your terminal, while in the CFML_koans directory, type:</p>
-        <div class='terminal'>
-          <p>C:\oss\CFML_koans &gt; CFML path_to_enlightenment.rb</p>
-        </div>
+        <p>You can run the tests by calling the index.cfm page.</p>
+
         <div id='red_green_refactor'>
+
           <h3>Red, Green, Refactor</h3>
 
           <p>In test-driven development (TDD) the mantra has always been red: write a failing test and run it, green: make the test pass, and refactor: look at the code and see if you can make it any better.</p>
           <p>With the koans, you will need to run the tests and see it fail (red), make the test pass (green), then take a moment and reflect upon the test to see what it is teaching you and improve the code to better communicate its intent (refactor).</p>
           <p>The very first time you run it you will see the following output:</p>
-          <div class='terminal'>
-            <p>
-              C:\oss\CFML_koans &gt; CFML path_to_enlightenment.rb
-              <br />
-
-              (in /Users/person/dev/CFML_koans)
-              <br />
-              cd koans
-            </p>
-            <p>
-              Thinking AboutAsserts
-              <br />
-              test_assert_truth has damaged your karma.
-            </p>
-            <p>
-              You have not yet reached enlightenment ...
-              <br />
-
-              &lt;false&gt; is not true.
-            </p>
-            <p>
-              Please meditate on the following code:
-              <br />
-              ./about_asserts.rb:10:in `test_assert_truth'
-              <br />
-              path_to_enlightenment.rb:27
-            </p>
-            <p>
-
-              mountains are merely mountains
-            </p>
+          <div>
+            <img alt='First time running CFML Koans' src='images/firstrun.gif' />
           </div>
-          <p>You have come to the first error. Notice you are told where to look for the error:</p>
-          <div class='terminal'>
-            <p>
-              Please meditate on the following code:
-              <br />
-              ./about_asserts.rb:10:in `test_assert_truth'
-              <br />
-
-              path_to_enlightenment.rb:27
-            </p>
-          </div>
-          <p>You then open up the about_asserts.rb file in your text editor and look at line 10:</p>
+          <p>You have come to the first error. Notice you are told where to look for the error: Koans.AboutAsserts and the testTrueShouldBeTrue method.</p>
+          <p>You then open up the AboutAsserts.cfc file under the Koans directory in your text editor and look at the testTrueShouldBeTrue method:</p>
           <div class='editor'>
             <p>
-              # We shall contemplate truth by testing reality, via asserts.
-              <br />
-              def test_assert_truth
-              <br />
-
-              &nbsp;&nbsp;assert false  # This should be true
-              <br />
-              end
+              public void function testTrueShouldBeTrue(){<br />
+              &nbsp;&nbsp;//try replacing false with true<br />
+              &nbsp;&nbsp;assertTrue(false);<br />
+              }
             </p>
           </div>
           <p>You then change false to true and run the tests again. You should get a new error.</p>
           <p>Before moving on, think about what you are learning.</p>
+
           <p>In this specific case, ignore everything except the method name (test_assert_truth) and the parts inside the method (everything before the end). The goal is for you to see that if you pass a value to the assert method, it will either ensure it is true and continue on, or fail if in fact the statement is false.</p>
 
         </div>
@@ -319,7 +260,7 @@
           Ryan Anklam
           <br />
 
-          <span class='email_address'>not available</span>
+          <span class='email_address'>ryan [dot] anklam [at] gmail [dot] com</span>
 
           <br />
           <a href='http://twitter.com/bittersweetryan' target='_blank'>@bittersweetryan</a>
