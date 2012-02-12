@@ -82,7 +82,7 @@ component extends="mxunit.framework.TestCase"{
 		// Use the mid() function to  extract a substring from a string
 		// Usage: mid(string, start, count)
 
-		var goodActor = "Chevy Case";
+		var goodActor = "Chevy Chase";
 
 		// Hint: Good automobile maker
 		assertEquals(mid(goodActor, 1, 5), "__"); 
