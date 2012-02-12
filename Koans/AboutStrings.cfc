@@ -79,7 +79,7 @@ component extends="mxunit.framework.TestCase"{
 	*/
 	public void function testGettingSubString(){
 		
-		// Use the mid() function to  extract a substring from a string
+		// Use the mid() function to extract a substring from a string
 		// Usage: mid(string, start, count)
 
 		var goodActor = "Chevy Chase";
@@ -153,7 +153,7 @@ component extends="mxunit.framework.TestCase"{
 	*@order 12
 	*/
 	public void function testSearchingString(){
-		var myVar = "To start press any key.  Where's the any key?";
+		var myVar = "To start press any key. Where's the any key?";
 
 		assertEquals(findNoCase("ANY",myVar),"__");
 	}
@@ -162,7 +162,7 @@ component extends="mxunit.framework.TestCase"{
 	*@order 13
 	*/
 	public void function testSearchingString2(){
-		var myVar = "To start press any key.  Where's the any key?";
+		var myVar = "To start press any key. Where's the any key?";
 
 		assertEquals(findNoCase("ANY",myVar,26),"__");
 	}
@@ -171,7 +171,7 @@ component extends="mxunit.framework.TestCase"{
 	*@order 14
 	*/
 	public void function testSearchingString3(){
-		var myVar = "To start press any key.  Where's the any key?";
+		var myVar = "To start press any key. Where's the any key?";
 
 		assertEquals(find("ANY",myVar,26),"__");
 	}
@@ -180,7 +180,7 @@ component extends="mxunit.framework.TestCase"{
 	*@order 15
 	*/
 	public void function testStringReplace(){
-		var myVar = "To start press any key.  Where's the any key?";
+		var myVar = "To start press any key. Where's the any key?";
 
 		assertEquals(replace(myVar,"any","pound"),"__");
 	}
@@ -189,9 +189,9 @@ component extends="mxunit.framework.TestCase"{
 	*@order 16
 	*/
 	public void function testStringReplace2(){
-		var myVar = "To start press any key.  Where's the any key?";
+		var myVar = "To start press any key. Where's the any key?";
 
-		//Did that last test get you?  To replace all occurances you need to pass another argument to find
+		//Did that last test get you? To replace all occurances you need to pass another argument to find
 		assertEquals(replace(myVar,"any","pound","all"),"__");
 	}
 
