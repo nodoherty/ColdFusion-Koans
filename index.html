@@ -117,9 +117,6 @@
         <a class='main_button' href='https://github.com/bittersweetryan/ColdFusion-Koans/tarball/master'>download the koans</a>
         <!-- <a class='main_button' href='online.html'>ColdFusion Koans online</a> -->
         <nav class='nix'>
-
-          <a class='active tab' href='index.html'>*nix</a>
-          <a class='tab' href='windows.html'>windows</a>
           <ol>
             <li>
               <a href='#main_content'>introduction</a>
@@ -129,7 +126,7 @@
               <a href='#the_structure'>the structure</a>
             </li>
             <li>
-              <a href='#installing_CFML'>installing CFML</a>
+              <a href='#installing'>installation</a>
             </li>
             <li>
               <a href='#what_editors'>what editors can i use?</a>
@@ -168,16 +165,10 @@
         <p>Some koans simply need to have the correct answer substituted for an incorrect one. Some, however, require you to supply your own answer. If you see the method __ (a double underscore) listed, it is a hint to you to supply your own code in order to make it work correctly.</p>
       </section>
 
-      <section id='installing_CFML'>
-        <h2><span>Installing CFML</span></h2>
-        <p class='instructions_message'>
-          These instructions are for *nix platforms. We also have
-          <a href='windows.html#installing_CFML'>Windows instructions</a>
-
-          .
-        </p>
+      <section id='installing'>
+        <h2><span>Installing</span></h2>
         <p>
-          In order to run the koans you need CFML installed. If you do not already have CFML setup, please visit for specific instructions:
+          In order to run the koans you need a CFML ebgube installed. If you do not already have a CFML engine setup, please visit for specific instructions:
         </p>
         <ul>
           <li>
@@ -186,19 +177,18 @@
           <li>
           <a href='http://www.getrailo.org/index.cfm/download/' target='_blank'>Railo ColdFusion server</a>
           </li>
+            <li>
+          <a href='http://www.openbluedragon.org/download/' target='_blank'>Open BlueDragon ColdFusion server</a>
+          </li>
         </ul>
         
-        <p>To verify your installation, in your browser type in the url for your server and you should see a welcome page.</p>
+        <h3>Installing the Koans</h3>
+        <p>Installing the Koans is easy.  Click on the "Download" link to download the Koans .zip file.  Extract this file somewhere in your webroot and rename the folder to whatever you'd like.  This page will assume that the folder is named "ColdFusion-Koans". If you name it something different replace ColdFusion-Koans to whatever you named it for the rest of these instructions</p>
+        <p>To verify your installation, in your browser type in the url for your server and you should see a welcome page. In most cases you can goto http://127.0.0.1/ColdFusion-Koans.  If you are using Railo or Open BlueDragon you may need to goto http://127.0.0.1:8080/ColdFusion-Koans.  If you are using the built in ColdFusion server under the default settings you'll need to goto http://127.0.0.1:8500/ColdFusion-Koans.  </p>
       </section>
 
       <section id='what_editors'>
         <h2><span>What Editors Can I Use?</span></h2>
-        <p class='instructions_message'>
-
-          These instructions are for *nix platforms. We also have
-          <a href='windows.html#what_editors'>Windows instructions</a>
-          .
-        </p>
         <p>You can really use any editor you'd like, but here are some suggestions:</p>
 
         <ul>
@@ -209,19 +199,13 @@
             <a href='http://www.jetbrains.com/idea/' rel='external'>IntelliJ IDEA</a> with <a href='http://plugins.intellij.net/plugin/?id=3571' rel='external'>CFML Support Plugin</a>
           </li>
           <li>
-            <a href='http://www.sublimetext.com/2' rel='external'>Sublime Text 2</a> with a ColdFusion package
+            <a href='http://www.sublimetext.com/2' rel='external'>Sublime Text 2</a> with the <a href="https://github.com/SublimeText/ColdFusion" target='_blank'>ColdFusion package.</a>  
           </li>
         </ul>
 
       </section>
       <section id='the_path'>
         <h2><span>The Path to Enlightenment</span></h2>
-        <p class='instructions_message'>
-          These instructions are for *nix platforms. We also have
-          <a href='windows.html#the_path'>Windows instructions</a>
-
-          .
-        </p>
 
         <p>You can run the tests by calling the index.cfm page.</p>
 
@@ -248,7 +232,7 @@
           <p>You then change false to true and run the tests again. You should get a new error.</p>
           <p>Before moving on, think about what you are learning.</p>
 
-          <p>In this specific case, ignore everything except the method name (test_assert_truth) and the parts inside the method (everything before the end). The goal is for you to see that if you pass a value to the assert method, it will either ensure it is true and continue on, or fail if in fact the statement is false.</p>
+          <p>In this specific case, ignore everything except the method name (testTrueShouldBeTrue) and the parts inside the method (everything before the end). The goal is for you to see that if you pass a value to the assert method, it will either ensure it is true and continue on, or fail if in fact the statement is false.</p>
 
         </div>
       </section>
@@ -288,24 +272,8 @@
       <section id='inspiration'>
 
         <h2><span>Inspiration</span></h2>
-        <p>A special thanks to Ruby Koans for inspiring this project. MXUnit for the unit testing framework for ColdFusion developers. EdgeCase for the design of the site.</p>
-
+        <p>A special thanks to <a href="http://www.rubykoans" target="_blank">Ruby Koans</a> and the <a href="https://github.com/liammclennan/JavaScript-Koans" target="_blank">JavaScript Koans</a> for inspiring this project, <a href="http://www.mxunit.org" target="_blank">MXUnit</a> for the unit testing framework for ColdFusion developers, and EdgeCase for the design of the site.</p>
         <p>
-          <a href='http://rubykoans.com/' target='_blank'>
-            Ruby Koans
-            <span>rubykoans.com</span>
-          </a>
-        </p>
-        <p>
-          <a href='http://mxunit.org/' target='_blank'>
-            MXUnit
-            <span>mxunit.org</span>
-
-          </a>
-
-        </p>
-        <p>
-
           <a href='http://edgecase.com/' target='_blank'>
             EdgeCase
             <span>edgecase.com</span>
