@@ -12,7 +12,7 @@
 		</cfloop>
 
 		<!--- hint: create a new array and populate it with the expected values from calling the functions in 
-			  /Components/testComponent.cfc --->
+			  /Components/TestComponent.cfc --->
 		<cfset assertEquals(valueArray,"__") />
 
 	</cffunction>
