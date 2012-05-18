@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	/**
 	*@order 1
@@ -12,7 +12,7 @@ component extends="mxunit.framework.TestCase"{
 	    //this can be extremely helpful when dealing with dynamic forms
 		var result = listGetAt(myList,2,"_");	    
 
-	    assertEquals(result,"__");
+	    assertEquals(__,result);
 	}
 
 	/**
@@ -22,6 +22,6 @@ component extends="mxunit.framework.TestCase"{
 		var myList = "apple_pear_banana";
 		myList = listChangeDelims(myList,",","_");
 
-		assertEquals(myList,"__");
+		assertEquals(__,myList);
 	}
 }

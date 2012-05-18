@@ -1,4 +1,4 @@
-<cfcomponent extends="mxunit.framework.TestCase" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
+<cfcomponent extends="Koans.BaseKoan" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
 	
 	<cffunction name="testDynamicInvocation" returntype="void" access="public" output="false" hint="" order="1">
 		<!--- There are some powerful things that we can't do in scripts yet, like calling the cfinvoke function --->	
@@ -13,7 +13,7 @@
 
 		<!--- hint: create a new array and populate it with the expected values from calling the functions in 
 			  /Components/testComponent.cfc --->
-		<cfset assertEquals(valueArray,"__") />
+		<cfset assertEquals(__,valueArray) />
 
 	</cffunction>
 

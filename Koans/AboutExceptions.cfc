@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase" {
+component extends="Koans.BaseKoan" {
 	
 	/**
 	*@order 1
@@ -26,7 +26,7 @@ component extends="mxunit.framework.TestCase" {
 		}
 
 		//For a complete list or error types in ColdFusion9 visit http://adobe.ly/vFRFKo
-		assertEquals(errorType,"__");
+		assertEquals(__,errorType);
 	}
 
 	private void function createError(){
@@ -46,7 +46,7 @@ component extends="mxunit.framework.TestCase" {
 			errorType = ex.type;
 		}
 
-		assertEquals(errorType,"__");
+		assertEquals(__,errorType);
 	}
 
 	private void function throwError(){

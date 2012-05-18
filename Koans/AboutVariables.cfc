@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	/**
 	*@order 1
@@ -19,7 +19,7 @@ component extends="mxunit.framework.TestCase"{
 	*/
 	public void function testIfAVariableExists(){
 		//the isdefined function will tell you if a variable exists or not	
-		assertEquals(isDefined("foo"),"__"); 
+		assertEquals(__,isDefined("foo")); 
 	}
 
 	/**
@@ -54,7 +54,7 @@ component extends="mxunit.framework.TestCase"{
 		session.foo = "session foo";
 
 		//which foo will ColdFusion find first?
-		assertEquals(foo,"__");
+		assertEquals(__,foo);
 		
 		/*********************
 		* 
@@ -62,7 +62,7 @@ component extends="mxunit.framework.TestCase"{
 		structDelete(local,"foo");
 
 		//wich foo will ColdFusion find second?
-		assertEquals(foo,"__");
+		assertEquals(__,foo);
 
 		/*********************
 		* 
@@ -70,6 +70,6 @@ component extends="mxunit.framework.TestCase"{
 		structDelete(arguments,"foo");
 
 		//which foo will ColdFusion find third?
-		assertEquals(foo,"__");
+		assertEquals(__,foo);
 	}
 }

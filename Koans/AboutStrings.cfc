@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 
 	/**
 	*@order 1
@@ -14,7 +14,7 @@ component extends="mxunit.framework.TestCase"{
 		
 		var myVar = "apple";
 
-		assertEquals(len(myVar),"__");
+		assertEquals(__,len(myVar));
 		
 	}
 
@@ -28,7 +28,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "Ho! "; // Notice the trailing space
 
-		assertEquals(repeatString(myVar, 3), "__");
+		assertEquals(__,repeatString(myVar, 3));
 
 	}
 
@@ -42,7 +42,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "otatop";
 
-		assertEquals(reverse(myVar), "__"); // Hint: spuds
+		assertEquals(__,reverse(myVar)); // Hint: spuds
 
 	}
 
@@ -56,7 +56,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "peanut";
 		
-		assertEquals(left(myVar, 3), "__" );
+		assertEquals(__,left(myVar, 3) );
 
 	}
 
@@ -70,7 +70,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "peanut";
 		
-		assertEquals(right(myVar, 3), "__" );
+		assertEquals(__,right(myVar, 3) );
 
 	}
 
@@ -85,7 +85,7 @@ component extends="mxunit.framework.TestCase"{
 		var goodActor = "Chevy Case";
 
 		// Hint: Good automobile maker
-		assertEquals(mid(goodActor, 1, 5), "__"); 
+		assertEquals(__,mid(goodActor, 1, 5)); 
 	}
 
 	/**
@@ -94,7 +94,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testAddingStringAndNumber(){
 		//string concatanation in ColdFusion is done with the & sign
 		var myVar = 1 & "Hello";
-		assertEquals(myVar,"__");
+		assertEquals(__,myVar);
 	}	
 
 	/**
@@ -103,7 +103,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testRemovingWhiteSpace(){
 		var myVar = "  hello world!  ";
 
-		assertEquals(trim(myVar),"__");
+		assertEquals(__,trim(myVar));
 	}
 	
 	/**
@@ -116,7 +116,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "  hello world!  ";		
 
-		assertEquals(lTrim(myVar), "__");
+		assertEquals(__,lTrim(myVar));
 	}
 
 	/**
@@ -129,7 +129,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var myVar = "  hello world!  ";		
 
-		assertEquals(rTrim(myVar), "__");
+		assertEquals(__,rTrim(myVar));
 
 	}
 
@@ -145,7 +145,7 @@ component extends="mxunit.framework.TestCase"{
 
 		// Hint: another great movie plot.
 
-		assertEquals(removeChars(greatMoviePlot, 21, 5), "__");
+		assertEquals(__,removeChars(greatMoviePlot, 21, 5));
 
 	}
 
@@ -155,7 +155,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testSearchingString(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(findNoCase("ANY",myVar),"__");
+		assertEquals(__,findNoCase("ANY",myVar));
 	}
 
 	/**
@@ -164,7 +164,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testSearchingString2(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(findNoCase("ANY",myVar,26),"__");
+		assertEquals(__,findNoCase("ANY",myVar,26));
 	}
 
 	/**
@@ -173,7 +173,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testSearchingString3(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(find("ANY",myVar,26),"__");
+		assertEquals(__,find("ANY",myVar,26));
 	}
 
 	/**
@@ -182,7 +182,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testStringReplace(){
 		var myVar = "To start press any key.  Wheres the any key?";
 
-		assertEquals(replace(myVar,"any","pound"),"__");
+		assertEquals(__,replace(myVar,"any","pound"));
 	}
 
 	/**
@@ -192,7 +192,7 @@ component extends="mxunit.framework.TestCase"{
 		var myVar = "To start press any key.  Wheres the any key?";
 
 		//Did that last test get you?  To replace all occurances you need to pass another argument to find
-		assertEquals(replace(myVar,"any","pound","all"),"__");
+		assertEquals(__,replace(myVar,"any","pound","all"));
 	}
 
 	/**
@@ -207,7 +207,7 @@ component extends="mxunit.framework.TestCase"{
 		var martySays = "Yeah well Biff, you're forgetting one thing. What the heck is that!!?";
 		// Hint: Watch out for trailing spaces
 
-		assertEquals(spanExcluding(martySays, "W"), "__");
+		assertEquals(__,spanExcluding(martySays, "W"));
 
 	}
 
@@ -224,7 +224,7 @@ component extends="mxunit.framework.TestCase"{
 
 		// Hint: If letters could talk, one might say this.
 
-		assertEquals(spanIncluding(martySays, "This "), "__");
+		assertEquals(__,spanIncluding(martySays, "This "));
 
 	}
 }

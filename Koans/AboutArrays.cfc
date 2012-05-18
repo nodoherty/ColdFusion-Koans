@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	/**
 	*@order 1
@@ -9,7 +9,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testGetingArrayLength(){
 		var myArray = ["one","two","three"];
 
-		assertEquals(arrayLen(myArray),"__");
+		assertEquals(__,arrayLen(myArray));
 	}
 
 	/**
@@ -19,7 +19,7 @@ component extends="mxunit.framework.TestCase"{
 		var myArray = ["one","two","three"];
 		
 		//arrays in coldfusion start with an index of one, not zero like a lot of languages
-		assertEquals(myArray[1],"__");		
+		assertEquals(__,myArray[1]);		
 	}
 
 	/**
@@ -37,7 +37,7 @@ component extends="mxunit.framework.TestCase"{
 		
 		arrayAppend(myArray,"four");
 		
-		assertEquals(myArray[4],"__");
+		assertEquals(__,myArray[4]);
 	}
 
 	/**
@@ -48,7 +48,7 @@ component extends="mxunit.framework.TestCase"{
 
 		arraySort(myArray,"text");
 
-		assertEquals(myArray[2],"__");
+		assertEquals(__,myArray[2]);
 	}
 
 	/**
@@ -59,6 +59,6 @@ component extends="mxunit.framework.TestCase"{
 
 		arraySort(myArray,"numeric");
 
-		assertEquals(myArray[3],"__");
+		assertEquals(__,myArray[3]);
 	}
 }

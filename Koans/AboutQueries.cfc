@@ -1,4 +1,4 @@
-<cfcomponent extends="mxunit.framework.TestCase" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
+<cfcomponent extends="Koans.BaseKoan" mxunit:decorators=mxunit.framework.decorators.OrderedTestDecorator>
 	
 	<cffunction name="buildQueryObj" access="private" returntype="query" output="false">
 		<!--- You can build a query recordset within coldfusion with using a real database
@@ -20,25 +20,25 @@
 	<cffunction name="testIsQuery" returntype="void" output="false" order="1">
 		<cfset var myQry = buildQueryObj()>
 		<!--- Check that a variable is a query --->
-		<cfset assertEquals(IsQuery(myQry),"___")>
+		<cfset assertEquals(__,isQuery(myQry))>
 	</cffunction>
 	
 	<cffunction name="testGettingQueryRecordCount" returntype="void" output="false" order="2">
 		<cfset var myQry = buildQueryObj()>
 		<!--- The total number of records in a returned query can be accessed using the recordcount --->
-		<cfset assertEquals(myQry.recordCount,"___")>
+		<cfset assertEquals(__,myQry.recordCount)>
 	</cffunction>
 
 	<cffunction name="testGettingFirstName_dotNotation" returntype="void" output="false" order="3">
 		<cfset var myQry = buildQueryObj()>
 		<!--- You can use dot notation to get at a particular column and a bracketed row numver--->
-		<cfset assertEquals(myQry.name[1],"___")>		
+		<cfset assertEquals(__,myQry.name[1])>		
 	</cffunction>
 	
 	<cffunction name="testGettingSecondName_bracketNotation" returntype="void" output="false" order="4">
 		<cfset var myQry = buildQueryObj()>
 		<!--- You can use brackets in place of dot notation to get at a particular cell using column/row number combination --->
-		<cfset assertEquals(myQry["name"][2],"___")>		
+		<cfset assertEquals(__,myQry["name"][2])>		
 	</cffunction>
 
 	<cffunction name="testGettingQueryMetaData" returntype="void" output="false" order="5">
@@ -47,13 +47,13 @@
 		<!--- You can get the meta data on a query recordset as an array
 			Make sure that debug output is turned on to see this --->
 		<cfset debug(queryMetaData)>
-		<cfset assertEquals(arrayLen(queryMetaData),"___")>
+		<cfset assertEquals(__,arrayLen(queryMetaData))>
 	</cffunction>
 	
 	<cffunction name="testGettingColumnLabels" returntype="void" output="false" order="6">
 		<cfset var myQry = buildQueryObj()>
 		<cfset var queryColumns = myQry.columnList>
-		<cfset assertEquals(queryColumns,"___")>
+		<cfset assertEquals(__,queryColumns)>
 	</cffunction>
 
 	<cffunction name="testGettingRowByValue_QueryofQuery" returntype="void" output="false"  order="7">
@@ -63,7 +63,7 @@
 		<cfquery name="QofQ" dbtype="query">
 			SELECT * FROM myQry WHERE ID = 2
 		</cfquery>
-		<cfset assertEquals(QofQ.recordCount,"___")>		
+		<cfset assertEquals(__,QofQ.recordCount)>		
 	</cffunction>
 	
 	<cffunction name="testAdvancedSQL_QueryofQuery" returntype="void" output="false"  order="8">
@@ -92,7 +92,7 @@
 			SELECT * FROM myQry WHERE NAME = <cfqueryparam cfsqltype="cf_sql_varchar" value="#searchName#">
 		</cfquery>
 		
-		<cfset assertEquals(QofQ.recordCount,"___")>		
+		<cfset assertEquals(__,QofQ.recordCount)>		
 	</cffunction>
 	
 	<cffunction name="testQueryParams_typeMismatch" returntype="void" output="false"  order="10">

@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	/**
 	*@order 1

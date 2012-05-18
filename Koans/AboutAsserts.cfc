@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	/**
 	*@order 1
@@ -19,7 +19,7 @@ component extends="mxunit.framework.TestCase"{
 		
 		/*in the koans __ represents a value that you need to 
 		fill in to make the test return true in  */
-		assertEquals(result,"__");
+		assertEquals(__,result);
 	}
 
 	/**
@@ -31,6 +31,6 @@ component extends="mxunit.framework.TestCase"{
 		/*and sometimes you'll need to update the code itself to 
 		make the test pass.  Here you'll need to change the value
 		of result to make the test pass */
-		assertEquals(result,5); //also note that the "" are optional here
+		assertEquals(5,result); //also note that the "" are optional here
 	}
 }

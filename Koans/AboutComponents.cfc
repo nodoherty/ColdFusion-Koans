@@ -1,7 +1,7 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	
 	//for these tests you'll need to study /Components/testComponent.cfc
 
@@ -12,7 +12,7 @@ component extends="mxunit.framework.TestCase"{
 
 		var testComponent = new Components.TestComponent("Homer","Simpson");
 
-		assertEquals(testComponent.getFullName(),"__");
+		assertEquals(__,testComponent.getFullName());
 	}
 	
 	/**
@@ -23,6 +23,6 @@ component extends="mxunit.framework.TestCase"{
 		
 		var reverseName = testComponent.getReverseName("Ned","Flanders");
 		
-		assertEquals(reverseName,"__");	
+		assertEquals(__,reverseName);	
 	}
 }

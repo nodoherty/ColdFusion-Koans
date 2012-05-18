@@ -1,14 +1,14 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
-component extends="mxunit.framework.TestCase"{
+component extends="Koans.BaseKoan"{
 	/**
 	*@order 1
 	*/
 	public void function testAddingTwoNumbers(){
 		//What happens when we add a number and a string?
 		var myVar = 1 + "1";
-		assertEquals(myVar,"__");
+		assertEquals(__,myVar);
 	}
 	
 	/**
@@ -20,7 +20,7 @@ component extends="mxunit.framework.TestCase"{
 		
 		//bonus points if you get this right on your first try without looking
 		//read this article on floating point math if you want to know more: http://bit.ly/eD78Ve
-		assertEquals(a+b,"__");
+		assertEquals(__,a+b);
 	}	
 
 	/**
@@ -31,7 +31,7 @@ component extends="mxunit.framework.TestCase"{
 		var b = 0.06;
 		
 		//this is much slower than regular floating point math, but you'll like the result
-		assertEquals(PrecisionEvaluate(a+b),"__");
+		assertEquals(__,PrecisionEvaluate(a+b));
 	}
 
 	/**
@@ -40,7 +40,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testModulus(){
 		var myNum = 8;
 
-		assertEquals(myNum mod 2,"__");
+		assertEquals(__,myNum mod 2);
 	}
 
 	/**
@@ -49,7 +49,7 @@ component extends="mxunit.framework.TestCase"{
 	public void function testModulus2(){
 		var myNum = 5;
 
-		assertEquals(myNum mod 2,"__");
+		assertEquals(__,myNum mod 2);
 	}
 
 	/**
@@ -61,7 +61,7 @@ component extends="mxunit.framework.TestCase"{
 		//take a second to think about this one
 		myNum = addOne(myNum++);
 
-		assertEquals(myNum,"__");
+		assertEquals(__,myNum);
 		//if you are not sure what happened read this blog post by Ben Nadal http://bit.ly/tsDWYe
 	}
 
