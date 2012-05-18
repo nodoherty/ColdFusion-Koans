@@ -31,6 +31,10 @@ Michael Seid [@mbseid](http://twitter.com/#!/mbseid)
 
 Steven Neiland [@sneiland](http://twitter.com/#!/sneiland)
 
+Craig Kaminsky [@craigkaminsky](http://twitter.com/#!/craigkaminsky) [http://craigkaminsky.me/](http://craigkaminsky.me/)
+
+Mike Henke [@mikehenke](http://twitter.com/#!/mikehenke) [http://www.henke.ws/](http://www.henke.ws/)
+
 ##Thanks
 
 Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
