@@ -21,6 +21,11 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 
 ##Suggested topics
 
+* About UnitTesting - Advanced
+  * Mocking
+  * Stubbing
+  * Inject Properties
+  * Make Public
 * AboutOOP
   * Inheritence
   * Encapsulation
