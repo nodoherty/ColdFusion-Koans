@@ -11,6 +11,7 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 
 ##Suggestions for committing
 
+* We need beginner lessons too, don't hesitate to add a new test for a cftag or something simple!
 * Try not to duplicate any current lessons.
 * Be creative!
 * Add comments that explain the concept for your test.
