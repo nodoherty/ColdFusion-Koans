@@ -30,6 +30,7 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
   * Inheritence
   * Encapsulation
   * Scope
+* ColdFusion 10 features (be sure to add the suites inside the conditional if(version > 10) statement in index.html)
 
 ##Contributors
 

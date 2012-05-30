@@ -1,3 +1,37 @@
+<cfscript>
+  version = 0;
+
+  if(structKeyExists(server,"coldfusion") && structKeyExists(server.coldfusion,"productversion")){
+    version = val(server.coldfusion.productversion);
+  }
+
+  testSuite = new mxunit.framework.TestSuite();
+
+  testSuite.addAll("Koans.AboutAsserts");
+  testSuite.addAll("Koans.AboutVariables");
+  testSuite.addAll("Koans.AboutBooleans");
+  testSuite.addAll("Koans.AboutStrings");
+  testSuite.addAll("Koans.AboutNumbers");
+  testSuite.addAll("Koans.AboutDates");
+  testSuite.addAll("Koans.AboutArrays");
+  testSuite.addAll("Koans.AboutStructs");
+  testSuite.addAll("Koans.AboutLists");
+  testSuite.addAll("Koans.AboutFunctions");
+  testSuite.addAll("Koans.AboutComponents");
+  testSuite.addAll("Koans.AboutComponentTags");
+  testSuite.addAll("Koans.AboutExceptions");
+  testSuite.addAll("Koans.AboutQueries");
+
+  //add coldfusion 10 and greater tests here
+  if(version >= 10){
+    testSUite.addAll("Koans.AboutClosures");
+  } 
+
+  results = testSuite.run();
+
+  results = replaceNoCase(results.getResultsOutput("html"),"#application.currentDirectory#.","","ALL");
+  results = replaceNoCase(results,"/mxunit","mxunit","ALL");
+</cfscript>
 <!DOCTYPE html>
 <html>
   <head>
@@ -77,29 +111,7 @@ line-height: 25px
     <div id='top_line'></div>
     <div id='main_content'>
       <section id='introduction'>
-<cfscript>
-	testSuite = new mxunit.framework.TestSuite();
 
-	testSuite.addAll("Koans.AboutAsserts");
-	testSuite.addAll("Koans.AboutVariables");
-	testSuite.addAll("Koans.AboutBooleans");
-	testSuite.addAll("Koans.AboutStrings");
-	testSuite.addAll("Koans.AboutNumbers");
-	testSuite.addAll("Koans.AboutDates");
-	testSuite.addAll("Koans.AboutArrays");
-	testSuite.addAll("Koans.AboutStructs");
-	testSuite.addAll("Koans.AboutLists");
-	testSuite.addAll("Koans.AboutFunctions");
-	testSuite.addAll("Koans.AboutComponents");
-	testSuite.addAll("Koans.AboutComponentTags");
-	testSuite.addAll("Koans.AboutExceptions");
-	testSuite.addAll("Koans.AboutQueries");
-
-	results = testSuite.run();
-
-	results = replaceNoCase(results.getResultsOutput("html"),"#application.currentDirectory#.","","ALL");
-	results = replaceNoCase(results,"/mxunit","mxunit","ALL");
-</cfscript>
 <div style="clear: both; display: block;">
 <section id="welcome">
     <h1><span>Welcome to the ColdFusion Koans</span></h1>
