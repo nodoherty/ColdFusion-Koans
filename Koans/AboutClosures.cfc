@@ -17,9 +17,9 @@ component extends="Koans.BaseKoan"{
 		var actual = function(string appendMe){
 			var myNewVar = "foo";
 
-			return myNewVar & appendMe;
+			return myNewVar & arguments.appendMe;
 		}; 
 
-		assertEquals(__,actual);
+		assertEquals(__,actual('bar'));
 	}
 }
