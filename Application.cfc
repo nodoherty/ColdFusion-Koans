@@ -11,6 +11,14 @@ component{
 
 	public boolean function onApplicationStart(){
 		application.currentDirectory = getCurrentDirectory();
+		
+		if(structKeyExists(server,"coldfusion") && structKeyExists(server.coldfusion,"productversion")){
+			application.version = val(server.coldfusion.productversion);
+		}
+		else{
+			application.version = 0;
+		}
+		
 		return true;
 	}
 

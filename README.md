@@ -9,6 +9,20 @@ As you complete a secion you'll confirm your tests by refreshing this page or ru
 
 **This is a comunity run project to please feel free to fork this project and contribute any time.  See the Suggested topics for ideas if you need one or feel free to add your own**
 
+##ColdFusion 10 Topics
+
+When adding topics that are reliant to ColdFusion 10 make sure to add them inside the conditional statement:
+
+```cfm
+ if(application.version >= 10){
+  /****************
+    If you have a topic that is 100% reliant on ColdFusion 10 or greater add them here
+  *****************/
+    ...
+  } 
+```
+in index.cfm.
+
 ##Suggestions for committing
 
 * We need beginner lessons too, don't hesitate to add a new test for a cftag or something simple!

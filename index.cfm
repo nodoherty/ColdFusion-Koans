@@ -1,9 +1,7 @@
 <cfscript>
   version = 0;
 
-  if(structKeyExists(server,"coldfusion") && structKeyExists(server.coldfusion,"productversion")){
-    version = val(server.coldfusion.productversion);
-  }
+ 
 
   testSuite = new mxunit.framework.TestSuite();
 
@@ -22,8 +20,10 @@
   testSuite.addAll("Koans.AboutExceptions");
   testSuite.addAll("Koans.AboutQueries");
 
-  //add coldfusion 10 and greater tests here
-  if(version >= 10){
+  if(application.version >= 10){
+  /****************
+    If you have a topic that is 100% reliant on ColdFusion 10 or greater add them here
+  *****************/
     testSUite.addAll("Koans.AboutClosures");
   } 
 
