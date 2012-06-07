@@ -56,6 +56,8 @@ Craig Kaminsky [@craigkaminsky](http://twitter.com/#!/craigkaminsky) [http://cra
 
 Mike Henke [@mikehenke](http://twitter.com/#!/mikehenke) [http://www.henke.ws/](http://www.henke.ws/)
 
+Niall O'Doherty [@nodoherty](http://twitter.com/#!/nodoherty) [http://www.niallodoherty.com/](http://www.niallodoherty.com/)
+
 ##Thanks
 
 Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
