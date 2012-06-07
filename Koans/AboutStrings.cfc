@@ -256,25 +256,25 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: It's one of the 26 LOTA
 
-		assertEquals(__,chr(65));
+		assertEquals(__, chr(65));
 	}
 	
 	
 	/**
 	*@order 21
 	*/
-	public void function testCJustify(){
+	public void function testcJustify(){
 		
-		// Use the CJustify() function to center a string in a field length.
+		// Use the cJustify() function to center a string in a field length.
 		// Returns: String, center-justified by adding spaces before or after the input parameter. If length is less than the length of the input parameter string, the string is returned unchanged.
 		// Usage: Cjustify(string, length)
 
-		var inputLength   = 35;
+		var inputLength   = 10;
 		var inputString   = "centered";
-		var justifyString = Cjustify(inputString, inputLength);
+		var justifyString = cJustify(inputString, inputLength);
 
 		// Hint: Fill in the gaps
-		assertEquals(__,justifyString);
+		assertEquals(__, justifyString);
 	}
 	
 	
@@ -283,13 +283,13 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCJustifyLength(){
 		
-		// Use the CJustify() function to center a string in a field length.
+		// Use the cJustify() function to center a string in a field length.
 		// Returns: String, center-justified by adding spaces before or after the input parameter. If length is less than the length of the input parameter string, the string is returned unchanged.
 		// Usage: Cjustify(string, length)
 
 		var inputLength   = 35;
 		var inputString   = "centered";
-		var justifyString = Cjustify(inputString, inputLength);
+		var justifyString = cJustify(inputString, inputLength);
 
 		// Hint: Spacing included
 		assertEquals(__, len(justifyString));
@@ -301,18 +301,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareEqualStrings(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "Equal";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -321,18 +321,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStrings(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "equaL";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -341,18 +341,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStringsLower(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "Unequal";
 
 		// Hint: These string are not equal in order
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -361,18 +361,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStringsHigher(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns : -1, if string1 is less than string2
 		//            0, if string1 is equal to string2
 		//            1, if string1 is greater than string2
 		// Note    :  
-		// Usage   : Compare(string1, string2)
+		// Usage   : compare(string1, string2)
 
 		var string1   = "Unequal";
 		var string2   = "Equal";
 
 		// Hint    : These string are not equal in order
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__,  compare(string1, string2));
 	}
 	
 	
@@ -386,13 +386,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "EqUaL";
 		var string2   = "eQuAl";
 
 		// Hint: There is no difference in these strings, aside from their case
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -406,13 +406,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "equally equal";
 
 		// Hint: There is a difference in these strings
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -426,13 +426,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "sequally equal";
 
 		// Hint: What comes first E or s?
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -446,13 +446,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "sequally equal";
 		var string2   = "Equal";
 
 		// Hint: Notice the order...?
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__,  compareNoCase(string1, string2));
 	}
 	
 	
@@ -461,17 +461,17 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringDefaultLocale(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDate   = Now();
 		var testDay    = DayOfWeek(testDate);
 
 		// Hint: This will continually fail, but it's English
-		assertEquals(__,  DayOfWeekAsString(DayOfWeek(testDay)));
+		assertEquals(__,  dayOfWeekAsString(DayOfWeek(testDay)));
 	}
 	
 	
@@ -480,16 +480,16 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringWithSpanishLocale(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDate   = Now();
 
 		// Hint: Hola, this will continuously fail
-		assertEquals(__,  DayOfWeekAsString(DayOfWeek(testDate), "es"));
+		assertEquals(__, dayOfWeekAsString(DayOfWeek(testDate), "es"));
 	}
 	
 	
@@ -498,15 +498,15 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringWithFixedDay(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDayAsNumber = 2;
 
 		// Hint: Everyones favourite day...but what's up with the number?
-		assertEquals(__,  DayOfWeekAsString( testDayAsNumber ));
+		assertEquals(__, dayOfWeekAsString( testDayAsNumber ));
 	}
 }
