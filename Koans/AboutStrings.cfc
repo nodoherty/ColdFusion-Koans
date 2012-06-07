@@ -171,6 +171,8 @@ component extends="Koans.BaseKoan"{
 	*@order 14
 	*/
 	public void function testSearchingString3(){
+		// Note    : For more details see: http://tinyurl.com/cjsdlf2
+		// Usage   : Find(substring, string [, start ])
 		var myVar = "To start press any key. Where's the any key?";
 
 		assertEquals(__,find("ANY",myVar,26));
@@ -224,7 +226,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: If letters could talk, one might say this.
 
-		assertEquals(__,spanIncluding(martySays, "This "));
+		assertEquals(__, spanIncluding(martySays, "This "));
 
 	}
 
@@ -240,7 +242,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: It's alphanumeric without the alpha
 
-		assertEquals(__,asc("A"));
+		assertEquals(__, asc("A"));
 	}
 	
 	
@@ -256,7 +258,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: It's one of the 26 LOTA
 
-		assertEquals(__,chr(65));
+		assertEquals(__, chr(65));
 	}
 	
 	
@@ -274,7 +276,7 @@ component extends="Koans.BaseKoan"{
 		var justifyString = Cjustify(inputString, inputLength);
 
 		// Hint: Fill in the gaps
-		assertEquals(__,justifyString);
+		assertEquals(__, justifyString);
 	}
 	
 	
@@ -312,7 +314,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "Equal";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, Compare(string1, string2));
 	}
 	
 	
@@ -332,7 +334,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "equaL";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, Compare(string1, string2));
 	}
 	
 	
@@ -352,7 +354,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "Unequal";
 
 		// Hint: These string are not equal in order
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, Compare(string1, string2));
 	}
 	
 	
@@ -372,7 +374,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "Equal";
 
 		// Hint    : These string are not equal in order
-		assertEquals(__,  Compare(string1, string2));
+		assertEquals(__, Compare(string1, string2));
 	}
 	
 	
@@ -392,7 +394,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "eQuAl";
 
 		// Hint: There is no difference in these strings, aside from their case
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, CompareNoCase(string1, string2));
 	}
 	
 	
@@ -412,7 +414,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "equally equal";
 
 		// Hint: There is a difference in these strings
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, CompareNoCase(string1, string2));
 	}
 	
 	
@@ -432,7 +434,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "sequally equal";
 
 		// Hint: What comes first E or s?
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, CompareNoCase(string1, string2));
 	}
 	
 	
@@ -452,7 +454,7 @@ component extends="Koans.BaseKoan"{
 		var string2   = "Equal";
 
 		// Hint: Notice the order...?
-		assertEquals(__,  CompareNoCase(string1, string2));
+		assertEquals(__, CompareNoCase(string1, string2));
 	}
 	
 	
@@ -471,7 +473,7 @@ component extends="Koans.BaseKoan"{
 		var testDay    = DayOfWeek(testDate);
 
 		// Hint: This will continually fail, but it's English
-		assertEquals(__,  DayOfWeekAsString(DayOfWeek(testDay)));
+		assertEquals(__, DayOfWeekAsString(DayOfWeek(testDay)));
 	}
 	
 	
@@ -489,7 +491,7 @@ component extends="Koans.BaseKoan"{
 		var testDate   = Now();
 
 		// Hint: Hola, this will continuously fail
-		assertEquals(__,  DayOfWeekAsString(DayOfWeek(testDate), "es"));
+		assertEquals(__, DayOfWeekAsString(DayOfWeek(testDate), "es"));
 	}
 	
 	
@@ -507,6 +509,168 @@ component extends="Koans.BaseKoan"{
 		var testDayAsNumber = 2;
 
 		// Hint: Everyones favourite day...but what's up with the number?
-		assertEquals(__,  DayOfWeekAsString( testDayAsNumber ));
+		assertEquals(__, DayOfWeekAsString( testDayAsNumber ));
 	}
+	
+	
+	/**
+	 *@order 34
+	 */
+	public void function testFindOneOf(){
+		
+		// Use the FindOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
+		// Returns : The position of the first member of set found in string; or 0, if no member of set is found in string.
+		// Note    : For more details see: http://tinyurl.com/dyxqylg
+		// Usage   : FindOneOf(set, string [, start ])
+
+		var testSet    = "aeiou";
+		var testString = "The quick brown fox jumped over the lazy dog";
+
+		// Hint: It's in "The" answer
+		assertEquals(__, FindOneOf( testSet, testString, 1 ));
+	}
+	
+	
+	/**
+	 *@order 35
+	 */
+	public void function testFindOneOfAgain(){
+		
+		// Use the FindOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
+		// Returns : The position of the first member of set found in string; or 0, if no member of set is found in string.
+		// Note    : For more details see: http://tinyurl.com/dyxqylg
+		// Usage   : FindOneOf(set, string [, start ])
+
+		var testSet    = "aeiou";
+		var testString = "Hmmm quick brown foxes jumping over lazy dogs";
+
+		// Hint: It's further up the chain this time
+		assertEquals(__, FindOneOf( testSet, testString, 1 ));
+	}
+	
+	
+	/**
+	 *@order 36
+	 */
+	public void function testInsertEnd(){
+		
+		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Returns : A string.
+		// Note    : For more details see: http://tinyurl.com/cwo3olq
+		// Usage   : Insert(substring, string, position)
+
+		var testSubString = " asleep in the garden ";
+		var testString    = "The quick brown fox jumped over the lazy dog";
+		var testPosition  = len(testString);
+
+		// Hint: The end - notice the case of the text?
+		assertEquals(__, Insert( testSubString, testString, testPosition ));
+	}
+	
+	
+	/**
+	 *@order 37
+	 */
+	public void function testInsertBeginning(){
+		
+		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Returns : A string.
+		// Note    : For more details see: http://tinyurl.com/cwo3olq
+		// Usage   : Insert(substring, string, position)
+
+		var testSubString = " Asleep in the garden ";
+		var testString    = "the quick brown fox jumped over the lazy dog";
+		var testPosition  = 0;
+
+		// Hint: The begining - notice the case of the text?
+		assertEquals(__, Insert( testSubString, testString, testPosition ));
+	}
+	
+	
+	/**
+	 *@order 38
+	 */
+	public void function testInsertMiddle(){
+		
+		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Returns : A string.
+		// Note    : For more details see: http://tinyurl.com/cwo3olq
+		// Usage   : Insert(substring, string, position)
+
+		var testSubString = " asleep in the garden ";
+		var testString    = "The quick brown fox jumped over the lazy dog.  How'd that happen?";
+		var testPosition  = 19;
+
+		// Hint: The middle - notice the case of the text?
+		assertEquals(__, Insert( testSubString, testString, testPosition ));
+	}
+	
+	
+	/**
+	 *@order 39
+	 */
+	public void function testLCase(){
+		
+		// Use the LCase() function to convert the alphabetic characters in a string to lowercase.
+		// Returns : A string, converted to lowercase.
+		// Note    : For more details see: http://tinyurl.com/cx3kz4l
+		// Usage   : LCase(string)
+
+		var testString    = "EASY PEASY...";
+
+		// Hint: Method name speaks for itself
+		assertEquals(__, LCase( testString));
+	}
+	
+	
+	/**
+	 *@order 40
+	 */
+	public void function testLCaseWithNumbers(){
+		
+		// Use the LCase() function to convert the alphabetic characters in a string to lowercase.
+		// Returns : A string, converted to lowercase.
+		// Note    : For more details see: http://tinyurl.com/cx3kz4l
+		// Usage   : LCase(string)
+
+		var testString    = "ABC easy AS 123...";
+
+		// Hint: Method name speaks for itself
+		assertEquals(__, LCase( testString));
+	}
+	
+	
+	/**
+	 *@order 41
+	 */
+	public void function testUCase(){
+		
+		// Use the UCase() function to convert the alphabetic characters in a string to uppercase.
+		// Returns : A string, converted to uppercase.
+		// Note    : For more details see: http://tinyurl.com/bwzaxfo
+		// Usage   : UCase(string)
+
+		var testString    = "abc easy as pie...";
+
+		// Hint: Method name speaks for itself
+		assertEquals(__, UCase( testString));
+	}
+	
+	
+	/**
+	 *@order 42
+	 */
+	public void function testUCaseWithNumbers(){
+		
+		// Use the UCase() function to convert the alphabetic characters in a string to uppercase.
+		// Returns : A string, converted to uppercase.
+		// Note    : For more details see: http://tinyurl.com/bwzaxfo
+		// Usage   : UCase(string)
+
+		var testString    = "abc easy as 123...!!!";
+
+		// Hint: Method name speaks for itself
+		assertEquals(__, UCase( testString));
+	}
+	 
 }
