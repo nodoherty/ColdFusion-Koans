@@ -25,6 +25,7 @@ in index.cfm.
 
 ##Suggestions for committing
 
+**Be sure to read [https://help.github.com/articles/dealing-with-line-endings](https://help.github.com/articles/dealing-with-line-endings) about line endings if you aren't sure how they can affect your pull requests!**
 * We need beginner lessons too, don't hesitate to add a new test for a cftag or something simple!
 * Try not to duplicate any current lessons.
 * Be creative!
