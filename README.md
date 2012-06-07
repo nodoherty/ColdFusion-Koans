@@ -5,9 +5,9 @@ open the file AboutAsserts/AboutAsserts.cfc and begin making the tests pass.
 
 **Its important that you use the mxunit that is packaged with this project.   It will run the unit tests in order!**
 
-As you complete a secion you'll confirm your tests by refreshing this page or running the test suite using the mxunit eclipse plugin.
+As you complete a section you'll confirm your tests by refreshing this page or running the test suite using the mxunit eclipse plugin.
 
-**This is a comunity run project to please feel free to fork this project and contribute any time.  See the Suggested topics for ideas if you need one or feel free to add your own**
+**This is a community run project to please feel free to fork this project and contribute any time.  See the Suggested topics for ideas if you need one or feel free to add your own**
 
 ##ColdFusion 10 Topics
 
