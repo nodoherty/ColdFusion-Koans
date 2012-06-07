@@ -19,7 +19,7 @@ component extends="Koans.BaseKoan"{
 	public void function testAddingAStructKey(){
 		var myStruct = {foo = "Foo"};
 
-		//add the correct key and value to the mystruct to make the test pass		
+		//add the correct key and value to the mystruct to make the test pass
 		assertEquals(myStruct.bar,"Bar");
 	}
 
@@ -34,7 +34,7 @@ component extends="Koans.BaseKoan"{
 		// 2) structureName["key"] - this way is useful if you have dynamic keys or spaces in keys
 
 		assertEquals("__","Bar");
-		//access the sturcture key in another way
+		//access the structure key in another way
 		assertEquals("__","Bar");
 	}
 
