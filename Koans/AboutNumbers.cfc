@@ -31,7 +31,7 @@ component extends="Koans.BaseKoan"{
 		var b = 0.06;
 		
 		//this is much slower than regular floating point math, but you'll like the result
-		assertEquals(__,PrecisionEvaluate(a+b));
+		assertEquals(__,precisionEvaluate(a+b));
 	}
 
 	/**

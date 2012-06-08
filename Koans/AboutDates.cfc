@@ -101,7 +101,7 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeek(){
 		
-		// Use the DayOfWeek() function to determine the day of the week, in a date.
+		// Use the dayOfWeek() function to determine the day of the week, in a date.
 		// Returns   : The ordinal for the day of the week, as an integer in the range 1 (Sunday) to 7 (Saturday).
 		// Usage     : monthAsString(monthNumber)
 		// Reference : http://tinyurl.com/cbargfj
@@ -109,7 +109,7 @@ component extends="Koans.BaseKoan"{
 		var testDate   = Now();
 
 		// Hint: This will fail on a daily basis
-		assertEquals(__,DayOfWeek(testDate));
+		assertEquals(__,dayOfWeek(testDate));
 
 	}
 }

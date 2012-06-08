@@ -251,10 +251,10 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testChrToDetermineCharacterOfUCS2Value(){
 		
-		// Use the Chr() function to determine the corresponding character of a UCS-2 value.
+		// Use the chr() function to determine the corresponding character of a UCS-2 value.
 		// Returns: A character with the specified UCS-2 character code.
 		// Note: For more details on UCS-2 character encoding please visit http://tinyurl.com/ckuxlyq. 
-		// Usage: Chr(number)
+		// Usage: chr(number)
 
 		// Hint: It's one of the 26 LOTA
 
@@ -265,15 +265,15 @@ component extends="Koans.BaseKoan"{
 	/**
 	*@order 21
 	*/
-	public void function testCJustify(){
+	public void function testcJustify(){
 		
-		// Use the CJustify() function to center a string in a field length.
+		// Use the cJustify() function to center a string in a field length.
 		// Returns: String, center-justified by adding spaces before or after the input parameter. If length is less than the length of the input parameter string, the string is returned unchanged.
-		// Usage: Cjustify(string, length)
+		// Usage: cJustify(string, length)
 
-		var inputLength   = 35;
+		var inputLength   = 10;
 		var inputString   = "centered";
-		var justifyString = Cjustify(inputString, inputLength);
+		var justifyString = cJustify(inputString, inputLength);
 
 		// Hint: Fill in the gaps
 		assertEquals(__, justifyString);
@@ -285,13 +285,13 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCJustifyLength(){
 		
-		// Use the CJustify() function to center a string in a field length.
+		// Use the cJustify() function to center a string in a field length.
 		// Returns: String, center-justified by adding spaces before or after the input parameter. If length is less than the length of the input parameter string, the string is returned unchanged.
-		// Usage: Cjustify(string, length)
+		// Usage: cJustify(string, length)
 
 		var inputLength   = 35;
 		var inputString   = "centered";
-		var justifyString = Cjustify(inputString, inputLength);
+		var justifyString = cJustify(inputString, inputLength);
 
 		// Hint: Spacing included
 		assertEquals(__, len(justifyString));
@@ -303,18 +303,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareEqualStrings(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "Equal";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__, Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -323,18 +323,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStrings(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "equaL";
 
 		// Hint: There is no difference in these strings
-		assertEquals(__, Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -343,18 +343,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStringsLower(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns: -1, if string1 is less than string2
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "Unequal";
 
 		// Hint: These string are not equal in order
-		assertEquals(__, Compare(string1, string2));
+		assertEquals(__, compare(string1, string2));
 	}
 	
 	
@@ -363,18 +363,18 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testCompareUnequalStringsHigher(){
 		
-		// Use the Compare() function to perform a case sensitive comparison of two strings.
+		// Use the compare() function to perform a case sensitive comparison of two strings.
 		// Returns : -1, if string1 is less than string2
 		//            0, if string1 is equal to string2
 		//            1, if string1 is greater than string2
 		// Note    :  
-		// Usage   : Compare(string1, string2)
+		// Usage   : compare(string1, string2)
 
 		var string1   = "Unequal";
 		var string2   = "Equal";
 
 		// Hint    : These string are not equal in order
-		assertEquals(__, Compare(string1, string2));
+		assertEquals(__,  compare(string1, string2));
 	}
 	
 	
@@ -388,13 +388,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "EqUaL";
 		var string2   = "eQuAl";
 
 		// Hint: There is no difference in these strings, aside from their case
-		assertEquals(__, CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -408,13 +408,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "equally equal";
 
 		// Hint: There is a difference in these strings
-		assertEquals(__, CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -428,13 +428,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "Equal";
 		var string2   = "sequally equal";
 
 		// Hint: What comes first E or s?
-		assertEquals(__, CompareNoCase(string1, string2));
+		assertEquals(__, compareNoCase(string1, string2));
 	}
 	
 	
@@ -448,13 +448,13 @@ component extends="Koans.BaseKoan"{
 		//           0, if string1 is equal to string2
 		//           1, if string1 is greater than string2
 		// Note:  
-		// Usage: Compare(string1, string2)
+		// Usage: compare(string1, string2)
 
 		var string1   = "sequally equal";
 		var string2   = "Equal";
 
 		// Hint: Notice the order...?
-		assertEquals(__, CompareNoCase(string1, string2));
+		assertEquals(__,  compareNoCase(string1, string2));
 	}
 	
 	
@@ -463,17 +463,17 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringDefaultLocale(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDate   = Now();
 		var testDay    = DayOfWeek(testDate);
 
 		// Hint: This will continually fail, but it's English
-		assertEquals(__, DayOfWeekAsString(DayOfWeek(testDay)));
+		assertEquals(__,  dayOfWeekAsString(DayOfWeek(testDay)));
 	}
 	
 	
@@ -482,16 +482,16 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringWithSpanishLocale(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDate   = Now();
 
 		// Hint: Hola, this will continuously fail
-		assertEquals(__, DayOfWeekAsString(DayOfWeek(testDate), "es"));
+		assertEquals(__, dayOfWeekAsString(DayOfWeek(testDate), "es"));
 	}
 	
 	
@@ -500,16 +500,16 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testDayOfWeekAsStringWithFixedDay(){
 		
-		// Use the DayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
+		// Use the dayOfWeekAsString() function to determine the day of the week, in a date, as a string function.
 		// Returns: The day of the week, as a string in the current locale, that corresponds to day_of_week.
 		// Note:  For more details on local specifics in ColdFusion see: http://tinyurl.com/75l9lc3
 		//        See also AboutDates.cfc
-		// Usage: DayOfWeekAsString(day_of_week [, locale])
+		// Usage: dayOfWeekAsString(day_of_week [, locale])
 
 		var testDayAsNumber = 2;
 
 		// Hint: Everyones favourite day...but what's up with the number?
-		assertEquals(__, DayOfWeekAsString( testDayAsNumber ));
+		assertEquals(__, dayOfWeekAsString( testDayAsNumber ));
 	}
 	
 	
@@ -518,16 +518,16 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testFindOneOf(){
 		
-		// Use the FindOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
+		// Use the findOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
 		// Returns : The position of the first member of set found in string; or 0, if no member of set is found in string.
 		// Note    : For more details see: http://tinyurl.com/dyxqylg
-		// Usage   : FindOneOf(set, string [, start ])
+		// Usage   : findOneOf(set, string [, start ])
 
 		var testSet    = "aeiou";
 		var testString = "The quick brown fox jumped over the lazy dog";
 
 		// Hint: It's in "The" answer
-		assertEquals(__, FindOneOf( testSet, testString, 1 ));
+		assertEquals(__, findOneOf( testSet, testString, 1 ));
 	}
 	
 	
@@ -536,16 +536,16 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testFindOneOfAgain(){
 		
-		// Use the FindOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
+		// Use the findOneOf() function to find the first occurrence of any one of a set of characters in a string, from a specified start position. The search is case sensitive.
 		// Returns : The position of the first member of set found in string; or 0, if no member of set is found in string.
 		// Note    : For more details see: http://tinyurl.com/dyxqylg
-		// Usage   : FindOneOf(set, string [, start ])
+		// Usage   : findOneOf(set, string [, start ])
 
 		var testSet    = "aeiou";
 		var testString = "Hmmm quick brown foxes jumping over lazy dogs";
 
 		// Hint: It's further up the chain this time
-		assertEquals(__, FindOneOf( testSet, testString, 1 ));
+		assertEquals(__, findOneOf( testSet, testString, 1 ));
 	}
 	
 	
@@ -554,17 +554,17 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testInsertEnd(){
 		
-		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Use the insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
 		// Returns : A string.
 		// Note    : For more details see: http://tinyurl.com/cwo3olq
-		// Usage   : Insert(substring, string, position)
+		// Usage   : insert(substring, string, position)
 
 		var testSubString = " asleep in the garden ";
 		var testString    = "The quick brown fox jumped over the lazy dog";
 		var testPosition  = len(testString);
 
 		// Hint: The end - notice the case of the text?
-		assertEquals(__, Insert( testSubString, testString, testPosition ));
+		assertEquals(__, insert( testSubString, testString, testPosition ));
 	}
 	
 	
@@ -573,17 +573,17 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testInsertBeginning(){
 		
-		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Use the insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
 		// Returns : A string.
 		// Note    : For more details see: http://tinyurl.com/cwo3olq
-		// Usage   : Insert(substring, string, position)
+		// Usage   : insert(substring, string, position)
 
 		var testSubString = " Asleep in the garden ";
 		var testString    = "the quick brown fox jumped over the lazy dog";
 		var testPosition  = 0;
 
 		// Hint: The begining - notice the case of the text?
-		assertEquals(__, Insert( testSubString, testString, testPosition ));
+		assertEquals(__, insert( testSubString, testString, testPosition ));
 	}
 	
 	
@@ -592,17 +592,17 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testInsertMiddle(){
 		
-		// Use the Insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
+		// Use the insert() function to insert a substring in a string after a specified character position. If position=0, prefixes the substring to the string.
 		// Returns : A string.
 		// Note    : For more details see: http://tinyurl.com/cwo3olq
-		// Usage   : Insert(substring, string, position)
+		// Usage   : insert(substring, string, position)
 
 		var testSubString = " asleep in the garden ";
 		var testString    = "The quick brown fox jumped over the lazy dog.  How'd that happen?";
 		var testPosition  = 19;
 
 		// Hint: The middle - notice the case of the text?
-		assertEquals(__, Insert( testSubString, testString, testPosition ));
+		assertEquals(__, insert( testSubString, testString, testPosition ));
 	}
 	
 	
@@ -611,15 +611,15 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testLCase(){
 		
-		// Use the LCase() function to convert the alphabetic characters in a string to lowercase.
+		// Use the lCase() function to convert the alphabetic characters in a string to lowercase.
 		// Returns : A string, converted to lowercase.
 		// Note    : For more details see: http://tinyurl.com/cx3kz4l
-		// Usage   : LCase(string)
+		// Usage   : lCase(string)
 
 		var testString    = "EASY PEASY...";
 
 		// Hint: Method name speaks for itself
-		assertEquals(__, LCase( testString));
+		assertEquals(__, lCase( testString));
 	}
 	
 	
@@ -628,15 +628,15 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testLCaseWithNumbers(){
 		
-		// Use the LCase() function to convert the alphabetic characters in a string to lowercase.
+		// Use the lCase() function to convert the alphabetic characters in a string to lowercase.
 		// Returns : A string, converted to lowercase.
 		// Note    : For more details see: http://tinyurl.com/cx3kz4l
-		// Usage   : LCase(string)
+		// Usage   : lCase(string)
 
 		var testString    = "ABC easy AS 123...";
 
 		// Hint: Method name speaks for itself
-		assertEquals(__, LCase( testString));
+		assertEquals(__, lCase( testString));
 	}
 	
 	
@@ -645,15 +645,15 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testUCase(){
 		
-		// Use the UCase() function to convert the alphabetic characters in a string to uppercase.
+		// Use the uCase() function to convert the alphabetic characters in a string to uppercase.
 		// Returns : A string, converted to uppercase.
 		// Note    : For more details see: http://tinyurl.com/bwzaxfo
-		// Usage   : UCase(string)
+		// Usage   : uCase(string)
 
 		var testString    = "abc easy as pie...";
 
 		// Hint: Method name speaks for itself
-		assertEquals(__, UCase( testString));
+		assertEquals(__, uCase( testString));
 	}
 	
 	
@@ -662,15 +662,15 @@ component extends="Koans.BaseKoan"{
 	 */
 	public void function testUCaseWithNumbers(){
 		
-		// Use the UCase() function to convert the alphabetic characters in a string to uppercase.
+		// Use the uCase() function to convert the alphabetic characters in a string to uppercase.
 		// Returns : A string, converted to uppercase.
 		// Note    : For more details see: http://tinyurl.com/bwzaxfo
-		// Usage   : UCase(string)
+		// Usage   : uCase(string)
 
 		var testString    = "abc easy as 123...!!!";
 
 		// Hint: Method name speaks for itself
-		assertEquals(__, UCase( testString));
+		assertEquals(__, uCase( testString));
 	}
 	 
 }

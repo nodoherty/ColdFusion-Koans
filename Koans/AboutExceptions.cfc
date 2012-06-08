@@ -58,6 +58,9 @@ component extends="Koans.BaseKoan" {
  	* @order 3
  	*/ 
 	public void function testCreatingYourOwnException(){
+		//ColdFusion allows you to create your own exceptions and exception types http://adobe.ly/LF8mV9
+		//In order to get this test to pass, get the generateError method to throw the type of error defined on line 57
+
 		generateError();
 	}
 
