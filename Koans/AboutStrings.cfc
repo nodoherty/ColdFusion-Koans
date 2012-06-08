@@ -243,8 +243,7 @@ component extends="Koans.BaseKoan"{
 		// Hint: It's alphanumeric without the alpha
 
 		assertEquals(__, asc("A"));
-	}
-	
+	}	
 	
 	/**
 	*@order 20
@@ -259,8 +258,7 @@ component extends="Koans.BaseKoan"{
 		// Hint: It's one of the 26 LOTA
 
 		assertEquals(__, chr(65));
-	}
-	
+	}	
 	
 	/**
 	*@order 21
@@ -277,8 +275,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Fill in the gaps
 		assertEquals(__, justifyString);
-	}
-	
+	}	
 	
 	/**
 	*@order 22
@@ -295,8 +292,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Spacing included
 		assertEquals(__, len(justifyString));
-	}
-	
+	}	
 	
 	/**
 	*@order 23
@@ -315,8 +311,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: There is no difference in these strings
 		assertEquals(__, compare(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 24
@@ -335,8 +330,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: There is no difference in these strings
 		assertEquals(__, compare(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 25
@@ -355,8 +349,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: These string are not equal in order
 		assertEquals(__, compare(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 26
@@ -375,8 +368,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint    : These string are not equal in order
 		assertEquals(__,  compare(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 27
@@ -395,8 +387,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: There is no difference in these strings, aside from their case
 		assertEquals(__, compareNoCase(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 28
@@ -415,8 +406,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: There is a difference in these strings
 		assertEquals(__, compareNoCase(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 29
@@ -435,8 +425,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: What comes first E or s?
 		assertEquals(__, compareNoCase(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 30
@@ -455,8 +444,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Notice the order...?
 		assertEquals(__,  compareNoCase(string1, string2));
-	}
-	
+	}	
 	
 	/**
 	*@order 31
@@ -474,8 +462,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: This will continually fail, but it's English
 		assertEquals(__,  dayOfWeekAsString(DayOfWeek(testDay)));
-	}
-	
+	}	
 	
 	/**
 	*@order 32
@@ -492,8 +479,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Hola, this will continuously fail
 		assertEquals(__, dayOfWeekAsString(DayOfWeek(testDate), "es"));
-	}
-	
+	}	
 	
 	/**
 	*@order 33
@@ -510,8 +496,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Everyones favourite day...but what's up with the number?
 		assertEquals(__, dayOfWeekAsString( testDayAsNumber ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 34
@@ -528,8 +513,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: It's in "The" answer
 		assertEquals(__, findOneOf( testSet, testString, 1 ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 35
@@ -546,8 +530,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: It's further up the chain this time
 		assertEquals(__, findOneOf( testSet, testString, 1 ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 36
@@ -565,8 +548,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: The end - notice the case of the text?
 		assertEquals(__, insert( testSubString, testString, testPosition ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 37
@@ -584,8 +566,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: The begining - notice the case of the text?
 		assertEquals(__, insert( testSubString, testString, testPosition ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 38
@@ -603,13 +584,12 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: The middle - notice the case of the text?
 		assertEquals(__, insert( testSubString, testString, testPosition ));
-	}
-	
+	}	
 	
 	/**
 	 *@order 39
 	 */
-	public void function testLCase(){
+	public void function testMakingStringLowerCaseWithLCase(){
 		
 		// Use the lCase() function to convert the alphabetic characters in a string to lowercase.
 		// Returns : A string, converted to lowercase.
@@ -620,8 +600,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Method name speaks for itself
 		assertEquals(__, lCase( testString));
-	}
-	
+	}	
 	
 	/**
 	 *@order 40
@@ -637,13 +616,12 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Method name speaks for itself
 		assertEquals(__, lCase( testString));
-	}
-	
+	}	
 	
 	/**
 	 *@order 41
 	 */
-	public void function testUCase(){
+	public void function testMakingStringUpperCaseWithUCase(){
 		
 		// Use the uCase() function to convert the alphabetic characters in a string to uppercase.
 		// Returns : A string, converted to uppercase.
@@ -654,8 +632,7 @@ component extends="Koans.BaseKoan"{
 
 		// Hint: Method name speaks for itself
 		assertEquals(__, uCase( testString));
-	}
-	
+	}	
 	
 	/**
 	 *@order 42
@@ -667,7 +644,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bwzaxfo
 		// Usage   : uCase(string)
 
-		var testString    = "abc easy as 123...!!!";
+		var testString = "abc easy as 123...!!!";
 
 		// Hint: Method name speaks for itself
 		assertEquals(__, uCase( testString));

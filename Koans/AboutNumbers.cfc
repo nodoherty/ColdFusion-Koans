@@ -2,6 +2,7 @@
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
 */
 component extends="Koans.BaseKoan"{
+
 	/**
 	*@order 1
 	*/
@@ -65,14 +66,12 @@ component extends="Koans.BaseKoan"{
 		//if you are not sure what happened read this blog post by Ben Nadal http://bit.ly/tsDWYe
 	}
 
-
 	/**
 	*@order 7
 	*/
 	private numeric function addOne(numeric myNum){
 		return myNum + 1;
 	}
-	
 	
 	/**
 	 *@order 8
@@ -84,11 +83,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cuy5rgj
 		// Usage   : Abs(number)
 
-		var testNumber    = -100;
+		var testNumber = -100;
 
-		assertEquals(__, Abs(testNumber));
+		assertEquals(__, abs(testNumber));
 	}
-	
 	
 	/**
 	 *@order 9
@@ -100,11 +98,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cuy5rgj
 		// Usage   : Abs(number)
 
-		var testNumber    = -123.12;
+		var testNumber = -123.12;
 
-		assertEquals(__, Abs(testNumber));
+		assertEquals(__, abs(testNumber));
 	}
-	
 	
 	/**
 	 *@order 10
@@ -116,11 +113,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cuy5rgj
 		// Usage   : Abs(number)
 
-		var testNumber    = -1234.E-10;
+		var testNumber = -1234.E-10;
 
-		assertEquals(__, Abs(testNumber));
+		assertEquals(__, abs(testNumber));
 	}
-	
 	
 	/**
 	 *@order 11
@@ -132,11 +128,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c9rq5uy
 		// Usage   : ACos(number)
 
-		var testNumber    = -0.01;
+		var testNumber = -0.01;
 
-		assertEquals(__, ACos(testNumber));
+		assertEquals(__, aCos(testNumber));
 	}
-	
 	
 	/**
 	 *@order 12
@@ -148,11 +143,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c9rq5uy
 		// Usage   : ACos(number)
 
-		var testNumber    = 1.0;
+		var testNumber = 1.0;
 
-		assertEquals(__, ACos(testNumber));
+		assertEquals(__, aCos(testNumber));
 	}
-	
 	
 	/**
 	 *@order 13
@@ -164,11 +158,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c9rq5uy
 		// Usage   : ACos(number)
 
-		var testNumber    = 0.0;
+		var testNumber = 0.0;
 
-		assertEquals(__, ACos(testNumber));
+		assertEquals(__, aCos(testNumber));
 	}
-	
 	
 	/**
 	 *@order 14
@@ -180,11 +173,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqw2j7d
 		// Usage   : ASin(number)
 
-		var testNumber    = 1;
+		var testNumber = 1;
 
-		assertEquals(__, ASin(testNumber));
+		assertEquals(__, aSin(testNumber));
 	}
-	
 	
 	/**
 	 *@order 15
@@ -196,11 +188,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqw2j7d
 		// Usage   : ASin(number)
 
-		var testNumber    = -1;
+		var testNumber = -1;
 
-		assertEquals(__, ASin(testNumber));
+		assertEquals(__, aSin(testNumber));
 	}
-	
 	
 	/**
 	 *@order 16
@@ -212,11 +203,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqw2j7d
 		// Usage   : ASin(number)
 
-		var testNumber    = 0;
+		var testNumber = 0;
 
-		assertEquals(__, ASin(testNumber));
+		assertEquals(__, aSin(testNumber));
 	}
-
 
 	/**
 	 *@order 17
@@ -228,11 +218,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/d8g8qlz
 		// Usage   : Atn(number)
 
-		var testNumber    = 12;
+		var testNumber = 12;
 
-		assertEquals(__, Atn(testNumber));
+		assertEquals(__, atn(testNumber));
 	}
-	
 	
 	/**
 	 *@order 18
@@ -244,11 +233,10 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/d8g8qlz
 		// Usage   : Atn(number)
 
-		var testNumber    = 0;
+		var testNumber = 0;
 
-		assertEquals(__, Atn(testNumber));
+		assertEquals(__, atn(testNumber));
 	}
-	
 	
 	/**
 	 *@order 19
@@ -260,46 +248,28 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/d8g8qlz
 		// Usage   : Atn(number)
 
-		var testNumber    = -120;
+		var testNumber = -120;
 
-		assertEquals(__, Atn(testNumber));
+		assertEquals(__, atn(testNumber));
 	}
-	
 	
 	/**
 	 *@order 20
 	 */
-	public void function testCeilingHigh(){
+	public void function testCeiling(){
 		
 		// Use the Ceiling() function to determine the closest integer that is greater than a specified number.
 		// Returns : The closest integer that is greater than a given number.
 		// Note    : For more details see: http://tinyurl.com/d8g8qlz
 		// Usage   : Ceiling(number)
 
-		var testNumber    = 19.8;
+		var testNumber = 19.1;
 
-		assertEquals(__, Ceiling(testNumber));
+		assertEquals(__, ceiling(testNumber));
 	}
-	
 	
 	/**
 	 *@order 21
-	 */
-	public void function testCeilingLow(){
-		
-		// Use the Ceiling() function to determine the closest integer that is greater than a specified number.
-		// Returns : The closest integer that is greater than a given number.
-		// Note    : For more details see: http://tinyurl.com/d8g8qlz
-		// Usage   : Ceiling(number)
-
-		var testNumber    = 19.01;
-
-		assertEquals(__, Ceiling(testNumber));
-	}
-	
-	
-	/**
-	 *@order 22
 	 */
 	public void function testCeilingBelow(){
 		
@@ -308,14 +278,13 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/d8g8qlz
 		// Usage   : Ceiling(number)
 
-		var testNumber    = 18.99;
+		var testNumber = 18.99;
 
-		assertEquals(__, Ceiling(testNumber));
+		assertEquals(__, ceiling(testNumber));
 	}
 	
-	
 	/**
-	 *@order 23
+	 *@order 22
 	 */
 	public void function testCosPositive(){
 		
@@ -324,14 +293,13 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cty67qt
 		// Usage   : Cos(number)
 
-		var testNumber    = 99.99;
+		var testNumber = 99.99;
 
-		assertEquals(__, Cos(testNumber));
+		assertEquals(__, cos(testNumber));
 	}
 	
-	
 	/**
-	 *@order 24
+	 *@order 23
 	 */
 	public void function testCosNegative(){
 		
@@ -340,14 +308,13 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cty67qt
 		// Usage   : Cos(number)
 
-		var testNumber    = -99.99;
+		var testNumber = -99.99;
 
-		assertEquals(__, Cos(testNumber));
+		assertEquals(__, cos(testNumber));
 	}
 	
-	
 	/**
-	 *@order 25
+	 *@order 24
 	 */
 	public void function testDecrementValuePositiveInteger(){
 		
@@ -356,15 +323,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c8trg2g
 		// Usage   : DecrementValue(number)
 
-		var testValue1    = 10;
-		var testValue2    = DecrementValue(testValue1);
+		var testValue1 = 10;
+		var testValue2 = decrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 26
+	 *@order 25
 	 */
 	public void function testDecrementValueNegativeInteger(){
 		
@@ -373,15 +339,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c8trg2g
 		// Usage   : DecrementValue(number)
 
-		var testValue1    = -10;
-		var testValue2    = DecrementValue(testValue1);
+		var testValue1 = -10;
+		var testValue2 = decrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 27
+	 *@order 26
 	 */
 	public void function testDecrementValuePositiveFloatingPoint(){
 		
@@ -390,15 +355,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c8trg2g
 		// Usage   : DecrementValue(number)
 
-		var testValue1    = 10.85;
-		var testValue2    = DecrementValue(testValue1);
+		var testValue1 = 10.85;
+		var testValue2 = decrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 28
+	 *@order 27
 	 */
 	public void function testDecrementValueNegativeFloatingPoint(){
 		
@@ -407,15 +371,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c8trg2g
 		// Usage   : DecrementValue(number)
 
-		var testValue1    = -10.85;
-		var testValue2    = DecrementValue(testValue1);
+		var testValue1 = -10.85;
+		var testValue2 = iecrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 29
+	 *@order 28
 	 */
 	public void function testIncrementValuePositiveInteger(){
 		
@@ -424,15 +387,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cfs3uf7
 		// Usage   : IncrementValue(number)
 
-		var testValue1    = 10;
-		var testValue2    = IncrementValue(testValue1);
+		var testValue1 = 10;
+		var testValue2 = incrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 30
+	 *@order 29
 	 */
 	public void function testIncrementValueNegativeInteger(){
 		
@@ -441,15 +403,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cfs3uf7
 		// Usage   : IncrementValue(number)
 
-		var testValue1    = -10;
-		var testValue2    = IncrementValue(testValue1);
+		var testValue1 = -10;
+		var testValue2 = incrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 31
+	 *@order 30
 	 */
 	public void function testIncrementValuePositiveFloatingPoint(){
 		
@@ -458,15 +419,14 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cfs3uf7
 		// Usage   : IncrementValue(number)
 
-		var testValue1    = 10.45;
-		var testValue2    = IncrementValue(testValue1);
+		var testValue1 = 10.45;
+		var testValue2 = incrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
 	
-	
 	/**
-	 *@order 32
+	 *@order 31
 	 */
 	public void function testIncrementValueNegativeFloatingPoint(){
 		
@@ -475,25 +435,8 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cfs3uf7
 		// Usage   : IncrementValue(number)
 
-		var testValue1    = -10.45;
-		var testValue2    = IncrementValue(testValue1);
-
-		assertEquals(__, testValue2);
-	}
-	
-	
-	/**
-	 *@order 33
-	 */
-	public void function testIncrementValueNegativeFloatingPoint(){
-		
-		// Use the IncrementValue() function to add one to an integer.
-		// Returns : Integer part of number, decremented by one.
-		// Note    : For more details see: http://tinyurl.com/cfs3uf7
-		// Usage   : IncrementValue(number)
-
-		var testValue1    = -10.45;
-		var testValue2    = IncrementValue(testValue1);
+		var testValue1 = -10.45;
+		var testValue2 = incrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
