@@ -372,7 +372,7 @@ component extends="Koans.BaseKoan"{
 		// Usage   : DecrementValue(number)
 
 		var testValue1 = -10.85;
-		var testValue2 = iecrementValue(testValue1);
+		var testValue2 = incrementValue(testValue1);
 
 		assertEquals(__, testValue2);
 	}
