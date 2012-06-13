@@ -304,22 +304,476 @@ component extends="Koans.BaseKoan"{
 		assertEquals(__,isItThere);
 	}
 
+	/**
+	*@order 16
+	*/
+	public void function testCountingValuesInAList(){
+
+		// Use the listValueCount() function to count instances of a specified value in a list. The search is case sensitive.
+		// Returns : The number of instances of a value in the list.
+		// Note    : For more details see: http://tinyurl.com/d237aml
+		// Usage   : listValueCount(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,train,boat,plane,orbiter,satellite";
+		var valueCount = 0;
+
+		// Count the values in the list
+		valueCount = listValueCount(myList, "plane", ",");
+
+		// What gets returned?  Is it 8?
+		assertEquals(__,valueCount);
+	}
+
+	/**
+	*@order 17
+	*/
+	public void function testCountingValuesInAListCaseSensitive(){
+
+		// Use the listValueCount() function to count instances of a specified value in a list. The search is case sensitive.
+		// Returns : The number of instances of a value in the list.
+		// Note    : For more details see: http://tinyurl.com/d237aml
+		// Usage   : listValueCount(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,train,boat,plane,orbiter,satellite";
+		var valueCount = 0;
+
+		// Count the values in the list
+		valueCount = listValueCount(myList, "Orbiter", ",");
+
+		// What gets returned?  Must be 1 - right?
+		assertEquals(__,valueCount);
+	}
+
+	/**
+	*@order 18
+	*/
+	public void function testCountingValuesInAListCaseInsensitive(){
+
+		// Use the listValueCountNoCase() function to count instances of a specified value in a list. The search is case-insensitive.
+		// Returns : The number of instances of value in the list.
+		// Note    : For more details see: http://tinyurl.com/dxtb3pt
+		// Usage   : listValueCountNoCase(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,train,boat,plane,orbiter,satellite";
+		var valueCount = 0;
+
+		// Count the values in the list
+		valueCount = listValueCountNoCase(myList, "Orbiter", ",");
+
+		// What gets returned?  Must be 1 this time - right?  What's different?
+		assertEquals(__,valueCount);
+	}
+
+	/**
+	*@order 19
+	*/
+	public void function testCountingValuesInAListCaseInsensitiveMatching(){
+
+		// Use the listValueCountNoCase() function to count instances of a specified value in a list. The search is case-insensitive.
+		// Returns : The number of instances of value in the list.
+		// Note    : For more details see: http://tinyurl.com/dxtb3pt
+		// Usage   : listValueCountNoCase(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var valueCount = 0;
+
+		// Count the values in the list
+		valueCount = listValueCountNoCase(myList, "PLANE", ",");
+
+		// What gets returned?  Must be 0 this time - right?                   Wrong again!!
+		assertEquals(__,valueCount);
+	}
+
+	/**
+	*@order 20
+	*/
+	public void function testGettingTheFirstElementFromTheList(){
+
+		// Use the listFirst() function to get the first element of a list.
+		// Returns : The first element of a list. If the list is empty, returns an empty string.
+		// Note    : For more details see: http://tinyurl.com/ckmloet
+		// Usage   : listFirst(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var firstItem  = 0;
+
+		// Get the first element in the list
+		firstItem = listFirst(myList, ",");
+
+		// What gets returned?  This is easy?
+		assertEquals(__,firstItem);
+	}
+
+	/**
+	*@order 21
+	*/
+	public void function testGettingTheFirstElementFromTheListWithBlankValueItems(){
+
+		// Use the listFirst() function to get the first element of a list.
+		// Returns : The first element of a list. If the list is empty, returns an empty string.
+		// Note    : For more details see: http://tinyurl.com/ckmloet
+		// Usage   : listFirst(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike,,bus,plane,train,boat,,orbiter,";
+		var firstItem  = 0;
+
+		// Get the first element in the list
+		firstItem = listFirst(myList, ",");
+
+		// What gets returned?  What happened our list?
+		assertEquals(__,firstItem);
+	}
+
+	/**
+	*@order 22
+	*/
+	public void function testGettingTheFirstElementFromTheListWithBlankValueItemsWithWhitespace(){
+
+		// Use the listFirst() function to get the first element of a list.
+		// Returns : The first element of a list. If the list is empty, returns an empty string.
+		// Note    : For more details see: http://tinyurl.com/ckmloet
+		// Usage   : listFirst(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = " ,bike, ,bus,plane,train,boat, ,orbiter, ";
+		var firstItem  = 0;
+
+		// Get the first element in the list
+		firstItem = listFirst(myList, ",");
+
+		// What gets returned?  Not so easy now?
+		assertEquals(__,firstItem);
+	}
+
+	/**
+	*@order 23
+	*/
+	public void function testGettingTheFirstElementFromTheListWithBlankValueItemsWithIgnoreEmptyValues(){
+
+		// Use the listFirst() function to get the first element of a list.
+		// Returns : The first element of a list. If the list is empty, returns an empty string.
+		// Note    : For more details see: http://tinyurl.com/ckmloet
+		// Usage   : listFirst(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike,,bus,plane,train,boat,,orbiter";
+		var firstItem  = 0;
+
+		// Get the first element in the list
+		firstItem = listFirst(myList, ",", "Yes");
+
+		// What gets returned?  Notice the extra argument to the listFirst() call above?
+		assertEquals("bike",firstItem);
+	}
+
+	/**
+	*@order 24
+	*/
+	public void function testGettingTheLastElementFromTheList(){
+
+		// Use the listLast() function to get the last element of a list.
+		// Returns : The last element of the list.
+		// Note    : For more details see: http://tinyurl.com/cdzg8hq
+		// Usage   : listLast(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var lastItem   = 0;
+
+		// Get the last element in the list
+		lastItem = listLast(myList, ",");
+
+		// What gets returned? 
+		assertEquals(__,lastItem);
+	}
+
+	/**
+	*@order 25
+	*/
+	public void function testGettingTheLastElementFromTheListWithBlankValueItems(){
+
+		// Use the listLast() function to get the last element of a list.
+		// Returns : The last element of the list.
+		// Note    : For more details see: http://tinyurl.com/cdzg8hq
+		// Usage   : listLast(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike,,bus,plane,train,boat,,orbiter,satellite,";
+		var lastItem   = 0;
+
+		// Get the last element in the list
+		lastItem = listLast(myList, ",");
+
+		// What gets returned? 
+		assertEquals(__,lastItem);
+	}
+
+	/**
+	*@order 26
+	*/
+	public void function testGettingTheLastElementFromTheListWithBlankValueItemsWithIgnoreEmptyValues(){
+
+		// Use the listLast() function to get the last element of a list.
+		// Returns : The last element of the list.
+		// Note    : For more details see: http://tinyurl.com/cdzg8hq
+		// Usage   : listLast(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike,,bus,plane,train,boat,,orbiter,satellite,";
+		var lastItem   = 0;
+
+		// Get the last element in the list
+		lastItem = listLast(myList, ",", "Yes");
+
+		// What gets returned?  Notice the extra argument to the listLast() call above?
+		assertEquals("satellite",lastItem);
+	}
+
+	/**
+	*@order 27
+	*/
+	public void function testGettingTheLengthOfTheList(){
+
+		// Use the listLen() function to get the number of elements in a list.
+		// Returns : Integer; the number of elements in a list.
+		// Note    : For more details see: http://tinyurl.com/d8cwuxf
+		// Usage   : listLen(list [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike, ,bus,plane,train,boat,,orbiter,satellite,";
+		var listLength = 0;
+
+		// Get the length of the elements in the list
+		listLength = listLen(myList, ",");
+
+		// What gets returned?  Count them - go on...
+		assertEquals(__,listLength);
+	}
+
+	/**
+	*@order 28
+	*/
+	public void function testGettingTheLengthOfTheConfusingList(){
+
+		// Use the listLen() function to get the number of elements in a list.
+		// Returns : Integer; the number of elements in a list.
+		// Note    : For more details see: http://tinyurl.com/d8cwuxf
+		// Usage   : listLen(list [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = ",bike, ,bus, plane,,, , ,,,,,train,boat,,orbiter, satellite,,, ,";
+		var listLength = 0;
+
+		// Get the length of the elements in the list
+		listLength = listLen(myList, ",");
+
+		// What gets returned?  Count them - go on...many more commas but how many more elements?
+		assertEquals(__,listLength);
+	}
+
+	/**
+	*@order 29
+	*/
+	public void function testPrependingToTheList(){
+
+		// Use the listPrepend() function to insert an element at the beginning of a list.
+		// Returns : A copy of the list, with value inserted at the first position.
+		// Note    : For more details see: http://tinyurl.com/btm78zf
+		// Usage   : listPrepend(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var listCopy   = "";
+
+		// Prepend a specified value to the list
+		listCopy = listPrepend(myList, "skate board");
+
+		// What gets returned??
+		assertEquals(__,listCopy);
+	}	
+
+	/**
+	*@order 30
+	*/
+	public void function testPrependingBlankValueToTheList(){
+
+		// Use the listPrepend() function to insert an element at the beginning of a list.
+		// Returns : A copy of the list, with value inserted at the first position.
+		// Note    : For more details see: http://tinyurl.com/btm78zf
+		// Usage   : listPrepend(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var listCopy   = "";
+
+		// Prepend a blank value to the list
+		listCopy = listPrepend(myList, "");
+
+		// What gets returned??  Huh???  Does it matter it's blank?
+		assertEquals(__,listCopy);
+	}
+
+	/**
+	*@order 31
+	*/
+	public void function testPrependingAnotherListValueToTheList(){
+
+		// Use the listPrepend() function to insert an element at the beginning of a list.
+		// Returns : A copy of the list, with value inserted at the first position.
+		// Note    : For more details see: http://tinyurl.com/btm78zf
+		// Usage   : listPrepend(list, value [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList     = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var listCopy   = "";
+
+		// Prepend a specified value to the list
+		listCopy = listPrepend(myList, "skate board,roller skates");
+
+		// What gets returned??  As expected?
+		assertEquals(__,listCopy);
+	}
+
+	/**
+	*@order 32
+	*/
+	public void function testQualifyingTheListWithSingleQuote(){
+
+		// Use the listQualify() function to insert a string at the beginning and end of list elements.
+		// Returns : A copy of the list, with qualifier before and after the specified elements.
+		// Note    : For more details see: http://tinyurl.com/bvjjvwv
+		// Usage   : listQualify(list, qualifier [, delimiters, elements, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList        = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var listQualified = "";
+
+		// Qualify the list values
+		listQualified = listQualify(myList, "'");
+
+		// What gets returned??  Nice feature?
+		assertEquals(__,listQualified);
+	}
+
+	/**
+	*@order 33
+	*/
+	public void function testQualifyingTheListWithDoubleQuote(){
+
+		// Use the listQualify() function to insert a string at the beginning and end of list elements.
+		// Returns : A copy of the list, with qualifier before and after the specified elements.
+		// Note    : For more details see: http://tinyurl.com/bvjjvwv
+		// Usage   : listQualify(list, qualifier [, delimiters, elements, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList        = "bike,car,bus,plane,train,boat,plane,orbiter,satellite";
+		var listQualified = "";
+
+		// Qualify the list values
+		listQualified = listQualify(myList, "&quot;");
+
+		// What gets returned??  Nice feature - notice the HTML Entity code?  Why use that?
+		assertEquals(__,listQualified);
+	}
+
+	/**
+	*@order 34
+	*/
+	public void function testQualifyingTheListWithDoubleQuoteWithListElementsWithSpecialCharacters(){
+
+		// Use the listQualify() function to insert a string at the beginning and end of list elements.
+		// Returns : A copy of the list, with qualifier before and after the specified elements.
+		// Note    : For more details see: http://tinyurl.com/bvjjvwv
+		// Usage   : listQualify(list, qualifier [, delimiters, elements, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList        = "O'Doherty,McLaughlin,McDaid,Moore";
+		var listQualified = "";
+
+		// Qualify the list values
+		listQualified = listQualify(myList, "&quot;");
+
+		// What gets returned??  Nice feature - notice the HTML Entity code?  Why use that?
+		assertEquals(__,listQualified);
+	}	
+
+	/**
+	*@order 35
+	*/
+	public void function testQualifyingTheListWithDoubleQuoteWithElementsComposedOfAlphabeticCharacters(){
+
+		// Use the listQualify() function to insert a string at the beginning and end of list elements.
+		// Returns : A copy of the list, with qualifier before and after the specified elements.
+		// Note    : For more details see: http://tinyurl.com/bvjjvwv
+		// Usage   : listQualify(list, qualifier [, delimiters, elements, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList        = "O'Doherty,McLaughlin,McDaid,Moore";
+		var listQualified = "";
+
+		// Qualify the list values
+		listQualified = listQualify(myList, "&quot;", ",");
+
+		// What gets returned??  Nice feature - notice the HTML Entity code?  Why use that?
+		assertEquals(__,listQualified);
+	}
+
+	/**
+	*@order 36
+	*/
+	public void function testQualifyingTheListWithDoubleQuoteWithElementsComposedOfAlphaNumericCharacters(){
+
+		// Use the listQualify() function to insert a string at the beginning and end of list elements.
+		// Returns : A copy of the list, with qualifier before and after the specified elements.
+		// Note    : For more details see: http://tinyurl.com/bvjjvwv
+		// Usage   : listQualify(list, qualifier [, delimiters, elements, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList        = "Apollo 11,Apollo 13,STS-124,STS-125";
+		var listQualified = "";
+
+		// Qualify the list values
+		listQualified = listQualify(myList, "&quot;", ",");
+
+		// What gets returned??  Nice feature - notice the HTML Entity code?  Why use that?
+		assertEquals(__,listQualified);
+	}
+
+	/**
+	*@order 37
+	*/
+	public void function testlistRestWithMultiElementList(){
+
+		// Use the listRest() function to get a list, without its first element. 
+		// Returns : A copy of list, without the first element. If list has one element, returns an empty list.
+		// Note    : For more details see: http://tinyurl.com/bqdpt5y
+		// Usage   : listRest(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList         = "Apollo 11,Apollo 13,STS-124,STS-125";
+		var listRestResult = "";
+
+		// Qualify the list values
+		listRestResult = listRest(myList, ",");
+
+		// What gets returned??  Easy enough...
+		assertEquals(__,listRestResult);
+	}
+
+	/**
+	*@order 38
+	*/
+	public void function testlistRestWithSingleElementList(){
+
+		// Use the listRest() function to get a list, without its first element. 
+		// Returns : A copy of list, without the first element. If list has one element, returns an empty list.
+		// Note    : For more details see: http://tinyurl.com/bqdpt5y
+		// Usage   : listRest(list [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList         = "Apollo 11";
+		var listRestResult = "";
+
+		// Qualify the list values
+		listRestResult = listRest(myList, ",");
+
+		// What gets returned??  Hmmm - what happened?
+		assertEquals(myList,listRestResult);
+	}
+
+
 	/*
 		BEING IMPLEMENTED
-	*/
-	//listValueCountNoCase("list", "value", [delimiters]);
-	//listFirst("list", [delimiters]);
-	//listLast("list", [delimiters]);
-	//listLen("list", [delimiters]);
-	//listPrepend("list", "value", [delimiters]);
-	//listQualify("list", "qualifier", [delimiters], [elements]);
-	//listRest("list", [delimiters]);
-	//listSort("list", "sort_type", [sort_order], [delimiters]);
+	*/	
 	//listDeleteAt("list", position, [delimiters]);
 	//listGetAt("list", position, [delimiters]);
 	//listInsertAt("list", position, "value", [delimiters]);
 	//listSetAt("list", position, "value", [delimiters]);
+	//listSort("list", "sort_type", [sort_order], [delimiters]);
 	//listToArray("list", [delimiters]);
-	//listValueCount("list", "value", [delimiters]);
+	
 
 }
