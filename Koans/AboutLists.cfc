@@ -156,27 +156,7 @@ component extends="Koans.BaseKoan"{
 	/**
 	*@order 9
 	*/
-	public void function testInspectingListForValueWithDifferentCaseWithNoMatch(){
-
-		// Use the listContainsNoCase() function to determine the index of the first list element that contains a specified substring.
-		// Returns : Index of the first list element that contains substring, regardless of case. If not found, returns zero.
-		// Note    : For more details see: http://tinyurl.com/cblfeqb
-		// Usage   : listContainsNoCase(list, substring [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
-
-		var myList    = "bike,car,bus,train,boat,plane";
-		var isItThere = 0;
-
-		// Check the list for a specified substring
-		isItThere = listContainsNoCase(myList, "Orbiter", ",");
-
-		// What gets returned if it DOESN'T match?
-		assertEquals(__,isItThere);
-	}
-
-	/**
-	*@order 10
-	*/
-	public void function testInspectingListForValueThatIsCaseInsensitiveWithMatch(){
+	public void function testInspectingListForValueThatIsCaseInsensitive(){
 
 		// Use the listContainsNoCase() function to determine the index of the first list element that contains a specified substring.
 		// Returns : Index of the first list element that contains substring, regardless of case. If not found, returns zero.
@@ -194,9 +174,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 11
+	*@order 10
 	*/
-	public void function testInspectingListForListItemWithNoMatch(){
+	public void function testInspectingListForListItem(){
 
 		// Use the listFind() function to determine the index of the first list element in which a specified value occurs. Case sensitive.
 		// Returns : Index of the first list element that contains value, with matching case. If not found, returns zero.
@@ -216,9 +196,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 12
+	*@order 11
 	*/
-	public void function testInspectingListForListItemWithNoMatchAgain(){
+	public void function testInspectingListForListItem2(){
 
 		// Use the listFind() function to determine the index of the first list element in which a specified value occurs. Case sensitive.
 		// Returns : Index of the first list element that contains value, with matching case. If not found, returns zero.
@@ -233,14 +213,14 @@ component extends="Koans.BaseKoan"{
 		// Check the list for a specified substring 
 		isItThere = listFind(myList, "Bus", ",");
 
-		// What gets returned?  Why isn't this found either?
+		// What gets returned?  
 		assertEquals(__,isItThere);
 	}
 
 	/**
-	*@order 13
+	*@order 12
 	*/
-	public void function testInspectingListForListItemWithMatch(){
+	public void function testInspectingListForListItem3(){
 
 		// Use the listFind() function to determine the index of the first list element in which a specified value occurs. Case sensitive.
 		// Returns : Index of the first list element that contains value, with matching case. If not found, returns zero.
@@ -260,9 +240,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 14
+	*@order 13
 	*/
-	public void function testInspectingListForListItemWithNoMatchCaseInsensitive(){
+	public void function testInspectingListForListItemCaseInsensitive(){
 
 		// Use the listFindNoCase() function to determine the index of the first list element in which a specified value occurs. Case Insensitive.
 		// Returns : Index of the first list element that contains value. If not found, returns zero. 
@@ -283,9 +263,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 15
+	*@order 14
 	*/
-	public void function testInspectingListForListItemWithMatchCaseInsensitive(){
+	public void function testInspectingListForListItemCaseInsensitive2(){
 
 		// Use the listFindNoCase() function to determine the index of the first list element in which a specified value occurs. Case Insensitive.
 		// Returns : Index of the first list element that contains value. If not found, returns zero. 
@@ -305,7 +285,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 16
+	*@order 15
 	*/
 	public void function testCountingValuesInAList(){
 
@@ -325,9 +305,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 17
+	*@order 16
 	*/
-	public void function testCountingValuesInAListCaseSensitive(){
+	public void function testCountingValuesInAList2(){
 
 		// Use the listValueCount() function to count instances of a specified value in a list. The search is case sensitive.
 		// Returns : The number of instances of a value in the list.
@@ -345,7 +325,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 18
+	*@order 17
 	*/
 	public void function testCountingValuesInAListCaseInsensitive(){
 
@@ -365,9 +345,9 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 19
+	*@order 18
 	*/
-	public void function testCountingValuesInAListCaseInsensitiveMatching(){
+	public void function testCountingValuesInAListCaseInsensitive2(){
 
 		// Use the listValueCountNoCase() function to count instances of a specified value in a list. The search is case-insensitive.
 		// Returns : The number of instances of value in the list.
@@ -385,7 +365,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 20
+	*@order 19
 	*/
 	public void function testGettingTheFirstElementFromTheList(){
 
@@ -405,7 +385,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 21
+	*@order 20
 	*/
 	public void function testGettingTheFirstElementFromTheListWithBlankValueItems(){
 
@@ -425,7 +405,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 22
+	*@order 21
 	*/
 	public void function testGettingTheFirstElementFromTheListWithBlankValueItemsWithWhitespace(){
 
@@ -445,7 +425,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 23
+	*@order 22
 	*/
 	public void function testGettingTheFirstElementFromTheListWithBlankValueItemsWithIgnoreEmptyValues(){
 
@@ -465,7 +445,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 24
+	*@order 23
 	*/
 	public void function testGettingTheLastElementFromTheList(){
 
@@ -485,7 +465,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 25
+	*@order 24
 	*/
 	public void function testGettingTheLastElementFromTheListWithBlankValueItems(){
 
@@ -505,7 +485,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 26
+	*@order 25
 	*/
 	public void function testGettingTheLastElementFromTheListWithBlankValueItemsWithIgnoreEmptyValues(){
 
@@ -525,7 +505,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 27
+	*@order 26
 	*/
 	public void function testGettingTheLengthOfTheList(){
 
@@ -545,7 +525,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 28
+	*@order 27
 	*/
 	public void function testGettingTheLengthOfTheConfusingList(){
 
@@ -565,7 +545,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 29
+	*@order 28
 	*/
 	public void function testPrependingToTheList(){
 
@@ -585,7 +565,7 @@ component extends="Koans.BaseKoan"{
 	}	
 
 	/**
-	*@order 30
+	*@order 29
 	*/
 	public void function testPrependingBlankValueToTheList(){
 
@@ -605,7 +585,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 31
+	*@order 30
 	*/
 	public void function testPrependingAnotherListValueToTheList(){
 
@@ -625,7 +605,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 32
+	*@order 31
 	*/
 	public void function testQualifyingTheListWithSingleQuote(){
 
@@ -645,7 +625,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 33
+	*@order 32
 	*/
 	public void function testQualifyingTheListWithDoubleQuote(){
 
@@ -665,7 +645,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 34
+	*@order 33
 	*/
 	public void function testQualifyingTheListWithDoubleQuoteWithListElementsWithSpecialCharacters(){
 
@@ -685,7 +665,7 @@ component extends="Koans.BaseKoan"{
 	}	
 
 	/**
-	*@order 35
+	*@order 34
 	*/
 	public void function testQualifyingTheListWithDoubleQuoteWithElementsComposedOfAlphabeticCharacters(){
 
@@ -705,7 +685,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 36
+	*@order 35
 	*/
 	public void function testQualifyingTheListWithDoubleQuoteWithElementsComposedOfAlphaNumericCharacters(){
 
@@ -725,7 +705,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 37
+	*@order 36
 	*/
 	public void function testlistRestWithMultiElementList(){
 
@@ -745,7 +725,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	*@order 38
+	*@order 37
 	*/
 	public void function testlistRestWithSingleElementList(){
 
