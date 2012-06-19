@@ -743,17 +743,305 @@ component extends="Koans.BaseKoan"{
 		// What gets returned??  Hmmm - what happened?
 		assertEquals(myList,listRestResult);
 	}
-
-
-	/*
-		BEING IMPLEMENTED
-	*/	
-	//listDeleteAt("list", position, [delimiters]);
-	//listGetAt("list", position, [delimiters]);
-	//listInsertAt("list", position, "value", [delimiters]);
-	//listSetAt("list", position, "value", [delimiters]);
-	//listSort("list", "sort_type", [sort_order], [delimiters]);
-	//listToArray("list", [delimiters]);
 	
+	/**
+	*@order 38
+	*/
+	public void function testDeleteAnElementFromTheList(){
+
+		// Use the listDeleteAt() function to delete an element from a list.
+		// Returns : A copy of the list, without the specified element. 
+		// Note    : For more details see: http://tinyurl.com/bwb7a43
+		// Usage   : listDeleteAt(list, position [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList             = "Apollo 11,Apollo 12,Apollo 13,Apollo 14,Apollo 15,Apollo 16,Apollo 17";
+		var listDeleteAtResult = "";
+
+		// Delete the specified list item value - remove the failed lunar landing mission
+		listDeleteAtResult = listDeleteAt(myList, 3);
+
+		// Check the list again
+		assertEquals(__,listDeleteAtResult);
+	}
+	
+	/**
+	*@order 39
+	*/
+	public void function testDeleteAnElementFromTheListUsingSpaceAsDelimeter(){
+
+		// Use the listDeleteAt() function to delete an element from a list.
+		// Returns : A copy of the list, without the specified element. 
+		// Note    : For more details see: http://tinyurl.com/bwb7a43
+		// Usage   : listDeleteAt(list, position [, delimiters ]) - square brackets indicate optional arguments
+
+		var myList             = "Apollo 11 carried the first ever astronauts to step on the moon";
+		var listDeleteAtResult = "";
+
+		// Delete the specified list item value
+		listDeleteAtResult = listDeleteAt(myList, 6, " ");
+
+		// What gets returned??  Hmmm - what happened the delimeter?  Should that be a comma?
+		assertEquals(__,listDeleteAtResult);
+	}
+	
+	/**
+	*@order 40
+	*/
+	public void function testGettingAnElementFromSpecificPositionInList(){
+
+		// Use the listGetAt() function to get a list element at a specified position.
+		// Returns : Value of the list element at position X. 
+		// Note    : For more details see: http://tinyurl.com/bnrolw4
+		// Usage   : listGetAt(list, position [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "Apollo 11 carried the first ever astronauts to step on the moon";
+		var listGetAtResult = "";
+
+		// Get a specified list item value
+		listGetAtResult = listGetAt(myList, 7, " ");
+
+		// What gets returned??  Notice the delimeter?  What about the spaces?
+		assertEquals(__,listGetAtResult);
+	}
+
+	/**
+	*@order 41
+	*/
+	public void function testGettingAnElementFromSpecificPositionInListCommaDelimeted(){
+
+		// Use the listGetAt() function to get a list element at a specified position.
+		// Returns : Value of the list element at position X. 
+		// Note    : For more details see: http://tinyurl.com/bnrolw4
+		// Usage   : listGetAt(list, position [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "Apollo 11,carried,the,first,ever,astronauts,to,step,on,the,moon";
+		var listGetAtResult = "";
+
+		// Get a specified list item value
+		listGetAtResult = listGetAt(myList, 7);
+
+		// What gets returned??  Notice the delimeter this time?  Why didn't we get the same result as the previous test, it's got the same index value?
+		assertEquals(__,listGetAtResult);
+	}
+
+	/**
+	*@order 42
+	*/
+	public void function testInsertingAnElementIntoTheList(){
+
+		// Use the listInsertAt() function to insert an element into the list.
+		// Returns : A copy of the list, with value inserted at the specified position. 
+		// Note    : For more details see: http://tinyurl.com/8a25r6k
+		// Usage   : listInsertAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList             = "1,2,3,5,6,7,8,9,10";
+		var listInsertAtResult = "";
+
+		// Insert the missing sequence number
+		listInsertAtResult = listInsertAt(myList, 4, "4");
+
+		// What gets returned??  Is everything in order now?
+		assertEquals(__,listInsertAtResult);
+	}
+	
+	/**
+	*@order 43
+	*/
+	public void function testInsertingAnElementIntoTheListWithEmptyValues(){
+
+		// Use the listInsertAt() function to insert an element into the list.
+		// Returns : A copy of the list, with value inserted at the specified position. 
+		// Note    : For more details see: http://tinyurl.com/8a25r6k
+		// Usage   : listInsertAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList             = "1,2,,3,5,6,,7,8,9,,,10";
+		var listInsertAtResult = "";
+
+		// Insert the missing sequence number
+		listInsertAtResult = listInsertAt(myList, 4, "4", ",", "yes");
+
+		// What gets returned??  Is everything still in order?
+		assertEquals(__,listInsertAtResult);
+	}
+	
+	/**
+	*@order 44
+	*/
+	public void function testReplaceContentOfElementInTheList(){
+
+		// Use the listSetAt() function to replace the contents of a list element.
+		// Returns : A copy of a list, with a new value assigned to the element at a specified position. 
+		// Note    : For more details see: http://tinyurl.com/c4whx67
+		// Usage   : listSetAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "1,2,3,4,5,6,7,,9,10";
+		var listSetAtResult = "";
+
+		// Update the blank values in the list
+		listSetAtResult = listSetAt(myList, 8, "8");
+
+		// What gets returned??  OK so what happens here - what's wrong with this result - where's 9 gone?
+		assertEquals(__,listSetAtResult);
+	}
+	
+	/**
+	*@order 45
+	*/
+	public void function testReplaceContentOfElementInTheListIncludeEmptyValues(){
+
+		// Use the listSetAt() function to replace the contents of a list element.
+		// Returns : A copy of a list, with a new value assigned to the element at a specified position. 
+		// Note    : For more details see: http://tinyurl.com/c4whx67
+		// Usage   : listSetAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "1,2,3,4,5,6,7,,9,10";
+		var listSetAtResult = "";
+
+		// Update the blank values in the list
+		listSetAtResult = listSetAt(myList, 8, "8", ",", "yes");
+
+		// What gets returned??  How come things look OK here, it's the same index value?
+		assertEquals(__,listSetAtResult);
+	}
+	
+	/**
+	*@order 46
+	*/
+	public void function testSortingTheList(){
+
+		// Use the listSort() function to sort list elements according to a sort type and sort order.
+		// Returns : A copy of a list, sorted.
+		// Note    : For more details see: http://tinyurl.com/c4vukpk
+		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "1,2,3,4,5,6,7,8,9,10";
+		var listSortResult = "";
+
+		// Sort the list
+		listSortResult = listSort(myList, "numeric", "desc");
+
+		// What gets returned??  
+		assertEquals(__,listSortResult);
+	}
+	
+	/**
+	*@order 47
+	*/
+	public void function testSortingTheListWithEmptyValues(){
+
+		// Use the listSort() function to sort list elements according to a sort type and sort order.
+		// Returns : A copy of a list, sorted.
+		// Note    : For more details see: http://tinyurl.com/c4vukpk
+		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "1,2,,,3,4,5,,6,,7,,,8,9,,10";
+		var listSortResult = "";
+
+		// Sort the list
+		listSortResult = listSort(myList, "numeric", "desc");
+
+		// What gets returned??  Where have the empties gone?
+		assertEquals(__,listSortResult);
+	}
+	
+	/**
+	*@order 48
+	*/
+	public void function testSortingTheListWithEmptyValuesAsText(){
+
+		// Use the listSort() function to sort list elements according to a sort type and sort order.
+		// Returns : A copy of a list, sorted.
+		// Note    : For more details see: http://tinyurl.com/c4vukpk
+		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
+
+		var myList          = "1,2,,,3,4,5,,6,,7,,,8,9,,10";
+		var listSortResult = "";
+
+		// Sort the list
+		listSortResult = listSort(myList, "text", "desc", ",", "yes");
+
+		// What gets returned??  What happened to number 10?
+		assertEquals(__,listSortResult);
+	}
+	
+	/**
+	*@order 49
+	*/
+	public void function testConvertingTheListToAnArray(){
+
+		// Use the listToArray() function to copy the elements of a list to an array. 
+		// Returns : An Array
+		// Note    : For more details see: http://tinyurl.com/bqu9c5h
+		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
+
+		var myList            = "1,2,3,4,5,,6,,7,,,8,9,,10";
+		var listToArrayResult = "";
+
+		// Update the blank values in the list
+		listToArrayResult = listToArray(myList, "," , "yes");
+
+		// What gets returned??
+		assertEquals(__,listToArrayResult);
+	}
+	
+	/**
+	*@order 50
+	*/
+	public void function testConvertingTheListToAnArrayExcludingEmptySpaces(){
+
+		// Use the listToArray() function to copy the elements of a list to an array. 
+		// Returns : An Array
+		// Note    : For more details see: http://tinyurl.com/bqu9c5h
+		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
+
+		var myList            = "1,2,3,4,5,,6,,7,,,8,9,,10";
+		var listToArrayResult = "";
+
+		// Update the blank values in the list
+		listToArrayResult = listToArray(myList, "," , "no");
+
+		// What gets returned??  This is much cleaner - why?
+		assertEquals(__,listToArrayResult);
+	}
+	
+	/**
+	*@order 51
+	*/
+	public void function testConvertingTheListToAnArrayUsingLetters(){
+
+		// Use the listToArray() function to copy the elements of a list to an array. 
+		// Returns : An Array
+		// Note    : For more details see: http://tinyurl.com/bqu9c5h
+		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
+
+		var myList            = "A,B,,C,D,,E,F,,G,,H,I,,J,K,L,,M,N,O,P,Q,R,S,T,,,U,V,,,W,X,,Y,Z";
+		var listToArrayResult = "";
+
+		// Convert the alphabet list to an array
+		listToArrayResult = listToArray(myList, "," , "yes");
+
+		// What gets returned??  This string array is a mess!!
+		assertEquals(__,listToArrayResult);
+	}
+	
+	/**
+	*@order 52
+	*/
+	public void function testConvertingTheListToAnArrayUsingLettersAndSPaces(){
+
+		// Use the listToArray() function to copy the elements of a list to an array. 
+		// Returns : An Array
+		// Note    : For more details see: http://tinyurl.com/bqu9c5h
+		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
+
+		var myList            = "A,B,,C,D,,E,F,,G,,H,I,,J,K,L,,M,N,O,P,Q,R,S,T,,,U,V,,,W,X,,Y,Z";
+		var listToArrayResult = "";
+
+		// Get the cleaner version alphabet array
+		listToArrayResult = listToArray(myList, "," , "no");
+
+		// What gets returned??  That's tidier.
+		assertEquals(__,listToArrayResult);
+	}
 
 }
