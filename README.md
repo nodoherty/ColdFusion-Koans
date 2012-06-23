@@ -60,6 +60,8 @@ Mike Henke [@mikehenke](http://twitter.com/#!/mikehenke) [http://www.henke.ws/](
 
 Niall O'Doherty [@nodoherty](http://twitter.com/#!/nodoherty) [http://www.niallodoherty.com/](http://www.niallodoherty.com/)
 
+Miles Rausch [@awayken](https://twitter.com/awayken) [http://milesrausch.com](http://milesrausch.com)
+
 ##Thanks
 
 Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
