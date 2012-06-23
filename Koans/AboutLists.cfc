@@ -834,7 +834,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/8a25r6k
 		// Usage   : listInsertAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList             = "1,2,3,5,6,7,8,9,10";
+		var myList             = "1,2,3,5";
 		var listInsertAtResult = "";
 
 		// Insert the missing sequence number
@@ -854,7 +854,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/8a25r6k
 		// Usage   : listInsertAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList             = "1,2,,3,5,6,,7,8,9,,,10";
+		var myList             = "1,2,,3,5";
 		var listInsertAtResult = "";
 
 		// Insert the missing sequence number
@@ -874,11 +874,11 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c4whx67
 		// Usage   : listSetAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList          = "1,2,3,4,5,6,7,,9,10";
+		var myList          = "1,2,,4,5";
 		var listSetAtResult = "";
 
 		// Update the blank values in the list
-		listSetAtResult = listSetAt(myList, 8, "8");
+		listSetAtResult = listSetAt(myList, 3, "3");
 
 		// What gets returned??  OK so what happens here - what's wrong with this result - where's 9 gone?
 		assertEquals(__,listSetAtResult);
@@ -894,11 +894,11 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c4whx67
 		// Usage   : listSetAt(list, position, value [, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList          = "1,2,3,4,5,6,7,,9,10";
+		var myList          = "1,2,,4,5";
 		var listSetAtResult = "";
 
 		// Update the blank values in the list
-		listSetAtResult = listSetAt(myList, 8, "8", ",", "yes");
+		listSetAtResult = listSetAt(myList, 3, "3", ",", "yes");
 
 		// What gets returned??  How come things look OK here, it's the same index value?
 		assertEquals(__,listSetAtResult);
@@ -914,7 +914,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c4vukpk
 		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList          = "1,2,3,4,5,6,7,8,9,10";
+		var myList          = "1,2,3,4,5";
 		var listSortResult = "";
 
 		// Sort the list
@@ -934,7 +934,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c4vukpk
 		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList          = "1,2,,,3,4,5,,6,,7,,,8,9,,10";
+		var myList          = "1,2,,,3,4,5,,6";
 		var listSortResult = "";
 
 		// Sort the list
@@ -954,7 +954,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/c4vukpk
 		// Usage   : listSort(list, sort_type [, sort_order, delimiters, includeEmptyValues ]) - square brackets indicate optional arguments
 
-		var myList          = "1,2,,,3,4,5,,6,,7,,,8,9,,10";
+		var myList          = "1,2,,,3,4,5,,6";
 		var listSortResult = "";
 
 		// Sort the list
@@ -974,7 +974,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqu9c5h
 		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
 
-		var myList            = "1,2,3,4,5,,6,,7,,,8,9,,10";
+		var myList            = "1,,,4,5,,6";
 		var listToArrayResult = "";
 
 		// Update the blank values in the list
@@ -994,7 +994,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqu9c5h
 		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
 
-		var myList            = "1,2,3,4,5,,6,,7,,,8,9,,10";
+		var myList            = "1,2,,,5";
 		var listToArrayResult = "";
 
 		// Update the blank values in the list
@@ -1014,7 +1014,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqu9c5h
 		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
 
-		var myList            = "A,B,,C,D,,E,F,,G,,H,I,,J,K,L,,M,N,O,P,Q,R,S,T,,,U,V,,,W,X,,Y,Z";
+		var myList            = "A,B,,C,D,,E";
 		var listToArrayResult = "";
 
 		// Convert the alphabet list to an array
@@ -1034,7 +1034,7 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/bqu9c5h
 		// Usage   : listToArray(list [, delimiters[, includeEmptyFields[, multiCharacterDelimiter]]]) - square brackets indicate optional arguments
 
-		var myList            = "A,B,,C,D,,E,F,,G,,H,I,,J,K,L,,M,N,O,P,Q,R,S,T,,,U,V,,,W,X,,Y,Z";
+		var myList            = "A,B,,C,D,,E";
 		var listToArrayResult = "";
 
 		// Get the cleaner version alphabet array
