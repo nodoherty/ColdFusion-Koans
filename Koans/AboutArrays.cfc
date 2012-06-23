@@ -218,4 +218,48 @@ component extends="Koans.BaseKoan"{
 		// hint: arraySwap switches element positions
 		assertEquals(__,myArray[1]);
 	}
+
+	/**
+	*@order 23
+	*/
+	public void function testArraySliceOffsetCF10(){
+		// new in CF10
+		// http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSf23b27ebc7b554b647112c9713585f0e10e-8000.html
+		if(application.version >= 10){
+			var myArray = ["Luke","Leia","Yoda","Chewbacca"];
+			var result = arraySlice(myArray, 3);
+			// what is the first element of the array?
+			assertEquals(__,result[1]);
+		}
+	}
+
+	/**
+	*@order 24
+	*/
+	public void function testArraySliceOffsetLengthCF10(){
+		// new in CF10
+		// http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSf23b27ebc7b554b647112c9713585f0e10e-8000.html
+		if(application.version >= 10){
+			var myArray = ["Luke","Leia","Yoda","Chewbacca","Han","Darth Vader"];
+			var result = arraySlice(myArray, 2, 3);
+			// how many elements are there in the array?
+			assertEquals(__,ArrayLen(result));
+		}
+	}
+
+	/**
+	*@order 24
+	*/
+	public void function testArraySliceNegativeCF10(){
+		// new in CF10
+		// http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSf23b27ebc7b554b647112c9713585f0e10e-8000.html
+		if(application.version >= 10){
+			var myArray = ["Luke","Leia","Yoda","Chewbacca","Han","Darth Vader"];
+			var result = arraySlice(myArray, -2, 1);
+			// what is the first element of the array?
+			// hint: a negative value means that CF counts from the end of the array
+			assertEquals(__,result[1]);
+		}
+	}
+	
 }

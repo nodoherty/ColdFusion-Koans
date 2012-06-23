@@ -62,6 +62,8 @@ Niall O'Doherty [@nodoherty](http://twitter.com/#!/nodoherty) [http://www.niallo
 
 Miles Rausch [@awayken](https://twitter.com/awayken) [http://milesrausch.com](http://milesrausch.com)
 
+John Whish [@aliaspooryorik](https://twitter.com/aliaspooryorik) [http://www.aliaspooryorik.com/](http://www.aliaspooryorik.com)
+
 ##Thanks
 
 Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
