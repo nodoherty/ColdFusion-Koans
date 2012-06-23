@@ -42,10 +42,6 @@
     <meta content='black' name='apple-mobile-web-app-status-bar-style' />
     <link href='/apple_favicon.png' rel='apple-touch-icon' />
 
-  <cfif isDefined('url.autorefresh') AND Val(url.autorefresh)>
-    <meta http-equiv="refresh" content="<cfoutput>#Val(url.autorefresh)#</cfoutput>" />
-  </cfif>
-
     <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon' />
     <style type='text/css'>
       /*<![CDATA[*/
@@ -123,11 +119,6 @@ line-height: 25px
 	<p>The ColdFusion Koans are a set of unit tests that the user must make pass by filling in values. To get started open the file Koans/AboutAsserts.cfc and begin making the tests pass.</p>
 	<p>As you complete a section you'll confirm your tests by refreshing this page or running the test suite using the mxunit eclipse plugin.</p>
 	<p><b>This is a community run project so please feel free to fork this project and contribute any time.</b></p>
-<cfif isDefined('url.autorefresh') AND Val(url.autorefresh)>
-  <p>This page is setup to auto-refresh every <cfoutput>#Val(url.autorefresh)#</cfoutput> seconds. To stop auto-refresh, <a href="?">click here</a>.</p>
-<cfelse>
-  <p>To setup this page to auto-refresh every 30 seconds, <a href="?autorefresh=30">click here</a>.</p>
-</cfif>
 </section>
 </div>
 <div>
