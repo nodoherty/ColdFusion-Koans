@@ -1043,5 +1043,37 @@ component extends="Koans.BaseKoan"{
 		// What gets returned??  That's tidier.
 		assertEquals(__,listToArrayResult);
 	}
+	
+	/**
+	*@order 53
+	*/
+	function testCaseSensitiveListRemoveDuplicatesCF10(){
+		// listRemoveDuplicates is new in ColdFusion 10
+		// see: http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSd8001ae4abdbd911-7fc6f4b01350d8e2282-8000.html
+		if(application.version >= 10){
+			var myList            = "The cat in the hat sat on the mat";
+			// case insensitive remove duplicates
+			var result = ListRemoveDuplicates(myList, " ");
+			
+			// What gets returned?
+			assertEquals(__,result);
+		}
+	}
 
+	/**
+	*@order 54
+	*/
+	function testCaseInSensitiveListRemoveDuplicatesCF10(){
+		// listRemoveDuplicates is new in ColdFusion 10
+		// see: http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSd8001ae4abdbd911-7fc6f4b01350d8e2282-8000.html
+		if(application.version >= 10){
+			var myList            = "The cat in the hat sat on the mat";
+			// case sensitive remove duplicates
+			var result = ListRemoveDuplicates(myList, " ", true);
+			
+			// What gets returned??
+			assertEquals(__,result);
+		}
+	}
+	
 }
