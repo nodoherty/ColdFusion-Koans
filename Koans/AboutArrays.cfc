@@ -1,5 +1,6 @@
 /**
 * @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+* @mxunit:decorators mxunit.framework.decorators.MinimumVersionDecorator
 */
 component extends="Koans.BaseKoan"{
 	

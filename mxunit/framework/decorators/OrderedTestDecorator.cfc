@@ -28,23 +28,5 @@
     		return returnArray;
     	</cfscript>
     </cffunction>
-    
-    <cffunction name="invokeTestMethod" output="false">
-		<cfargument name="methodName">
-		<cfargument name="args">
-		
-		<cfscript>
-			var CFMLEngineVersion = Val( ListFirst( server.coldfusion.productversion ) );
-			var minVersion = Val( getAnnotation( arguments.methodName, "minVersion" ) );
-			var result = ""; 
-
-			if ( minVersion <= CFMLEngineVersion ) {
-				// test is applicable to engine so run it 
-				result = getTarget().invokeTestMethod( argumentCollection=arguments );
-			}
-			// note excluded tests show as green
-			return result;
-		</cfscript>
-	</cffunction>
 
 </cfcomponent>
