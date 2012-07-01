@@ -12,17 +12,27 @@ As you complete a section you'll confirm your tests by refreshing this page or r
 
 ##ColdFusion 10 Topics
 
-When adding topics that are reliant to ColdFusion 10 make sure to add them inside the conditional statement:
+When adding topics that are reliant to ColdFusion 10 there are two steps you must take.
+
+####1. Make sure the topic cfc has the MinimumVersionDecorator defined in the component declaration
 
 ```cfm
- if(application.version >= 10){
-  /****************
-    If you have a topic that is 100% reliant on ColdFusion 10 or greater add them here
-  *****************/
-    ...
-  } 
+/**
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator
+* @mxunit:decorators mxunit.framework.decorators.MinimumVersionDecorator
+*/
+component extends="Koans.BaseKoan"{
 ```
-in index.cfm.
+
+####2. Make sure your tests that rely on ColdFusion10 have the minVersion 10 annotation on them
+
+```cfm
+ /**
+	*@order 1
+	*@minVersion 10
+	*/
+	public void function testWhatIsAClosure(){
+```
 
 ##Suggestions for committing
 
