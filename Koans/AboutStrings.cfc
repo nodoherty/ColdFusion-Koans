@@ -650,4 +650,19 @@ component extends="Koans.BaseKoan"{
 		assertEquals(__, uCase( testString));
 	}
 	 
+	/**
+	 *@order 43
+	 */
+  	public void function testHTMLEditFormat() {
+  	
+		// Use HTMLEditFormat to escape characters that have special meaning in HTML.
+		// Returns : A string with HTML characters converted to their escaped equivalent.
+		// Note    : For more details see: http://tinyurl.com/8a2o8bv
+		// Usage   : htmlEditFormat(string [, HTMLversion])
+		
+		var testString= '<p>The fox jumped over the "lazy" dogs & cats.</p>';
+		
+		assertEquals(__,htmlEditFormat(testString));
+  	}	 	 
+	 
 }
