@@ -440,4 +440,102 @@ component extends="Koans.BaseKoan"{
 
 		assertEquals(__, testValue2);
 	}
+	
+	/**
+	 *@order 32
+	 */
+	public void function testMaxFunction() {
+		
+		// Use the max() function to find the greater of two numbers.
+		// Returns : The greater number
+		// Note    : For more details see: http://tinyurl.com/84rz9l7
+		// Usage   : max(number1, number2)
+		
+		var testValue1= 10.56;
+		var testValue2= 20;
+		var testValue3= -5;
+		
+		assertEquals(__,max(testValue1,testValue2));
+		assertEquals(__,max(testValue1,testValue3));
+	}
+	
+	/**
+	 *@order 33
+	 */
+	public void function testMinFunction() {
+		
+		// Use the min() function to find the lower of two numbers.
+		// Returns : The lower number
+		// Note    : For more details see: http://tinyurl.com/6lhson7
+		// Usage   : min(number1, number2)
+		
+		var testValue1= 10.56;
+		var testValue2= 20;
+		var testValue3= -5;
+		
+		assertEquals(__,min(testValue1,testValue2));
+		assertEquals(__,min(testValue1,testValue3));
+	}
+	
+	/**
+	 *@order 34
+	 */
+	public void function testFormatBaseN() {
+		
+		// Use the formatBaseN() function to convert a number into another numeric base
+		// Returns : The converted number as a string
+		// Note    : For more details see: http://tinyurl.com/7s53p8z
+		// Usage   : formatBaseN(number, radix/numeric base)	
+			
+		var testValue1= 5;
+		
+		//FormatBaseN is useful for converting normal (base 10) integers to binary (base 2)
+		assertEquals(__,formatBaseN(testValue1,2));
+	}
+	
+	/**
+	 *@order 35
+	 */
+	public void function testInputBaseN() {
+		
+		// Use the inputBaseN() function to convert a string into another numeric base
+		// Returns : The converted string as a number
+		// Note    : For more details see: http://tinyurl.com/6u6ecpy
+		// Usage   : inputBaseN(string, radix/numeric base)	
+		
+		//You couldn't covert this hex code with FormatBaseN
+		var testValue1= "ffffff";
+		
+		assertEquals(__,inputBaseN(testValue1,16));
+	}
+	
+	/**
+	 *@order 36
+	 */
+	public void function testFixOnPositiveNumber() {
+		
+		// Use the fix() function to convert a real number to the next closest integer to 0.
+		// Returns : For positive numbers, the nearest lower integer; for negative numbers, the nearest higher integer
+		// Note    : For more details see: http://tinyurl.com/6m5yrej
+		// Usage   : fix(number)
+			
+		var testValue1= 7.501;
+		
+		assertEquals(__,fix(testValue1));
+	}
+	
+	/**
+	 *@order 37
+	 */
+	public void function testFixOnNegativeNumber() {
+		
+		// Use the fix() function to convert a real number to the next closest integer to 0.
+		// Returns : For positive numbers, the nearest lower integer; for negative numbers, the nearest higher integer
+		// Note    : For more details see: http://tinyurl.com/6m5yrej
+		// Usage   : fix(number)
+			
+		var testValue1= -7.999;
+		
+		assertEquals(__,fix(testValue1));
+	}
 }
