@@ -112,4 +112,116 @@ component extends="Koans.BaseKoan"{
 		assertEquals(__,dayOfWeek(testDate));
 
 	}
+	
+	/**
+	 *@order 9
+	 */
+	public void function testCreateDate() {
+		
+		// Use the createDate() function to create a date variable (with a time of 12am).
+		// Returns : A date variable
+		// Note    : For more details see: http://tinyurl.com/7rcleyc
+		// Usage   : createDate(year, month, day)	
+			
+		var myDate= createDate(2012,7,7);
+		
+		assertEquals(__,dateFormat(myDate,"mm/dd/yyyy"));
+		assertEquals(__,isDate(myDate));
+	}
+	
+	/**
+	 *@order 10
+	 */
+	public void function testDateFormatWithPredefinedMask() {
+		
+		// Use the dateFormat() function to return the date in a date/timestamp object in a particular format.
+		// Returns : A string
+		// Note    : For more details see: http://tinyurl.com/63699rw
+		// Usage   : dateFormat(time [, mask])	
+			
+		var myDate= createDate(2012,7,7);
+		
+		assertEquals(__,dateFormat(myDate,"short"));
+	}
+	
+	/**
+	 *@order 11
+	 */
+	public void function testDateFormatWithCustomMask() {
+		
+		// Use the dateFormat() function to return the date in a date/timestamp object in a particular format.
+		// Returns : A string
+		// Note    : For more details see: http://tinyurl.com/63699rw
+		// Usage   : dateFormat(time [, mask])	
+			
+		var myDate= createDate(2012,7,7);
+		
+		assertEquals(__,dateFormat(myDate,"yyyy-mm-dd"));
+	}
+	
+	
+	/**
+	 *@order 12
+	 */
+	public void function testCreateDateTime() {
+		
+		// Use the createDateTime() function to create a timestamp with a specific date and time.
+		// Returns : A date variable that can be stored in the database as a timestamp
+		// Note    : For more details see: http://tinyurl.com/6m22xux
+		// Usage   : createDateTime(year, month, day, hour, minute, second)	
+			
+		var myTime= createDateTime(2012,7,7,0,9,35);
+		
+		assertEquals(__,timeFormat(myTime));
+		assertEquals(__,isDate(myTime));
+		//Hint: Because it is a date variable, you can get the date from the variable as well.
+		assertEquals(__,dateFormat(myTime,"mm/dd/yyyy"));
+	}
+	
+	/**
+	 *@order 13
+	 */
+	public void function testTimeFormatWithPredefinedMask() {
+		
+		// Use the timeFormat() function to return the time in a date/timestamp object in a particular format.
+		// Returns : A string
+		// Note    : For more details see: http://tinyurl.com/6wyw4d6
+		// Usage   : timeFormat(time [, mask])	
+			
+		var myTime= createDateTime(2012,7,7,0,9,35);
+		
+		assertEquals(__,timeFormat(myTime,"short"));
+	}
+	
+	/**
+	 *@order 14
+	 */
+	public void function testTimeFormatWithCustomMask() {
+		
+		// Use the timeFormat() function to return the time in a date/timestamp object in a particular format.
+		// Returns : A string
+		// Note    : For more details see: http://tinyurl.com/6wyw4d6
+		// Usage   : timeFormat(time [, mask])	
+			
+		var myTime= createDateTime(2012,7,7,0,9,35);
+		
+		assertEquals(__,timeFormat(myTime,"hh:mm:ss tt"));
+	}
+	
+	
+	/**
+	 *@order 15
+	 */
+	public void function testDatePart() {
+		
+		// Use the datePart() function to retrieve a particular value (month, day, etc) of a date variable.
+		// Returns : An integer
+		// Note    : For more details see: http://tinyurl.com/bn5dl3z
+		// Usage   : datePart(datepart, date)
+			
+		var myDateTime= createDateTime(2012,7,7,0,9,35);
+		
+		assertEquals(__,DatePart("m",myDateTime));
+		assertEquals(__,DatePart("n",myDateTime));
+	}
 }
