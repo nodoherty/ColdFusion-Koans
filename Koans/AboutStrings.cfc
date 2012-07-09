@@ -659,8 +659,11 @@ component extends="Koans.BaseKoan"{
 		// Returns : A string with HTML characters converted to their escaped equivalent.
 		// Note    : For more details see: http://tinyurl.com/8a2o8bv
 		// Usage   : htmlEditFormat(string [, HTMLversion])
+
+		//BE CAREFUL!  The output on the screen doesn't necessarily reflect the string that will match!
+		// Hint: "<"" in html syntax is &lt; ">" is &gt; and "&" is &amp;
 		
-		var testString= '<p>The fox jumped over the "lazy" dogs & cats.</p>';
+		var testString= '<p>Dogs & cats.</p>';
 		
 		assertEquals(__,htmlEditFormat(testString));
   	}	 	 
