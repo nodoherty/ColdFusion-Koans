@@ -67,8 +67,9 @@ component extends="Koans.BaseKoan"{
 	*/
 	public void function testWorkingWithDates(){
 		
-		myDate = parseDateTime("01/01/77");		
-		assertEquals(__,isDate(myDate));
+		myDate = parseDateTime("01/01/77");
+		//isDate will return true if the parameter passed in can be parsed into a valid date, otherwise it will return false		
+		assertEquals(__,isDate(myDate));  
 
 		myDate = parseDateTime("01.01.77");		
 		assertEquals(__,isDate(myDate));
@@ -172,8 +173,11 @@ component extends="Koans.BaseKoan"{
 			
 		var myTime= createDateTime(2012,7,7,0,9,35);
 		
-		assertEquals(__,timeFormat(myTime));
-		assertEquals(__,isDate(myTime));
+		//for more information on time format go here http://adobe.ly/LBQaR0
+		//theDefault format for timeFormat is hh:mm am/pm
+		assertEquals(__,timeFormat(myTime)); 
+		assertEquals(__,isDate(myTime)); 
+
 		//Hint: Because it is a date variable, you can get the date from the variable as well.
 		assertEquals(__,dateFormat(myTime,"mm/dd/yyyy"));
 	}
@@ -190,6 +194,7 @@ component extends="Koans.BaseKoan"{
 			
 		var myTime= createDateTime(2012,7,7,0,9,35);
 		
+		//short timeformat is h:mm am/pm
 		assertEquals(__,timeFormat(myTime,"short"));
 	}
 	
