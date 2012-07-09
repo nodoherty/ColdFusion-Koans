@@ -489,28 +489,14 @@ component extends="Koans.BaseKoan"{
 			
 		var testValue1= 5;
 		
+		//If you don't know binary here is a simple tool to help you with the conversion http://bit.ly/NbcTyX
+
 		//FormatBaseN is useful for converting normal (base 10) integers to binary (base 2)
 		assertEquals(__,formatBaseN(testValue1,2));
 	}
 	
 	/**
 	 *@order 35
-	 */
-	public void function testInputBaseN() {
-		
-		// Use the inputBaseN() function to convert a string into another numeric base
-		// Returns : The converted string as a number
-		// Note    : For more details see: http://tinyurl.com/6u6ecpy
-		// Usage   : inputBaseN(string, radix/numeric base)	
-		
-		//You couldn't covert this hex code with FormatBaseN
-		var testValue1= "ffffff";
-		
-		assertEquals(__,inputBaseN(testValue1,16));
-	}
-	
-	/**
-	 *@order 36
 	 */
 	public void function testFixOnPositiveNumber() {
 		
@@ -525,7 +511,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 37
+	 *@order 36
 	 */
 	public void function testFixOnNegativeNumber() {
 		
