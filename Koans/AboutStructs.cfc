@@ -57,4 +57,164 @@ component extends="Koans.BaseKoan"{
 		assertEquals(structKeyExists(carStruct, "bmw"), "yes");
 
 	}
+	
+	/**
+	 *@order 5
+	 */
+	public void function testStructNew() {
+	 	
+		// Use the structNew() function to explicitly create a struct
+		// Returns : An empty struct
+		// Note    : For more details see: http://tinyurl.com/ckxvt9s
+		// Usage   : structNew();
+		
+		var myStruct= StructNew();
+		
+		assertEquals(__,isStruct(myStruct));
+	}	
+	
+	/**
+	 *@order 6
+	 */
+	public void function testStructIsEmpty() {
+	 	
+		// Use the structIsEmpty() function to determine if a struct is empty
+		// Returns : Boolean
+		// Note    : For more details see: http://tinyurl.com/7dompdp
+		// Usage   : structIsEmpty(struct);
+		
+		var myStruct= StructNew();
+		
+		assertEquals(__,structIsEmpty(myStruct));
+	}
+	
+	/**
+	 *@order 7
+	 */
+	public void function testStructCount() {
+		
+		// Use the structCount() function to count the number of keys in a struct
+		// Returns : The number of keys
+		// Note    : For more details see: http://tinyurl.com/buj598f
+		// Usage   : structCount(struct);
+		
+		var myStruct= {foo = "Foo", bar= "Bar"};
+		
+		assertEquals(__,structCount(myStruct));
+	}	
+		
+	/**
+	 *@order 8
+	 */
+	public void function testStructClear() {
+		
+		// Use the structClear() function to remove all keys and values from a struct
+		// Returns : True if successful
+		// Note    : For more details see: http://tinyurl.com/7rzrywh
+		// Usage   : structClear(struct);
+		
+		var myStruct= {foo = "Foo", bar= "Bar"};
+		
+		structClear(myStruct);
+		
+		assertEquals(__,structIsEmpty(myStruct));
+	}
+	
+	/**
+	 *@order 9
+	 */
+	public void function testStructInsert() {
+		
+		// Use the structInsert() function to insert a new key/value pair in a struct (with optional overwrite parameter)
+		// Returns : True if successful
+		// Note    : For more details see: http://tinyurl.com/7r35hx6
+		// Usage   : structInsert(struct, key, value [,allowoverwrite]);
+		
+		var myStruct= {foo = "Foo", bar= "Bar"};
+		
+		structInsert(myStruct,"rainbows","Colorful");
+		
+		assertEquals(__,myStruct.rainbows);
+	}
+	
+	/**
+	 *@order 10
+	 */
+	public void function testStructFindKey() {
+		
+		// Use structFindKey to find one or more values within a struct or a struct with a struct or array tied to the specified key
+		// Returns : An array of structures (empty if not found), with each structure having the struct containing the key, the "path" to the key, and the value
+		// Note    : For more details see: http://tinyurl.com/czwpgus
+		// Usage   : structFindKey(struct to search, value, scope)
+		
+		var myStruct= {goodGuy = "Luke", badGuy = "Darth Vader", scoundrel= "Han"};
+		var whoIsTheGoodGuy= structFindKey(myStruct,"goodGuy","one"); 
+		
+		//Hint: use debug() and the mxUnit debug view to view the full data returned by structFindKey.
+		//debug(whoIsTheGoodGuy);
+		
+		assertEquals(__,whoIsTheGoodGuy[1].value);
+	}
+
+	/**
+	 *@order 11
+	 */
+	public void function testStructFindValue() {
+		
+		// Use structFindValue to find one or more key within a struct or a struct with a struct or array tied to the specified value
+		// Returns : An array of structures (empty if not found), with each structure having the struct containing the value, the "path" to the value, and the key
+		// Note    : For more details see: http://tinyurl.com/79kuqne
+		// Usage   : structFindValue(struct to search, value, scope)
+		
+		var myCharacters= {
+			Luke= {lastname= "Skywalker", allegiance= "Rebels"},
+			Han= {lastname = "Solo", allegiance = "Rebels"},
+			Anakin= {lastname = "Skywalker", allegiance = "Empire"}
+		};
+		
+		var whoAreTheRebels= structFindValue(myCharacters,"Rebels","all"); 
+		
+		//Hint: use debug() and the mxUnit debug view to view the full data returned by structFindValue.
+		//debug(whoAreTheRebels);
+		
+		assertEquals(__,whoAreTheRebels[1].key);
+	}
+	
+	/**
+	 *@order 12
+	 */
+	public void function testStructFindValueNotFound() {
+		
+		// Use structFindValue to find one or more key within a struct or a struct with a struct or array tied to the specified value
+		// Returns : An array of structures, with each structure having the struct containing the key, the "path" to the value, and the value
+		// Note    : For more details see: http://tinyurl.com/79kuqne
+		// Usage   : structFindValue(struct to search, value, scope)
+		
+		var myCharacters= {
+			Luke= {lastname= "Skywalker", allegiance= "Rebels"},
+			Han= {lastname = "Solo", allegiance = "Rebels"},
+			Anakin= {lastname = "Skywalker", allegiance = "Empire"}
+		};
+		
+		var whereIsTheFett= structFindValue(myCharacters,"Fett","all"); 
+		
+		assertEquals(__,arrayIsEmpty(whereIsTheFett));
+	}
+	
+	/**
+	 *@order 13
+	 */
+	public void function testStructKeyList() {
+		
+		// Use structKeyList to return a list of keys
+		// Returns : A list of keys in the specified struct
+		// Note    : For more details see: http://tinyurl.com/d4pkxbo
+		// Usage   : structKeyList(struct [,delimiter])
+		
+		var myStruct= {goodGuy = "Luke", badGuy = "Darth Vader"};
+		var myKeyList= structKeyList(myStruct);
+		
+		//Note: You cannot rely on the struct keys being returned in a particular order, so we'll test the list length
+		assertEquals(__,ListLen(myKeyList));
+	}	
 }

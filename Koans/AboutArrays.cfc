@@ -259,4 +259,79 @@ component extends="Koans.BaseKoan"{
 		assertEquals(__,result[1]);
 	}
 	
+	/**
+	 *@order 25
+	 */
+	public void function testArrayNewWithMultipleDimensions() {
+		
+		// Use the arrayNew() function to explicitly declare an array with 1, 2, or 3 dimensions.
+		// Returns : An array
+		// Note    : For more details see: http://tinyurl.com/7q5a6jo
+		// Usage   : arrayNew(number of dimensions)
+		
+		var myArray= ArrayNew(3);
+		
+		myArray[1][1][1]= "Luke";
+		myArray[1][1][2]= "Leia";
+		myArray[1][1][3]= "Yoda";
+		
+		myArray[1][2][1]= "The Emperor";
+		myArray[1][2][2]= "Darth Vader";
+		myArray[1][2][3]= "Boba Fett";
+		
+		assertEquals(__,myArray[1][2][2]);
+	} 
+	
+	/**
+	 *@order 26
+	 */
+	public void function testArrayResize() {
+		
+		// Use the arrayResize() function to explicitly set the size of an array (note, cannot shrink an array).
+		// Returns : True if successful
+		// Note    : For more details see: http://tinyurl.com/6smbdpo
+		// Usage   : arrayResize(number of elements)
+		
+		var myArray= ["one","two","three"];
+		
+		arrayResize(myArray,5);
+		
+		assertEquals(__,arrayLen(myArray));
+	}
+	
+	/**
+	 *@order 27
+	 */
+	public void function testArrayToList() {
+		
+		// Use the arrayToList() function to convert a one-dimensional array to a list.
+		// Returns : Delimited list as a string
+		// Note    : For more details see: http://tinyurl.com/7ms8uw2
+		// Usage   : arrayToList(array [, delimiter])
+		
+		var myArray= ["one","two","three"];
+		
+		assertEquals(__,arrayToList(myArray,"|"));
+	}
+
+	/**
+	 *@order 28
+	 */
+	public void function testArraySet() {
+		
+		// Use the arraySet() function to set the value of one or more particular elements in a one-dimensional array
+		// Returns : True if successful
+		// Note    : For more details see: http://tinyurl.com/7m5b497
+		// Usage   : arraySet(array, start position, end position, value);
+		
+		var myArray= arrayNew(1);
+		arraySet(myArray,1,2,"first two");
+		arraySet(myArray,3,5,"last three");
+		arraySet(myArray,2,2,"changed");
+		
+		assertEquals(__,myArray[1]);
+		assertEquals(__,myArray[2]);
+		assertEquals(__,myArray[5]);
+	}
+	
 }
