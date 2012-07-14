@@ -61,21 +61,6 @@ component extends="Koans.BaseKoan"{
 	/**
 	 *@order 5
 	 */
-	public void function testStructNew() {
-	 	
-		// Use the structNew() function to explicitly create a struct
-		// Returns : An empty struct
-		// Note    : For more details see: http://tinyurl.com/ckxvt9s
-		// Usage   : structNew();
-		
-		var myStruct= StructNew();
-		
-		assertEquals(__,isStruct(myStruct));
-	}	
-	
-	/**
-	 *@order 6
-	 */
 	public void function testStructIsEmpty() {
 	 	
 		// Use the structIsEmpty() function to determine if a struct is empty
@@ -89,7 +74,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 7
+	 *@order 6
 	 */
 	public void function testStructCount() {
 		
@@ -104,7 +89,7 @@ component extends="Koans.BaseKoan"{
 	}	
 		
 	/**
-	 *@order 8
+	 *@order 7
 	 */
 	public void function testStructClear() {
 		
@@ -121,7 +106,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 9
+	 *@order 8
 	 */
 	public void function testStructInsert() {
 		
@@ -138,7 +123,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 10
+	 *@order 9
 	 */
 	public void function testStructFindKey() {
 		
@@ -157,7 +142,7 @@ component extends="Koans.BaseKoan"{
 	}
 
 	/**
-	 *@order 11
+	 *@order 10
 	 */
 	public void function testStructFindValue() {
 		
@@ -181,7 +166,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 12
+	 *@order 11
 	 */
 	public void function testStructFindValueNotFound() {
 		
@@ -202,7 +187,7 @@ component extends="Koans.BaseKoan"{
 	}
 	
 	/**
-	 *@order 13
+	 *@order 12
 	 */
 	public void function testStructKeyList() {
 		
