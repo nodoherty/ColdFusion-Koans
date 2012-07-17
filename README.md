@@ -16,10 +16,9 @@ When adding topics that are reliant to ColdFusion 10 there are two steps you mus
 
 ####1. Make sure the topic cfc has the MinimumVersionDecorator defined in the component declaration
 
-_Note: do not add a space between decorators, this will break the tests_
 ```cfm
 /**
-* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator,mxunit.framework.decorators.MinimumVersionDecorator
+* @mxunit:decorators mxunit.framework.decorators.OrderedTestDecorator, mxunit.framework.decorators.MinimumVersionDecorator
 */
 component extends="Koans.BaseKoan"{
 ```
@@ -27,11 +26,11 @@ component extends="Koans.BaseKoan"{
 ####2. Make sure your tests that rely on ColdFusion10 have the minVersion 10 annotation on them
 
 ```cfm
- /**
-	*@order 1
-	*@minVersion 10
-	*/
-	public void function testWhatIsAClosure(){
+/**
+* @order 1
+* @minVersion 10
+*/
+public void function testWhatIsAClosure(){
 ```
 
 ##Suggestions for committing
