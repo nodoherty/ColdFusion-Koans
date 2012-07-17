@@ -74,6 +74,8 @@ Miles Rausch [@awayken](https://twitter.com/awayken) [http://milesrausch.com](ht
 
 John Whish [@aliaspooryorik](https://twitter.com/aliaspooryorik) [http://www.aliaspooryorik.com/](http://www.aliaspooryorik.com)
 
+Brian Swartzfager [@bcswartz](https://twitter.com/bcswartz) [http://www.thoughtdelimited.org/thoughts](http://www.thoughtdelimited.org/thoughts)
+
 ##Thanks
 
 Robert Glover [@snarfblat](http://twitter.com/#!/snarfblat) for helping me troubleshoot issues.
