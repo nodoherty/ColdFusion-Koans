@@ -113,8 +113,13 @@ component extends="Koans.BaseKoan"{
 		// Note    : For more details see: http://tinyurl.com/cuy5rgj
 		// Usage   : Abs(number)
 
-		var testNumber = -1234.E-10;
-
+		var testNumber = "";
+		if (server.coldfusion.productname is "Railo") {
+		testNumber = evaluate('-1234^-10');			// Works in Railo and Coldfusion
+		}
+		else {
+		testNumber = evaluate('-1234E-10');			// Works ONLY in Adobe ColdFusion
+		} 
 		assertEquals(__, abs(testNumber));
 	}
 	

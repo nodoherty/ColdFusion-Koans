@@ -1067,8 +1067,15 @@ component extends="Koans.BaseKoan"{
 		// listRemoveDuplicates is new in ColdFusion 10
 		// see: http://help.adobe.com/en_US/ColdFusion/10.0/CFMLRef/WSd8001ae4abdbd911-7fc6f4b01350d8e2282-8000.html
 		var myList            = "The cat in the hat sat on the mat";
-		// case sensitive remove duplicates
-		var result = ListRemoveDuplicates(myList, " ", true);
+		var result = "";
+		// case sensitive remove duplicates - depending on server type
+		if (server.coldfusion.productname is "Railo") {
+		result = 'ListRemoveDuplicates(myList, " ")';				// Railo
+		}
+		else {
+		result = 'ListRemoveDuplicates(myList, " ", true)';			// CF 10 and Above
+		} 
+		result = evaluate(result);
 		
 		// What gets returned??
 		assertEquals(__,result);
