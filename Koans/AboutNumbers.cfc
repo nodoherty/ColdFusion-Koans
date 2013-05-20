@@ -115,7 +115,7 @@ component extends="Koans.BaseKoan"{
 
 		var testNumber = "";
 		if (server.coldfusion.productname is "Railo") {
-		testNumber = evaluate('-1234^-10');			// Works in Railo and Coldfusion
+		testNumber = evaluate('"-1234E-10"');			// Works in Railo and Coldfusion
 		}
 		else {
 		testNumber = evaluate('-1234E-10');			// Works ONLY in Adobe ColdFusion
