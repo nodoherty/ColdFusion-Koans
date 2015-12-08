@@ -1,3 +1,5 @@
+[![ZenHub] (https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)] (https://zenhub.io)
+
 #ColdFusion Koans Project
 
 The ColdFusion Koans are a set of unit tests that the user must make pass by filling in values. To get started 
